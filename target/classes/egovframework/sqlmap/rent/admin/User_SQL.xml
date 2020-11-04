@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rent.admin.user.service.UserDAO">
+	
+    <sql id="ugmGubunSql">
+		<where>
+			<if test="searchKeyword != null and searchKeyword != ''">
+				<choose>
+					<when test="searchCondition == 'userNm'">
+						AND USER_NM LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>
+					<when test="searchCondition == 'emailAddr'">
+						AND EMAIL_ADDR LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>
+					<otherwise>
+						AND USER_ID LIKE CONCAT('%', #{searchKeyword}, '%')
+					</otherwise>
+				</choose>
+			</if>
+		</where>
+	</sql>
+	
+    <!-- 사용자 목록 -->
+	<select id="selectUserList" parameterType="userVO" resultType="userVO">
+		<![CDATA[
+		SELECT
+			USER_SEQ userSeq,
+			USER_ID userId, 
+			USER_PW userPw, 
+			USER_NM userNm, 
+			DEL_YN delYn, 
+			EMAIL_ADDR emailAddr,
+			REG_ID regId,
+			DATE_FORMAT(REG_DT, '%Y-%m-%d') regDt
+		FROM 
+			USERS
+		]]>
+		<include refid="ugmGubunSql"/>
+		ORDER BY reg_dt DESC
+		LIMIT #{firstIndex}, #{lastIndex}
+	</select>
+	
+	<!-- 사용자 목록 카운트 -->
+	<select id="selectUserListCnt" parameterType="userVO" resultType="int">
+		<![CDATA[
+		SELECT COUNT(*) CNT FROM USERS
+		]]>
+		<include refid="ugmGubunSql"/>
+	</select>
+	
+	<!-- 사용자 아이디,이메일 중복체크 -->
+	<select id="selectUserIdChk" parameterType="userVO" resultType="userVO">
+		<![CDATA[
+		SELECT
+			user_id AS userId,
+			email_addr AS emailAddr
+		FROM USERS
+		WHERE
+			user_id = #{userId}
+			OR email_addr = #{emailAddr}
+		]]>
+	</select>
+	
+	<!-- 사용자 등록 -->
+	<insert id="insertUserProc" parameterType="userVO">
+		<![CDATA[
+		INSERT INTO USERS (		USER_SEQ,
+								USER_ID, 
+								USER_PW, 
+		   						USER_NM, 
+		   						DEL_YN, 
+		   						EMAIL_ADDR,
+		   						REG_ID,
+		   						REG_DT ) 
+		   						
+					VALUES (	#{userSeq},
+								#{userId},
+								#{userPw}, 
+								#{userNm}, 
+								#{delYn}, 
+								#{emailAddr},
+								#{regId},
+								NOW())
+		]]>		
+    </insert>
+    
+	<!-- 사용자상세 -->
+	<select id="selectUserDetail" parameterType="userVO" resultType="userVO">
+		<![CDATA[
+		SELECT
+			USER_SEQ userSeq, 
+			USER_ID userId, 
+			USER_PW userPw, 
+			USER_NM userNm, 
+			DEL_YN delYn, 
+			EMAIL_ADDR emailAddr,
+			REG_ID regId,
+			DATE_FORMAT(REG_DT, '%Y-%m-%d') regDt
+		FROM 
+			USERS
+		 WHERE USER_SEQ = #{userSeq}
+		 ]]>
+	</select>
+	
+	<!-- 패스워드 초기화 -->
+	<update id="updateUserPwReset" parameterType="userVO">
+		<![CDATA[
+		UPDATE USERS
+		SET    USER_PW  = #{userPw}
+			   , MOD_ID = #{modId}
+			   , MOD_DT = now() 
+		WHERE USER_SEQ = #{userSeq}
+		]]>
+	</update>
+	
+	<!-- 이메일 중복체크 -->
+	<select id="selectUserEmailChk" parameterType="userVO" resultType="java.lang.Integer">
+		<![CDATA[
+		SELECT COUNT (*) CNT
+		FROM USERS
+		WHERE email_addr = #{emailAddr}
+			AND USER_SEQ != #{userSeq}
+		]]>
+	</select>
+	
+	<!-- 사용자 수정 -->
+	<update id="updateUserProc" parameterType="userVO">
+		UPDATE  USERS
+		SET		USER_NM = #{userNm}
+				, EMAIL_ADDR = #{emailAddr}
+				, DEL_YN = #{delYn}
+				<if test="userPw != null and userPw != ''">
+				, USER_PW  = #{userPw}
+				</if>
+				, MOD_ID = #{modId}
+				, MOD_DT = now()
+		WHERE	USER_SEQ = #{userSeq}
+	</update>
+	
+	<!-- 사용자 삭제 -->
+	<update id="deleteUserProc" parameterType="userVO">
+		UPDATE	USERS
+		SET		DEL_YN = 'Y'
+		WHERE 	USER_SEQ = #{userSeq}
+	</update>
+</mapper>

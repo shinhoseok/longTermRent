@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rent.admin.survey.service.SurveyDAO">
+	
+	<!-- 설문질문 목록 -->
+	<select id="selectSurveyQtnList" parameterType="surveyVO" resultType="surveyVO">
+		SELECT
+			qtn_id qtnId,
+			qtn_contents qtnContents,
+			del_yn delYn,
+			reg_id regId,
+			DATE_FORMAT(REG_DT, '%Y-%m-%d') regDt 
+		FROM survey_qtn
+		WHERE del_yn = 'N'
+	</select>
+	
+	<!-- 설문질문 수정 -->
+	<update id="updateSurveyQtnProc" parameterType="surveyVO">
+		<![CDATA[
+		UPDATE survey_qtn
+		SET    qtn_contents  = #{qtnContents}
+			   , MOD_ID = #{modId}
+			   , MOD_DT = now()
+		WHERE qtn_id = #{qtnId}
+		]]>
+	</update>
+	
+</mapper>

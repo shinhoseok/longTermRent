@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<!-- egovMap -->
+		<typeAlias alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap" />
+		<!-- 관리자 사용자관리 VO -->
+		<typeAlias alias="userVO" type="com.rent.admin.user.service.UserVO"/>
+		<!-- 로그인 VO -->
+		<typeAlias alias="loginVO" type="com.rent.login.service.LoginVO"/>
+		<!-- 로그인 VO -->
+		<typeAlias alias="visitorVO" type="com.rent.admin.visitor.service.VisitorVO"/>
+		<!-- 설문 VO -->
+		<typeAlias alias="surveyVO" type="com.rent.admin.survey.service.SurveyVO"/>
+	</typeAliases>
+</configuration>

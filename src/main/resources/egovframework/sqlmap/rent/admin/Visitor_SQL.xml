@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rent.admin.visitor.service.VisitorDAO">
+	
+	<sql id="vstGubunSql">
+		<where>
+			<if test="searchKeyword != null and searchKeyword != ''">
+				<choose>
+					<when test="searchCondition == 'telNo'">
+						AND TEL_NO LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>
+					<otherwise>
+						AND VISITOR_NM LIKE CONCAT('%', #{searchKeyword}, '%')
+					</otherwise>
+				</choose>
+			</if>
+		</where>
+	</sql>
+	
+    <!-- 견적관리 목록 -->
+	<select id="selectVisitorList" parameterType="visitorVO" resultType="visitorVO">
+		<![CDATA[
+		SELECT
+			VISITOR_ID visitorId,
+			ACCESS_PATH accessPath, 
+			VISITOR_NM visitorNm, 
+			ITRSTD_CAR_TY itrstdCarTy, 
+			TEL_NO telNo,
+			DEL_YN delYn, 
+			DATE_FORMAT(REG_DT, '%Y-%m-%d %H:%i') regDt
+		FROM 
+			VISITORS
+		]]>
+		<include refid="vstGubunSql"/>
+		ORDER BY reg_dt DESC
+		LIMIT #{firstIndex}, #{lastIndex}
+	</select>
+	
+	<!-- 견적관리 목록 카운트 -->
+	<select id="selectVisitorListCnt" parameterType="visitorVO" resultType="java.lang.Integer">
+		<![CDATA[
+		SELECT COUNT(*) CNT FROM VISITORS
+		]]>
+		<include refid="vstGubunSql"/>
+	</select>
+	
+</mapper>
