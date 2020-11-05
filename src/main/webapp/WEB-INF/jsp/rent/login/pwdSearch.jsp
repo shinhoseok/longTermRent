@@ -27,7 +27,7 @@
 			<p class="sub_path">
 				<img src="${imagePath }/ico_home.png" width="10" height="9" />&nbsp;〉&nbsp;비밀번호 찾기
 			</p>
-			<h4 class="contentTitle_h4">개인 정보</h4>
+			<h4 class="contentTitle_h4">본인 확인</h4>
 			<div class="tableLayer">
 				<table class="table">
 					<caption></caption>
@@ -39,55 +39,40 @@
 					</colgroup>
 					<tbody class="line">
 						<tr>
-							<th>이름</th>
-							<td><c:out value="${resultVO.userNm}"/></td>
-							<th>아이디</th>
-							<td><c:out value="${resultVO.userId}"/></td>
-						</tr>
-						<tr>
-							<th>이메일 주소</th>
-							<td colspan="4"><c:out value="${resultVO.emailAddr}"/></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<h4 class="contentTitle_h4">비밀번호 변경</h4>
-			<div class="tableLayer">
-				<table class="table">
-					<caption></caption>
-					<colgroup>
-						<col width="150px">
-						<col width="340px">
-						<col width="150px">
-						<col width="340px">
-					</colgroup>
-					<tbody class="line">
-						<tr>
-							<th>기존 비밀번호</th>
+							<th>본인 확인</th>
 							<td colspan="3">
-								<div class="commonSearch_wrap">
-									<label class="blind" for=" ">d</label>
-									<input type="password" id="beforePw" style="width: 728px; height:28px; border: 1px solid #D4D4D4;" onfocus="checker(this, 20 , 'nbytes_beforePw');" onblur="stopchecker();">
-									&nbsp;[<span id="nbytes_beforePw" class="color_red">0</span>/20]byte
-								</div>
+								등록되어 있는 아이디와 이메일 주소가 같아야, 이메일로 임시 비밀번호를 받을 수 있습니다. 등록한 회원정보로 찾기 어려우시면 관리자에게 문의 바랍니다.
 							</td>
 						</tr>
-						<tr>
-							<th>신규 비밀번호 확인</th>
-							<td colspan="3">
-								<div class="commonSearch_wrap">
-									<label class="blind" for=" ">d</label> 
-									<input type="password" id="user_pw_confirm" style="width: 728px; height:28px; border: 1px solid #D4D4D4;" onfocus="checker(this, 20 , 'nbytes_user_pw_confirm');" onblur="stopchecker();"/>
-									&nbsp;[<span id="nbytes_user_pw_confirm" class="color_red">0</span>/20]byte
-								</div>
-							</td>
-						</tr>
+						<form:form commandName="loginVO" id="loginVO" name="loginVO" method="post" action="${basePath}/login/a/afterUserPwSearch.do">
+							<form:hidden path="userSeq" />
+							<tr>
+								<th>아이디</th>
+								<td colspan="3">
+									<div class="commonSearch_wrap">
+										<label class="blind" for=" ">d</label> 
+										<form:input path="userId" id="userId" style="width: 720px;" onfocus="checker(this, 20 , 'nbytes_userId');" onblur="stopchecker();"/>
+										&nbsp;[<span id="nbytes_userId" class="color_red">0</span>/20]byte
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>이메일 주소</th>
+								<td colspan="3">
+									<div class="commonSearch_wrap">
+										<label class="blind" for=" ">d</label> 
+										<form:input path="emailAddr" id="emailAddr" style="width: 720px;" onfocus="checker(this, 100 , 'nbytes_emailAddr');" onblur="stopchecker();"/>
+										&nbsp;[<span id="nbytes_emailAddr" class="color_red">0</span>/100]byte 
+									</div>
+								</td>
+							</tr>
+						</form:form>
 					</tbody>
 				</table>
 			</div>
 			<div class="T_btnLayer fr">
-				<a href="javascript:void(0);" onclick="javascript:fn_updateUserPwProc('<c:out value="${resultVO.userId}"/>');"><button type="button" class="blueBtn L">수정</button></a>
-				<a href="${basePath}/vtmgr/z/selectVisitorList.do"><button type="button" class="blueBtn L">취소</button></a>
+				<a href="javascript:void(0);" onclick="javascript:fn_selectUserPwSearch();"><button type="button" class="blueBtn L">비밀번호 초기화</button></a>
+				<a href="${basePath}/login/a/login.do"><button type="button" class="blueBtn L">취소</button></a>
 			</div>
 		</div>
 	</div>
@@ -98,54 +83,47 @@
 	<!--//footer-->
 	
 	<script type="text/javascript">
-	var fn_updateUserPwProc = function(userId) {
-		if (!TypeChecker.required($("#beforePw").val())) {
-			alert("'기존 비밀번호'는  "+ TypeChecker.requiredText);
-			$("#beforePw").focus();
+	var fn_selectUserPwSearch = function() {
+		if (!TypeChecker.required($("#userId").val())) {
+			alert("'아이디'는  "+ TypeChecker.requiredText);
+			$("#userId").focus();
 			return;
 		}
-		if (!TypeChecker.required($("#userPw").val())) {
-			alert("'신규 비밀번호'는  "+ TypeChecker.requiredText);
-			$("#userPw").focus();
+		if (!TypeChecker.usrid($("#userId").val())) {
+			alert("'아이디'는' "+TypeChecker.usridText);
+			$("#userVO #userId").focus();
 			return;
 		}
-		if(!fn_checkPass("userPw")) {
+		if (!TypeChecker.required($("#emailAddr").val())) {
+			alert("'이메일'은  "+ TypeChecker.requiredText);
+			$("#emailAddr").focus();
 			return;
 		}
-		if (!TypeChecker.required($("#user_pw_confirm").val())) {
-			alert("'신규 비밀번호 확인'은  "+ TypeChecker.requiredText);
-			$("#user_pw_confirm").focus();
+		if (!TypeChecker.email($("#emailAddr").val())) {
+			alert("이메일은 "+TypeChecker.emailText);
+			$("#emailAddr").focus();
 			return;
 		}
-		if($("#userPw").val() != $("#user_pw_confirm").val()) {
-			alert("패스워드를 확인해주세요");
-			$("#userPw").focus();
-			return;
-		}
-		if(!confirm("수정 하시겠습니까?")){
-			return;
-		}
-		var params = {};
-		params.userId = userId;
-		params.userPw = $("#beforePw").val();
-		//중복체크
+		
 		$.ajax({ 	
-			url: "${basePath}/mypagemgr/w/selectBeforeUserPwConfirm.do",
+			url: "${basePath}/login/a/selectUserPwSearch.do",
 			type: 'POST',
 			dataType : "json",
-			data : params,
+			data : $("#loginVO").serialize(),
 			error: function(){
 				 alert("현재 조회 서비스가 원할하지 않습니다.\n잠시후 다시 이용해 주십시요.");
 				 return;
 			},
-			success: function(r) { 
-				if(r.result) {
-					document.userVO.submit();
+			success: function(r) {
+				if(r.message != "N") {
+					$("#userSeq").val(r.message);
+					document.loginVO.submit();
 				} else {
-					alert("기존 비밀번호가 올바르지 않습니다.\n다시 시도해 주시기 바랍니다.");
-					$("#beforePw").focus();
+					alert("사용자 정보가 올바르지 않습니다.\n다른값으로 입력바랍니다.");
+					$("#userNm").focus();
 					return;
 				}
+				
 			}
 		}); 
 	};

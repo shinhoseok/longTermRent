@@ -41,10 +41,11 @@
 						<tr>
 							<th>본인 확인</th>
 							<td colspan="3">
-								등록되어 있는 아이디와 이메일 주소가 같아야, 이메일로 아이디를 받을 수 있습니다. 등록한 회원정보로 찾기 어려우시면 관리자에게 문의 바랍니다.
+								등록되어 있는 이름과 이메일 주소가 같아야, 이메일로 아이디를 받을 수 있습니다. 등록한 회원정보로 찾기 어려우시면 관리자에게 문의 바랍니다.
 							</td>
 						</tr>
-						<form:form commandName="loginVO" id="loginVO" name="loginVO" method="post" action="${basePath}/login/z/afterLogin.do">
+						<form:form commandName="loginVO" id="loginVO" name="loginVO" method="post" action="${basePath}/login/a/afterIdSearch.do">
+							<form:hidden path="userId" />
 							<tr>
 								<th>이름</th>
 								<td colspan="3">
@@ -70,7 +71,7 @@
 				</table>
 			</div>
 			<div class="T_btnLayer fr">
-				<a href="javascript:void(0);" onclick="javascript:fn_selectIdSearch('<c:out value="${resultVO.userId}"/>');"><button type="button" class="blueBtn L">아이디 찾기</button></a>
+				<a href="javascript:void(0);" onclick="javascript:fn_selectIdSearchAjax();"><button type="button" class="blueBtn L">아이디 찾기</button></a>
 				<a href="${basePath}/login/a/login.do"><button type="button" class="blueBtn L">취소</button></a>
 			</div>
 		</div>
@@ -82,15 +83,15 @@
 	<!--//footer-->
 	
 	<script type="text/javascript">
-	var fn_selectIdSearch = function() {
+	var fn_selectIdSearchAjax = function() {
 		if (!TypeChecker.required($("#userNm").val())) {
 			alert("'이름'은  "+ TypeChecker.requiredText);
 			$("#userNm").focus();
 			return;
 		}
-		if (!TypeChecker.korEng($("#userVO #userNm").val())) {
+		if (!TypeChecker.korEng($("#userNm").val())) {
 			alert("'이름'는' "+TypeChecker.korEngText);
-			$("#userVO #userNm").focus();
+			$("#userNm").focus();
 			return;
 		}
 		if (!TypeChecker.required($("#emailAddr").val())) {
@@ -98,38 +99,33 @@
 			$("#emailAddr").focus();
 			return;
 		}
-		if (!TypeChecker.email($("#userVO #emailAddr").val())) {
+		if (!TypeChecker.email($("#emailAddr").val())) {
 			alert("이메일은 "+TypeChecker.emailText);
-			$("#userVO #emailAddr").focus();
+			$("#emailAddr").focus();
 			return;
 		}
-		alert("진행 중입니다.");
-// 		$.ajax({ 	
-// 			url: "${basePath}/login/w/selectUserIdChk.do",
-// 			type: 'POST',
-// 			dataType : "json",
-// 			data : $("#userVO").serialize(),
-// 			error: function(){
-// 				 alert("현재 조회 서비스가 원할하지 않습니다.\n잠시후 다시 이용해 주십시요.");
-// 				 return;
-// 			},
-// 			success: function(r) { 
-// 				if(r.message == 'userId') {
-// 					alert("사용자 아이디가 중복되었습니다.\n다른값으로 입력바랍니다.");
-// 					$("#userId").focus();
-// 					return;
-// 				}
-// 				if(r.message == 'emailAddr') {
-// 					alert("사용자 이메일이 중복되었습니다 \n다른값으로 입력바랍니다.");
-// 					$("#emailAddr").focus();
-// 					return;
-// 				}
-// 				if(!confirm("등록 하시겠습니까?")){
-// 					return;
-// 				}
-// 				document.userVO.submit();
-// 			}
-// 		}); 
+		
+		$.ajax({ 	
+			url: "${basePath}/login/a/selectIdSearchAjax.do",
+			type: 'POST',
+			dataType : "json",
+			data : $("#loginVO").serialize(),
+			error: function(){
+				 alert("현재 조회 서비스가 원할하지 않습니다.\n잠시후 다시 이용해 주십시요.");
+				 return;
+			},
+			success: function(r) {
+				if(r.message != "N") {
+					$("#userId").val(r.message);
+					document.loginVO.submit();
+				} else {
+					alert("사용자 정보가 올바르지 않습니다.\n다른값으로 입력바랍니다.");
+					$("#userNm").focus();
+					return;
+				}
+				
+			}
+		}); 
 	};
 	</script>
 </body>

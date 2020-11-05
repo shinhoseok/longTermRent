@@ -24,7 +24,7 @@
 			<p class="txt_login">
 				<span>Log in to Basic Administrator Account</span>
 			</p>
-			<form:form commandName="loginVO" id="loginVO" name="loginVO" method="post" action="${basePath}/login/z/afterLogin.do">
+			<form:form commandName="loginVO" id="loginVO" name="loginVO" method="post" action="${basePath}/login/a/afterLogin.do">
 				<dl class="box_area">
 					<dt>
 						<a href="javascript:void(0);" onclick="javascript:fn_login();"><img src="${imagePath}/btn_login.jpg" width="97" height="78" /></a>
@@ -63,7 +63,7 @@
 	};
 	
 	var fn_selectIdSearch = function() {
-		location.href="${basePath}/login/z/selectIdSearch.do";
+		location.href="${basePath}/login/a/selectIdSearch.do";
 	};
 	
 	var fn_selectPwSearch = function() {

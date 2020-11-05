@@ -35,10 +35,37 @@
 			DATE_FORMAT(REG_DT, '%Y-%m-%d') regDt
 		FROM 
 			USERS
-		 WHERE USER_ID = #{userId}
-		   AND USER_PW = #{userPw}
+		 WHERE USER_NM = #{userNm}
+		   AND EMAIL_ADDR = #{emailAddr}
 		   AND DEL_YN = 'N'
 		 ]]>
 	</select>
 	
+	<!-- 비밀번호 찾기-->		
+	<select id="selectUserPwSearch" parameterType="loginVO" resultType="loginVO">
+		<![CDATA[
+		SELECT
+			USER_SEQ userSeq,
+			USER_ID userId, 
+			USER_PW userPw, 
+			USER_NM userNm, 
+			DEL_YN delYn, 
+			EMAIL_ADDR emailAddr,
+			DATE_FORMAT(REG_DT, '%Y-%m-%d') regDt
+		FROM 
+			USERS
+		 WHERE USER_ID = #{userId}
+		   AND EMAIL_ADDR = #{emailAddr}
+		   AND DEL_YN = 'N'
+		 ]]>
+	</select>
+	
+	<!-- 패스워드 초기화 -->
+	<update id="updateUserPwReset" parameterType="loginVO">
+		<![CDATA[
+		UPDATE USERS
+		SET    USER_PW  = #{userPw}
+		WHERE USER_SEQ = #{userSeq}
+		]]>
+	</update>
 </mapper>

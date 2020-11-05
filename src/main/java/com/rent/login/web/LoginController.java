@@ -29,7 +29,7 @@ public class LoginController {
 	}
 	
 	//로그인 처리
-	@RequestMapping(value = "/login/z/afterLogin.do")
+	@RequestMapping(value = "/login/a/afterLogin.do")
 	public String afterLogin(HttpServletRequest request, @ModelAttribute("loginVO") LoginVO loginVO, ModelMap model) throws Exception {
 		
 		LoginVO resultVO = (LoginVO)loginService.selectLoginUserInfo(loginVO);
@@ -44,14 +44,43 @@ public class LoginController {
 	}
 	
 	//아이디 찾기
-	@RequestMapping(value="/login/z/selectIdSearch.do")
+	@RequestMapping(value="/login/a/selectIdSearch.do")
 	public String selectIdSearch(@ModelAttribute("loginVO") LoginVO loginVO, ModelMap model) throws Exception {
 		
 		model.addAttribute("alevel", "1");
 		
 		return "/login/iDSearch";
 	}
+	
+	//아이디 찾기 이름,이메일 정합성 체크
+	@RequestMapping(value="/login/a/selectIdSearchAjax.do")
+	public String selectIdSearchAjax(@ModelAttribute("loginVO") LoginVO loginVO, ModelMap model) throws Exception {
 		
+		LoginVO resultVO = loginService.selectIdSearch(loginVO);
+		String message = "N";
+		if(resultVO != null) {
+			message = resultVO.getUserId();
+		}
+		model.addAttribute("message", message);
+		
+		return "jsonView";
+	}
+	
+	//아이디 찾기 메일발송
+	@RequestMapping(value="/login/a/afterIdSearch.do")
+	public String afterIdSearch(@ModelAttribute("loginVO") LoginVO loginVO, ModelMap model) throws Exception {
+		
+		loginService.afterIdSearch(loginVO);
+		
+		String redirectUrl = "/login/a/login.do";
+		String message = "아이디가 메일로 발송되었습니다.";
+		
+		model.addAttribute("message", message);
+		model.addAttribute("redirectUrl", redirectUrl);
+		
+		return "/common/temp_action_message";
+	}
+	
 	//비밀번호 찾기
 	@RequestMapping(value="/login/z/selectPwdSearch.do")
 	public String selectPwdSearch(@ModelAttribute("loginVO") LoginVO loginVO, ModelMap model) throws Exception {
@@ -59,6 +88,35 @@ public class LoginController {
 		model.addAttribute("alevel", "2");
 		
 		return "/login/pwdSearch";
+	}
+	
+	//비밀번호 찾기 정합성
+	@RequestMapping(value = "/login/a/selectUserPwSearch.do")
+	public String selectUserPwSearch(@ModelAttribute("loginVO") LoginVO loginVO, ModelMap model) throws Exception {
+		
+		LoginVO resultVO = loginService.selectUserPwSearch(loginVO);
+		String message = "N";
+		if(resultVO != null) {
+			message = resultVO.getUserSeq();
+		}
+		model.addAttribute("message", message);
+		
+		return "jsonView";
+	}
+	
+	//비밀번호 찾기 임시비밀번호 메일발송
+	@RequestMapping(value = "/login/a/afterUserPwSearch.do")
+	public String afterUserPwSearch(@ModelAttribute("loginVO") LoginVO loginVO, ModelMap model) throws Exception {
+		
+		loginService.afterUserPwSearch(loginVO);
+		
+		String redirectUrl = "/login/a/login.do";
+		String message = "임시 비밀번호가 메일로 발송되었습니다.";
+		
+		model.addAttribute("message", message);
+		model.addAttribute("redirectUrl", redirectUrl);
+		
+		return "/common/temp_action_message";
 	}
 	
 	//로그아웃
