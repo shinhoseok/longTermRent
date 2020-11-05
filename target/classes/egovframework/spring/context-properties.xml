@@ -11,6 +11,8 @@
 				<entry key="Naver.Email" value="${Naver.Email}" />
 				<entry key="Mail.TmpPwdTitle" value="${Mail.TmpPwdTitle}" />
 				<entry key="Mail.TmpPwdContent" value="${Mail.TmpPwdContent}" />
+				<entry key="Mail.IdSearchTitle" value="${Mail.IdSearchTitle}" />
+				<entry key="Mail.IdSearchContent" value="${Mail.IdSearchContent}" />
 			</map>
 		</property>
 	</bean>
