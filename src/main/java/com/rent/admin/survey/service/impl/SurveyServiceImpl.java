@@ -1,6 +1,8 @@
 package com.rent.admin.survey.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -31,5 +33,25 @@ public class SurveyServiceImpl extends EgovAbstractServiceImpl implements Survey
 	public void updateSurveyQtnProc(SurveyVO surveyVO) throws Exception {
 		surveyDAO.updateSurveyQtnProc(surveyVO);
 	}
-
+	
+	//설문답변 리스트
+	public Map<String, Object> selectSurveyAsrList() throws Exception {
+		Map<String, Object> rsltMap = new HashMap<String, Object>();
+		
+		SurveyVO surveyVO = new SurveyVO();
+		List<SurveyVO> surveyQtnList = surveyDAO.selectSurveyQtnList(surveyVO);
+		for(int i=0; i<surveyQtnList.size(); i++) {
+			List<SurveyVO> surveyAsrList = surveyDAO.selectSurveyAsrList(surveyQtnList.get(i));
+			rsltMap.put(surveyQtnList.get(i).getQtnId(), surveyAsrList);
+		}
+		
+		rsltMap.put("surveyQtnList", surveyQtnList);
+		
+		return rsltMap;
+	}
+	
+	//설문 답변수정
+	public void updateSurveyAsrProc(SurveyVO surveyVO) throws Exception {
+		surveyDAO.updateSurveyAsrProc(surveyVO);
+	}
 }

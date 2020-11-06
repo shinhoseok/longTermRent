@@ -10,6 +10,10 @@ public class SurveyVO extends CommDefaultVO implements Serializable {
 	private String qtnId;
 	//질문내용
 	private String qtnContents;
+	//답변아이디
+	private String asrId;
+	//답변내용
+	private String asrContents;
 	
 	public String getQtnId() {
 		return qtnId;
@@ -22,5 +26,17 @@ public class SurveyVO extends CommDefaultVO implements Serializable {
 	}
 	public void setQtnContents(String qtnContents) {
 		this.qtnContents = qtnContents;
+	}
+	public String getAsrId() {
+		return asrId;
+	}
+	public void setAsrId(String asrId) {
+		this.asrId = asrId;
+	}
+	public String getAsrContents() {
+		return asrContents;
+	}
+	public void setAsrContents(String asrContents) {
+		this.asrContents = asrContents;
 	}
 }

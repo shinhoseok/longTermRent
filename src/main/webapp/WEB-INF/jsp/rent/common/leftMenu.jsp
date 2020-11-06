@@ -65,8 +65,8 @@
 					<li class="bigMenu"><a href="#">링크 관리</a>
 						<div class="subMenu">
 							<ul>
-								<li class="smallMenu"><a href="${basePath}/linkmgr/z/updateReviewLink.do"> 후기 링크</a></li>
-								<li class="smallMenu"><a href="${basePath}/linkmgr/z/updateYouTubeLink.do">유튜브 링크</a></li>
+								<li class="smallMenu"><a href="${basePath}/linkmgr/w/updateReviewLink.do"> 후기 링크</a></li>
+								<li class="smallMenu"><a href="${basePath}/linkmgr/w/updateYouTubeLink.do">유튜브 링크</a></li>
 							</ul>
 						</div>
 					</li>
@@ -86,8 +86,8 @@
 					<li class="bigMenu"><a href="#">링크 관리</a>
 						<div class="subMenu">
 							<ul>
-								<li class="smallMenu"><a href="${basePath}/linkmgr/z/updateReviewLink.do"> 후기 링크</a></li>
-								<li class="smallMenu"><a href="${basePath}/linkmgr/z/updateYouTubeLink.do">유튜브 링크</a></li>
+								<li class="smallMenu"><a href="${basePath}/linkmgr/w/updateReviewLink.do"> 후기 링크</a></li>
+								<li class="smallMenu"><a href="${basePath}/linkmgr/w/updateYouTubeLink.do">유튜브 링크</a></li>
 							</ul>
 						</div>
 					</li>
@@ -109,8 +109,8 @@
 					<li class="bigMenu"><a href="#">링크 관리</a>
 						<div class="subMenu">
 							<ul>
-								<li class="selectsubMenu"><a href="${basePath}/linkmgr/z/updateReviewLink.do"> 후기 링크</a></li>
-								<li class="smallMenu"><a href="${basePath}/linkmgr/z/updateYouTubeLink.do">유튜브 링크</a></li>
+								<li class="selectsubMenu"><a href="${basePath}/linkmgr/w/updateReviewLink.do"> 후기 링크</a></li>
+								<li class="smallMenu"><a href="${basePath}/linkmgr/w/updateYouTubeLink.do">유튜브 링크</a></li>
 							</ul>
 						</div>
 					</li>
@@ -130,8 +130,8 @@
 					<li class="bigMenu"><a href="#">링크 관리</a>
 						<div class="subMenu">
 							<ul>
-								<li class="smallMenu"><a href="${basePath}/linkmgr/z/updateReviewLink.do"> 후기 링크</a></li>
-								<li class="selectsubMenu"><a href="${basePath}/linkmgr/z/updateYouTubeLink.do">유튜브 링크</a></li>
+								<li class="smallMenu"><a href="${basePath}/linkmgr/w/updateReviewLink.do"> 후기 링크</a></li>
+								<li class="selectsubMenu"><a href="${basePath}/linkmgr/w/updateYouTubeLink.do">유튜브 링크</a></li>
 							</ul>
 						</div>
 					</li>

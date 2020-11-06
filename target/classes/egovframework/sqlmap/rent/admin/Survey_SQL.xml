@@ -10,14 +10,14 @@
 			del_yn delYn,
 			reg_id regId,
 			DATE_FORMAT(REG_DT, '%Y-%m-%d') regDt 
-		FROM survey_qtn
+		FROM SURVEY_QTN
 		WHERE del_yn = 'N'
 	</select>
 	
 	<!-- 설문질문 수정 -->
 	<update id="updateSurveyQtnProc" parameterType="surveyVO">
 		<![CDATA[
-		UPDATE survey_qtn
+		UPDATE SURVEY_QTN
 		SET    qtn_contents  = #{qtnContents}
 			   , MOD_ID = #{modId}
 			   , MOD_DT = now()
@@ -25,4 +25,28 @@
 		]]>
 	</update>
 	
+	<!-- 설문답변 목록 -->
+	<select id="selectSurveyAsrList" parameterType="surveyVO" resultType="surveyVO">
+		SELECT 
+			asr_id asrId,
+			qtn_id qtnId,
+			asr_contents asrContents,
+			del_yn delYn,
+			reg_id regId,
+			DATE_FORMAT(reg_dt, '%Y-%m-%d') regDt
+		FROM SURVEY_ASR
+		WHERE qtn_id = #{qtnId}
+			AND del_yn = 'N'
+	</select>
+	
+	<!-- 설문답변 수정 -->
+	<update id="updateSurveyAsrProc" parameterType="surveyVO">
+		<![CDATA[
+		UPDATE SURVEY_ASR
+		SET    asr_contents  = #{asrContents}
+			   , MOD_ID = #{modId}
+			   , MOD_DT = now()
+		WHERE asr_id = #{asrId}
+		]]>
+	</update>
 </mapper>

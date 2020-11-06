@@ -35,7 +35,7 @@ public class LoginController {
 		LoginVO resultVO = (LoginVO)loginService.selectLoginUserInfo(loginVO);
 		if(resultVO == null){
 			model.addAttribute("message", "로그인정보가 잘못되었습니다.");
-			model.addAttribute("redirectUrl", "/login/z/login.do");
+			model.addAttribute("redirectUrl", "/login/a/login.do");
 			return "/common/temp_action_message";
 		}
 		request.getSession().setAttribute(GlobalConstants.LOGIN_SESSION_KEY, resultVO);

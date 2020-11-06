@@ -10,4 +10,8 @@ public interface SurveyDAO {
 	List<SurveyVO> selectSurveyQtnList(SurveyVO surveyVO) throws Exception;
 	//설문 질문 수정
 	void updateSurveyQtnProc(SurveyVO surveyVO) throws Exception;
+	//설문 답변 목록
+	List<SurveyVO> selectSurveyAsrList(SurveyVO surveyVO) throws Exception;
+	//설문 답변수정
+	void updateSurveyAsrProc(SurveyVO surveyVO) throws Exception;
 }

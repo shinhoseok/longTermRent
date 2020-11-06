@@ -33,160 +33,56 @@
 				<p class="sub_path">
 					<img src="${imagePath }/ico_home.png" width="10" height="9" />&nbsp;〉&nbsp;설문조사 관리&nbsp;〉&nbsp;답변 수정
 				</p>
-
-				<h4 class="contentTitle_h4">질문1 답변</h4>
-				<div class="tableLayer">
-					<table class="table">
-						<caption></caption>
-						<colgroup>
-							<col width="150px">
-							<col width="339px">
-							<col width="150px">
-							<col width="339px">
-						</colgroup>
-						<tbody class="line">
-							<tr>
-								<td colspan="4" class="f_more_b">장기렌트, 영업기밀을 알면 특별한 할인이 있다는 것을 아시나요?</td>
-							</tr>
-							<tr>
-								<th class="bullet_orange">답변 1_1</th>
-								<td>그렇다</td>
-								<th class="bullet_orange">답변 1_1 변경</th>
-								<td>
-									<div class="commonSearch_wrap">
-										<label class="blind" for=" ">d</label> <input id=" " style="width: 200px;" type="text" placeholder="새로운 답변을 입력하세요.">
-										<button type="button" class="blueBtn M">수정</button>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<th class="bullet_orange">답변 1_2</th>
-								<td>아니다</td>
-								<th class="bullet_orange">답변 1_2변경</th>
-								<td>
-									<div class="commonSearch_wrap">
-										<label class="blind" for=" ">d</label> <input id=" " style="width: 200px;" type="text" placeholder="새로운 답변을 입력하세요.">
-										<button type="button" class="blueBtn M">수정</button>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<th class="bullet_orange">답변 1_3</th>
-								<td>모르겠다.</td>
-								<th class="bullet_orange">답변 1_3 변경</th>
-								<td>
-									<div class="commonSearch_wrap">
-										<label class="blind" for=" ">d</label> <input id=" " style="width: 200px;" type="text" placeholder="새로운 답변을 입력하세요.">
-										<button type="button" class="blueBtn M">수정</button>
-									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-
-				<h4 class="contentTitle_h4">질문2</h4>
-				<div class="tableLayer">
-					<table class="table">
-						<caption></caption>
-						<colgroup>
-							<col width="150px">
-							<col width="339px">
-							<col width="150px">
-							<col width="339px">
-						</colgroup>
-						<tbody class="line">
-							<tr>
-								<td colspan="4" class="f_more_b">에이전시, 대리점, 홈쇼핑의 차이점을 알고 계신가요?</td>
-							</tr>
-							<tr>
-								<th class="bullet_orange">답변 2_1</th>
-								<td>모른다</td>
-								<th class="bullet_orange">답변 2_1 변경</th>
-								<td>
-									<div class="commonSearch_wrap">
-										<label class="blind" for=" ">d</label> <input id=" " style="width: 200px;" type="text" placeholder="새로운 답변을 입력하세요.">
-										<button type="button" class="blueBtn M">수정</button>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<th class="bullet_orange">답변 2_2</th>
-								<td>알고있다</td>
-								<th class="bullet_orange">답변 2_2변경</th>
-								<td>
-									<div class="commonSearch_wrap">
-										<label class="blind" for=" ">d</label> <input id=" " style="width: 200px;" type="text" placeholder="새로운 답변을 입력하세요.">
-										<button type="button" class="blueBtn M">수정</button>
-									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-
-				<h4 class="contentTitle_h4">질문3</h4>
-				<div class="tableLayer">
-					<table class="table">
-						<caption></caption>
-						<colgroup>
-							<col width="150px">
-							<col width="339px">
-							<col width="150px">
-							<col width="339px">
-						</colgroup>
-						<tbody class="line">
-							<tr>
-								<td colspan="4" class="f_more_b">생각하시는 월 비용은 얼마인가요?</td>
-							</tr>
-							<tr>
-								<th class="bullet_orange">답변 3_1</th>
-								<td>40만원 미만</td>
-								<th class="bullet_orange">답변 3_1 변경</th>
-								<td>
-									<div class="commonSearch_wrap">
-										<label class="blind" for=" ">d</label> <input id=" " style="width: 200px;" type="text" placeholder="새로운 답변을 입력하세요.">
-										<button type="button" class="blueBtn M">수정</button>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<th class="bullet_orange">답변 3_2</th>
-								<td>41~60만원</td>
-								<th class="bullet_orange">답변 3_2변경</th>
-								<td>
-									<div class="commonSearch_wrap">
-										<label class="blind" for=" ">d</label> <input id=" " style="width: 200px;" type="text" placeholder="새로운 답변을 입력하세요.">
-										<button type="button" class="blueBtn M">수정</button>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<th class="bullet_orange">답변 3_3</th>
-								<td>61~70만원</td>
-								<th class="bullet_orange">답변 3_3변경</th>
-								<td>
-									<div class="commonSearch_wrap">
-										<label class="blind" for=" ">d</label> <input id=" " style="width: 200px;" type="text" placeholder="새로운 답변을 입력하세요.">
-										<button type="button" class="blueBtn M">수정</button>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<th class="bullet_orange">답변 3_4</th>
-								<td>70만원 이상</td>
-								<th class="bullet_orange">답변 3_4변경</th>
-								<td>
-									<div class="commonSearch_wrap">
-										<label class="blind" for=" ">d</label> <input id=" " style="width: 200px;" type="text" placeholder="새로운 답변을 입력하세요.">
-										<button type="button" class="blueBtn M">수정</button>
-									</div>
-								</td>
-							</tr>
-
-						</tbody>
-					</table>
-				</div>
+				<c:choose>
+					<c:when test="${fn:length(rslt.surveyQtnList) > 0}">
+						<c:forEach items="${rslt.surveyQtnList }" varStatus="i" var="qlist">
+							<h4 class="contentTitle_h4">질문${i.count}</h4>
+							<div class="tableLayer">
+								<table class="table">
+									<caption></caption>
+									<colgroup>
+										<col width="150px">
+										<col width="339px">
+										<col width="150px">
+										<col width="339px">
+									</colgroup>
+									<tbody class="line">
+										<tr>
+											<td colspan="4" class="f_more_b"><c:out value="${qlist.qtnContents}"/></td>
+										</tr>
+										<c:set var="key" value="${qlist.qtnId}"/>
+										<c:choose>
+											<c:when test="${fn:length(rslt[key]) > 0}">
+												<c:forEach items="${rslt[key]}" varStatus="j" var="alist">
+													<tr>
+														<th class="bullet_orange">답변 ${i.count}_${j.count}</th>
+														<td><c:out value="${alist.asrContents}"/></td>
+														<th class="bullet_orange">답변 ${i.count}_${j.count} 변경</th>
+														<td>
+															<div class="commonSearch_wrap">
+																<label class="blind" for=" ">d</label>
+																<input id="<c:out value="${alist.asrId}"/>" style="width: 200px;" type="text" placeholder="새로운 답변을 입력하세요.">
+																<button type="button" class="blueBtn M" onclick="javascript:fn_updateSurveyAsrProc('<c:out value="${alist.asrId}"/>');">수정</button>
+															</div>
+														</td>
+													</tr>
+												</c:forEach>
+											</c:when>
+											<c:otherwise>
+												<tr><td colspan="4">등록된 답변이 없습니다</td></tr>
+											</c:otherwise>
+										</c:choose>
+										
+									</tbody>
+								</table>
+							</div>
+						</c:forEach>
+					</c:when>
+					<c:otherwise>
+						<h4 class="contentTitle_h4">등록된 질문이 없습니다.</h4>
+					</c:otherwise>
+				</c:choose>
+				<tbody class="line">
 			</div>
 		</div>
 		<!--container End-->
@@ -194,5 +90,22 @@
 	<!--wrap End-->
 	<%@ include file="/WEB-INF/jsp/rent/common/footer.jsp"%>
 	<!--//footer-->
+	<form action="${basePath}/svymgr/w/updateSurveyAsrProc.do" name="updateForm" id="updateForm">
+		<input type="hidden" name="asrId" id="asrId">
+		<input type="hidden" name="asrContents" id="asrContents">
+	</form>
+	<script type="text/javascript">
+	var fn_updateSurveyAsrProc = function(asrId) {
+		if (!TypeChecker.required($("#"+asrId).val())) {
+			alert("'답변'은  "+ TypeChecker.requiredText);
+			$("#"+asrId).focus();
+			return;
+		}
+		var frm = document.updateForm;
+		frm.asrId.value = asrId;
+		frm.asrContents.value = $("#"+asrId).val();
+		frm.submit();
+	};
+	</script>
 </body>
 </html>

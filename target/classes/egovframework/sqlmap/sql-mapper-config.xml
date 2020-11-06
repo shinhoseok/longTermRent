@@ -13,5 +13,7 @@
 		<typeAlias alias="visitorVO" type="com.rent.admin.visitor.service.VisitorVO"/>
 		<!-- 설문 VO -->
 		<typeAlias alias="surveyVO" type="com.rent.admin.survey.service.SurveyVO"/>
+		<!-- 링크 VO -->
+		<typeAlias alias="linkVO" type="com.rent.admin.link.service.LinkVO"/>
 	</typeAliases>
 </configuration>

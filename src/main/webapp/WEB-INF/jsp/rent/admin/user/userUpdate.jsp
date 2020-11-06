@@ -72,8 +72,8 @@
 									</td>
 									<th>사용여부</th>
 									<td>
-										<form:radiobutton path="delYn" id="radio01" checked="checked" value="N"/> <label for="radio01" class="mr15">O</label>
-										<form:radiobutton path="delYn" id="radio02" value="Y"/> <label for="radio02">X</label>
+										<form:radiobutton path="delYn" id="radio01" checked="${resultVO.delYn eq 'N' ? 'checked' : '' }" value="N"/> <label for="radio01" class="mr15">O</label>
+										<form:radiobutton path="delYn" id="radio02" checked="${resultVO.delYn eq 'Y' ? 'checked' : '' }" value="Y"/> <label for="radio02">X</label>
 									</td>
 								</tr>
 								<tr>

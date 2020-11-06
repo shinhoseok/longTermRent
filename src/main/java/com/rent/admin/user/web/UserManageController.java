@@ -40,7 +40,12 @@ public class UserManageController {
 	
 	//사용자 등록화면
 	@RequestMapping(value = "/usermgr/z/insertUser.do")
-	public String insertUser(@ModelAttribute("userVO") UserVO userVO) throws Exception {
+	public String insertUser(@ModelAttribute("userVO") UserVO userVO, ModelMap model) throws Exception {
+		
+		model.addAttribute("alevel", "2");
+		model.addAttribute("blevel", "1");
+		model.addAttribute("clevel", "1");
+		
 		return "/admin/user/userInsert";
 	}
 	
@@ -72,6 +77,10 @@ public class UserManageController {
 		userVO = userManageService.selectUserDetail(userVO);
 		model.addAttribute("resultVO", userVO);
 		
+		model.addAttribute("alevel", "2");
+		model.addAttribute("blevel", "1");
+		model.addAttribute("clevel", "1");
+		
 		return "/admin/user/userDetail";
 	}
 	
@@ -100,6 +109,10 @@ public class UserManageController {
 		userVO = userManageService.selectUserDetail(userVO);
 		model.addAttribute("resultVO", userVO);
 		
+		model.addAttribute("alevel", "2");
+		model.addAttribute("blevel", "1");
+		model.addAttribute("clevel", "1");
+		
 		return "/admin/user/userUpdate";
 	}
 	
@@ -116,6 +129,7 @@ public class UserManageController {
 	//사용자 수정 처리
 	@RequestMapping(value = "/usermgr/z/updateUserProc.do")
 	public String updateUserProc(@ModelAttribute("userVO") UserVO userVO, ModelMap model, SessionStatus status, LoginVO sessionVO) throws Exception {
+		
 		userVO.setModId(sessionVO.getUserSeq());
 		userManageService.updateUserProc(userVO);
 		status.setComplete();

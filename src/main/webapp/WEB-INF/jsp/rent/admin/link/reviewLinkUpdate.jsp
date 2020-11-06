@@ -43,29 +43,35 @@
 							<col width="150px">
 							<col width="339px">
 						</colgroup>
-						<tbody class="line">
-							<tr>
-								<th class="bullet_orange">기존 링크 주소</th>
-								<td>http://www.naver.com</td>
-							</tr>
-							<tr>
-								<th class="bullet_orange">신규 링크 주소</th>
-								<td>
-									<div>
-										<input id="inactive" style="width: 500px;" type="text" placeholder="http://">
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<th class="bullet_orange">사용여부</th>
-								<td colspan="3">
-									<input type="radio" name="" id="radio01" checked="checked"> <label for="radio01" class="mr15">Y</label> <input type="radio" name="" id="radio02"> <label for="radio02">N</label>
-								</td>
-							</tr>
-						</tbody>
+						<form:form commandName="linkVO" name="linkVO" id="linkVO" method="post" action="${basePath}/linkmgr/w/updateReviewLinkProc.do">
+							<input type="hidden" name="linkId" id="linkId" value="<c:out value="${resultVO.linkId}"/>">
+							<input type="hidden" name="linkKind" id="linkKind" value="<c:out value="${resultVO.linkKind}"/>">
+							<tbody class="line">
+								<tr>
+									<th class="bullet_orange">기존 링크 주소</th>
+									<td><c:out value="${resultVO.linkAddr}"/></td>
+								</tr>
+								<tr>
+									<th class="bullet_orange">신규 링크 주소</th>
+									<td>
+										<div>
+											<form:input type="text" path="linkAddr" id="linkAddr"  onfocus="checker(this, 200 , 'nbytes_linkAddr');" onblur="stopchecker();" placeholder="http://" style="width: 690px; height:28px; border: 1px solid #D4D4D4;"/> &nbsp;
+											&nbsp;[<span id="nbytes_linkAddr" class="color_red">0</span>/200]byte 
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th class="bullet_orange">사용여부</th>
+									<td colspan="3">
+										<form:radiobutton path="delYn" id="radio01" checked="${resultVO.delYn eq 'N' ? 'checked' : '' }" value="N"/> <label for="radio01" class="mr15">O</label>
+										<form:radiobutton path="delYn" id="radio02" checked="${resultVO.delYn eq 'Y' ? 'checked' : '' }" value="Y"/> <label for="radio02">X</label>
+									</td>
+								</tr>
+							</tbody>
+						</form:form>
 					</table>
 					<div class="T_btnLayer fr" id="mb15">
-						<a href="#"><button type="button" class="blueBtn L">수정</button></a> <a href="#"><button type="button" class="blueBtn L">취소</button></a>
+						<a href="javascript:void(0);" onclick="javascript:fn_updateReviewLinkProc();"><button type="button" class="blueBtn L">수정</button></a>
 					</div>
 				</div>
 			</div>
@@ -75,5 +81,18 @@
 	<!--wrap End-->
 	<%@ include file="/WEB-INF/jsp/rent/common/footer.jsp"%>
 	<!--//footer-->
+	<script type="text/javascript">
+	var fn_updateReviewLinkProc = function() {
+		if (!TypeChecker.required($("#linkAddr").val())) {
+			alert("'신규 링크 주소'는  "+ TypeChecker.requiredText);
+			$("#linkAddr").focus();
+			return;
+		}
+		if(!confirm("수정 하시겠습니까?")){
+			return;
+		}
+		document.linkVO.submit();
+	};
+	</script>
 </body>
 </html>
