@@ -6,11 +6,11 @@
 			<c:if test="${clevel eq '1'}">
 				<h3>견적 관리</h3>
 				<ul class="menuBox">
-					<li class="bigMenu"><a href="${basePath}/vtmgr/z/selectVisitorList.do">견적관리</a>
+					<li class="bigMenu">견적관리
 						<div class="subMenu">
 							<ul>
-								<li class="selectsubMenu"><a href="${basePath}/vtmgr/z/selectVisitorList.do"> 견적 관리</a></li>
-								<li class="smallMenu"><a href="#">견적 통계</a></li>
+								<li class="selectsubMenu" style="cursor: pointer;" onclick="location.href='${basePath}/vtmgr/z/selectVisitorList.do';"><a href="javascript:void(0);"> 견적 관리</a></li>
+								<li class="smallMenu" style="cursor: pointer;"><a href="javascript:void(0);">견적 통계</a></li>
 									
 							</ul>
 						</div>
@@ -20,12 +20,11 @@
 			<c:if test="${clevel eq '2'}">
 				<h3>견적 관리</h3>
 				<ul class="menuBox">
-					<li class="bigMenu"><a href="${basePath}/vtmgr/z/selectVisitorList.do">견적관리</a>
+					<li class="bigMenu">견적관리
 						<div class="subMenu">
 							<ul>
-								<li class="smallMenu"><a href="${basePath}/vtmgr/z/selectVisitorList.do"> 견적 관리</a></li>
-								<li class="selectsubMenu"><a href="#">견적 통계</a></li>
-									
+								<li class="smallMenu" style="cursor: pointer;" onclick="location.href='${basePath}/vtmgr/z/selectVisitorList.do';"><a href="javascript:void(0);"> 견적 관리</a></li>
+								<li class="selectsubMenu" style="cursor: pointer;"><a href="javascript:void(0);">견적 통계</a></li>
 							</ul>
 						</div>
 					</li>
@@ -38,10 +37,10 @@
 			<c:if test="${clevel eq '1'}">
 				<h3>어드민사용자 관리</h3>
 				<ul class="menuBox">
-				<li class="bigMenu"><a href="${basePath}/usermgr/z/selectUserList.do">어드민사용자 관리</a>
+				<li class="bigMenu">어드민사용자 관리
 					<div class="subMenu">
 						<ul>
-							<li class="selectsubMenu"><a href="${basePath}/usermgr/z/selectUserList.do">어드민사용자 관리</a></li>
+							<li class="selectsubMenu" onclick="location.href='${basePath}/usermgr/z/selectUserList.do';" style="cursor: pointer;"><a href="javascript:void(0);">어드민사용자 관리</a>
 						</ul>
 					</div>
 				</li>
@@ -54,19 +53,19 @@
 			<c:if test="${clevel eq '1'}">
 				<h3>랜딩페이지 관리</h3>
 				<ul class="menuBox">
-					<li class="bigMenu"><a href="#">설문조사 관리</a>
+					<li class="bigMenu">설문조사 관리
 						<div class="subMenu">
 							<ul>
-								<li class="selectsubMenu"><a href="${basePath}/svymgr/w/updateSurveyQtn.do"> 질문 수정</a></li>
-								<li class="smallMenu"><a href="${basePath}/svymgr/w/updateSurveyAnswer.do">답변 수정</a></li>
+								<li class="selectsubMenu" onclick="location.href='${basePath}/svymgr/w/updateSurveyQtn.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 질문 수정</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/svymgr/w/updateSurveyAnswer.do';" style="cursor: pointer;"><a href="javascript:void(0);">답변 수정</a></li>
 							</ul>
 						</div>
 					</li>
-					<li class="bigMenu"><a href="#">링크 관리</a>
+					<li class="bigMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">링크 관리</a>
 						<div class="subMenu">
 							<ul>
-								<li class="smallMenu"><a href="${basePath}/linkmgr/w/updateReviewLink.do"> 후기 링크</a></li>
-								<li class="smallMenu"><a href="${basePath}/linkmgr/w/updateYouTubeLink.do">유튜브 링크</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateYouTubeLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">유튜브 링크</a></li>
 							</ul>
 						</div>
 					</li>
@@ -75,19 +74,19 @@
 			<c:if test="${clevel eq '2'}">
 				<h3>랜딩페이지 관리</h3>
 				<ul class="menuBox">
-					<li class="bigMenu"><a href="#">설문조사 관리</a>
+					<li class="bigMenu">설문조사 관리
 						<div class="subMenu">
 							<ul>
-								<li class="smallMenu"><a href="${basePath}/svymgr/w/updateSurveyQtn.do"> 질문 수정</a></li>
-								<li class="selectsubMenu"><a href="${basePath}/svymgr/w/updateSurveyAnswer.do">답변 수정</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/svymgr/w/updateSurveyQtn.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 질문 수정</a></li>
+								<li class="selectsubMenu" onclick="location.href='${basePath}/svymgr/w/updateSurveyAnswer.do';" style="cursor: pointer;"><a href="javascript:void(0);">답변 수정</a></li>
 							</ul>
 						</div>
 					</li>
-					<li class="bigMenu"><a href="#">링크 관리</a>
+					<li class="bigMenu">링크 관리
 						<div class="subMenu">
 							<ul>
-								<li class="smallMenu"><a href="${basePath}/linkmgr/w/updateReviewLink.do"> 후기 링크</a></li>
-								<li class="smallMenu"><a href="${basePath}/linkmgr/w/updateYouTubeLink.do">유튜브 링크</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateYouTubeLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">유튜브 링크</a></li>
 							</ul>
 						</div>
 					</li>
@@ -98,19 +97,19 @@
 			<c:if test="${clevel eq '1'}">
 				<h3>랜딩페이지 관리</h3>
 				<ul class="menuBox">
-					<li class="bigMenu"><a href="#">설문조사 관리</a>
+					<li class="bigMenu">설문조사 관리
 						<div class="subMenu">
 							<ul>
-								<li class="smallMenu"><a href="${basePath}/svymgr/w/updateSurveyQtn.do"> 질문 수정</a></li>
-								<li class="smallMenu"><a href="${basePath}/svymgr/w/updateSurveyAnswer.do">답변 수정</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/svymgr/w/updateSurveyQtn.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 질문 수정</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/svymgr/w/updateSurveyAnswer.do';" style="cursor: pointer;"><a href="javascript:void(0);">답변 수정</a></li>
 							</ul>
 						</div>
 					</li>
-					<li class="bigMenu"><a href="#">링크 관리</a>
+					<li class="bigMenu">링크 관리
 						<div class="subMenu">
 							<ul>
-								<li class="selectsubMenu"><a href="${basePath}/linkmgr/w/updateReviewLink.do"> 후기 링크</a></li>
-								<li class="smallMenu"><a href="${basePath}/linkmgr/w/updateYouTubeLink.do">유튜브 링크</a></li>
+								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateYouTubeLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">유튜브 링크</a></li>
 							</ul>
 						</div>
 					</li>
@@ -119,19 +118,19 @@
 			<c:if test="${clevel eq '2'}">
 				<h3>랜딩페이지 관리</h3>
 				<ul class="menuBox">
-					<li class="bigMenu"><a href="#">설문조사 관리</a>
+					<li class="bigMenu">설문조사 관리
 						<div class="subMenu">
 							<ul>
-								<li class="smallMenu"><a href="${basePath}/svymgr/w/updateSurveyQtn.do"> 질문 수정</a></li>
-								<li class="smallMenu"><a href="${basePath}/svymgr/w/updateSurveyAnswer.do">답변 수정</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/svymgr/w/updateSurveyQtn.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 질문 수정</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/svymgr/w/updateSurveyAnswer.do';" style="cursor: pointer;"><a href="javascript:void(0);">답변 수정</a></li>
 							</ul>
 						</div>
 					</li>
-					<li class="bigMenu"><a href="#">링크 관리</a>
+					<li class="bigMenu">링크 관리
 						<div class="subMenu">
 							<ul>
-								<li class="smallMenu"><a href="${basePath}/linkmgr/w/updateReviewLink.do"> 후기 링크</a></li>
-								<li class="selectsubMenu"><a href="${basePath}/linkmgr/w/updateYouTubeLink.do">유튜브 링크</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
+								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateYouTubeLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">유튜브 링크</a></li>
 							</ul>
 						</div>
 					</li>

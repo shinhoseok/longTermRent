@@ -7,39 +7,43 @@
 			<if test="searchKeyword != null and searchKeyword != ''">
 				<choose>
 					<when test="searchCondition == 'telNo'">
-						AND TEL_NO LIKE CONCAT('%', #{searchKeyword}, '%')
+						AND A.TEL_NO LIKE CONCAT('%', #{searchKeyword}, '%')
 					</when>
 					<otherwise>
-						AND VISITOR_NM LIKE CONCAT('%', #{searchKeyword}, '%')
+						AND A.VISITOR_NM LIKE CONCAT('%', #{searchKeyword}, '%')
 					</otherwise>
 				</choose>
 			</if>
 		</where>
 	</sql>
-	
-    <!-- 견적관리 목록 -->
+
+	<!-- 견적관리 목록 -->
 	<select id="selectVisitorList" parameterType="visitorVO" resultType="visitorVO">
 		<![CDATA[
 		SELECT
-			VISITOR_ID visitorId,
-			ACCESS_PATH accessPath, 
-			VISITOR_NM visitorNm, 
-			ITRSTD_CAR_TY itrstdCarTy, 
-			TEL_NO telNo,
-			DEL_YN delYn, 
-			DATE_FORMAT(REG_DT, '%Y-%m-%d %H:%i') regDt
+			A.VISITOR_ID visitorId,
+			IF(A.ACCESS_PATH='M','모바일','PC') AS accessPath,
+			A.VISITOR_NM visitorNm,
+			A.ITRSTD_CAR_TY itrstdCarTy,
+			A.TEL_NO telNo,
+			A.OVERLAP_CNT overlapCnt,
+			A.DEL_YN delYn,
+			DATE_FORMAT(A.REG_DT, '%Y-%m-%d %H:%i') regDt,
+			(SELECT C.ASR_CONTENTS FROM VISITOR_SURVEY_MPPG B INNER JOIN SURVEY_ASR C ON (C.ASR_ID = B.ASR_ID) WHERE B.VISITOR_ID = A.VISITOR_ID AND B.QTN_ID = 'QTN-000000') AS answer1,
+			(SELECT C.ASR_CONTENTS FROM VISITOR_SURVEY_MPPG B INNER JOIN SURVEY_ASR C ON (C.ASR_ID = B.ASR_ID) WHERE B.VISITOR_ID = A.VISITOR_ID AND B.QTN_ID = 'QTN-000001') AS answer2,
+			(SELECT C.ASR_CONTENTS FROM VISITOR_SURVEY_MPPG B INNER JOIN SURVEY_ASR C ON (C.ASR_ID = B.ASR_ID) WHERE B.VISITOR_ID = A.VISITOR_ID AND B.QTN_ID = 'QTN-000002') AS answer3
 		FROM 
-			VISITORS
+			VISITORS A
 		]]>
 		<include refid="vstGubunSql"/>
-		ORDER BY reg_dt DESC
+		ORDER BY A.REG_DT DESC
 		LIMIT #{firstIndex}, #{lastIndex}
 	</select>
 	
 	<!-- 견적관리 목록 카운트 -->
 	<select id="selectVisitorListCnt" parameterType="visitorVO" resultType="java.lang.Integer">
 		<![CDATA[
-		SELECT COUNT(*) CNT FROM VISITORS
+		SELECT COUNT(*) CNT FROM VISITORS A
 		]]>
 		<include refid="vstGubunSql"/>
 	</select>

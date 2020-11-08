@@ -19,28 +19,6 @@ public class CommonExcelView extends AbstractExcelView {
 	
 	private static final String EXCEL_PATH = "egovframework/excel";
 	
-	/**
-	 * <pre>
-	 * 1. 개요 : 엑셀 다운로드
-	 * 2. 처리내용 : 엑셀 다운로드
-	 * </pre>
-	 * @Method Name : buildExcelDocument
-	 * @date : 2019. 6. 22.
-	 * @author : 뷰아떼1
-	 * @history : 
-	 *	-----------------------------------------------------------------------
-	 *	변경일				작성자						변경내용  
-	 *	----------- ------------------- ---------------------------------------
-	 *	2019. 6. 22.		뷰아떼1				최초 작성 
-	 *	-----------------------------------------------------------------------
-	 * 
-	 * @see org.springframework.web.servlet.view.document.AbstractExcelView#buildExcelDocument(java.util.Map, org.apache.poi.hssf.usermodel.HSSFWorkbook, javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
-	 * @param model
-	 * @param workbook
-	 * @param request
-	 * @param response
-	 * @throws Exception
-	 */ 	
 	@Override
 	protected void buildExcelDocument(Map<String, Object> model,
 			HSSFWorkbook workbook, HttpServletRequest request,

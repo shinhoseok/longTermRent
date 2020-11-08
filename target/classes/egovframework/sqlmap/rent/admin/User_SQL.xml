@@ -53,7 +53,8 @@
 		<![CDATA[
 		SELECT
 			user_id AS userId,
-			email_addr AS emailAddr
+			email_addr AS emailAddr,
+			
 		FROM USERS
 		WHERE
 			user_id = #{userId}

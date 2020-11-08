@@ -59,9 +59,9 @@ ul.sub {clear:both;}
 h3 {color:#0069a8; font-size:21px; font-weight:600;}
 .menuBox {margin-top:13px; border-left:1px solid #c3cacf; border-right:1px solid #c3cacf; width:228px;}
 .menuBox li {/*border-bottom:1px solid #c3cacf; height:35px;*/}
-.bigMenu {font-size:14px; font-weight:600; line-height:35px; padding-left:12px; background:url(../images/lnb_arrwoL.png) no-repeat; background-position:204px 13px; border-bottom:1px solid #c3cacf;}
-.bigMenu:hover {background:url(../images/lnb_arrwoD.png) no-repeat; background-position:204px 13px;}
-.selectbigMenu {font-size:14px; font-weight:600; line-height:35px; padding-left:12px; background:url(../images/lnb_arrwoL.png) no-repeat; background-position:204px center; background-color:#f3f3f3; border-bottom:1px solid #c3cacf;}
+.bigMenu {font-size:14px; font-weight:600; line-height:35px; padding-left:12px; background-position:204px 13px; border-bottom:1px solid #c3cacf;}
+.bigMenu:hover {background-position:204px 13px;}
+.selectbigMenu {font-size:14px; font-weight:600; line-height:35px; padding-left:12px; background-position:204px center; background-color:#f3f3f3; border-bottom:1px solid #c3cacf;}
 .subMenu {margin-left:-12px; font-size:12px; font-weight:normal;}
 .smallMenu {line-height:35px; padding-left:30px; background:url(../images/bul_Lnb_d.png) no-repeat; background-position:18px center; border-top:1px solid #c3cacf;}
 .smallMenu:hover {background-color:#f3f3f3;}
@@ -69,7 +69,6 @@ h3 {color:#0069a8; font-size:21px; font-weight:600;}
 /*#noborder {border-bottom:none;}*/
 .menuBox li:nth-child(1) {border-top:4px solid #7baade; border-left:none; border-right:none;}
 .subMenu li:nth-child(1) {border-top:1px solid #c3cacf;}
-.bullet {background:url(../images/lnb_arrwoL.png) no-repeat;}
 
 /* 페이징 컨트롤 */
 .paging_place{clear:both; text-align:center;padding:25px 0 0 0;}

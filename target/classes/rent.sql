@@ -50,6 +50,7 @@ CREATE TABLE VISITORS
 	VISITOR_NM      VARCHAR(50)                 NULL       COMMENT '방문자이름',
 	ITRSTD_CAR_TY      VARCHAR(50)                 NULL       COMMENT '관심차종',
 	TEL_NO           VARCHAR(50) NULL COMMENT '전화번호',
+	OVERLAP_CNT		INT				NOT NULL			COMMENT '중복접속_카운트',
 	DEL_YN		CHAR(1)					 	NOT NULL			COMMENT '삭제여부',
 	REG_DT            DATETIME NULL           COMMENT '등록_일자'
 )COMMENT '방문자테이블';

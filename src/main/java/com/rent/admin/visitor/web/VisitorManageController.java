@@ -1,5 +1,6 @@
 package com.rent.admin.visitor.web;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -33,5 +34,17 @@ public class VisitorManageController {
 		model.addAttribute("clevel", "1");
 		
 		return "/admin/visitor/visitorList";
+	}
+	
+	@RequestMapping(value = "/vtmgr/z/selectVisitorListExcelDownload.do")
+	public String selectVisitorListExcelDownload(@ModelAttribute("visitorVO") VisitorVO visitorVO, ModelMap model) throws Exception {
+		
+		List<VisitorVO> selectList = visitorManageService.selectVisitorListExcelDownload(visitorVO);
+		
+		model.addAttribute("visitorList", selectList);
+		model.addAttribute("templateFileName"	, "visitorListExcelDownload.xls");
+		model.addAttribute("destFileName"		, "견적관리목록");
+		
+		return "excelView";
 	}
 }

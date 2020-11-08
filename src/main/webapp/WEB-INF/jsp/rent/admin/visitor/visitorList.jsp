@@ -29,28 +29,30 @@
 				<p class="sub_path">
 					<img src="${imagePath }/ico_home.png" width="10" height="9" />&nbsp;〉&nbsp;견적관리&nbsp;〉&nbsp;견적관리
 				</p>
-				<div class="selectBox">
-					<select name="select" class="w13p">
-						<option>성명</option>
-						<option>전화번호</option>
-					</select>
-					<input class="searchName" name="" type="text" />
-					<button type="button" class="grayBtn ico">
-						<img src="${imagePath }/ico_search.png"> 검색
-					</button>
-				</div>
+				<form:form commandName="visitorVO" id="listForm" name="listForm" method="post" action="${basePath}/vtmgr/z/selectVisitorList.do">
+					<form:hidden path="pageIndex" id="pageIndex" />
+					<form:hidden path="visitorId" />
+					<div class="selectBox">
+						<form:select path="searchCondition" class="w13p">
+							<form:option value="visitorNm" label="성명"></form:option>
+							<form:option value="telNo" label="전화번호"></form:option>
+						</form:select> 
+						<form:input path="searchKeyword" onkeydown="if(event.keyCode==13){javascript:fn_searchList(1);}" class="searchName" style="width: 737px;"></form:input>
+						<button type="button" class="grayBtn ico" onclick="javascript:fn_searchList(1);"><img src="${imagePath }/ico_search.png"> 검색</button>
+					</div>
+				</form:form>
 				<div class="tableLayer">
 					<table class="tableList">
 						<caption></caption>
 						<colgroup>
 							<col width="5%">
 							<col width="15%">
+							<col width="7%">
 							<col width="10%">
 							<col width="10%">
 							<col width="10%">
-							<col width="10%">
-							<col width="10%">
-							<col width="10%">
+							<col width="*">
+							<col width="7%">
 							<col width="15%">
 							<col width="5%">
 						</colgroup>
@@ -74,13 +76,13 @@
 											<td><c:out value="${i.count}"/></td>
 											<td><c:out value="${list.regDt}"/></td>
 											<td><c:out value="${list.accessPath}"/></td>
-											<td><c:out value="${list.accessPath}"/></td>
-											<td><c:out value="${list.accessPath}"/></td>
-											<td><c:out value="${list.accessPath}"/></td>
+											<td><c:if test="${empty list.answer1}">-</c:if><c:out value="${list.answer1}"/></td>
+											<td><c:if test="${empty list.answer2}">-</c:if><c:out value="${list.answer2}"/></td>
+											<td><c:if test="${empty list.answer3}">-</c:if><c:out value="${list.answer3}"/></td>
 											<td><c:out value="${list.itrstdCarTy}"/></td>
 											<td><c:out value="${list.visitorNm}"/></td>
 											<td><c:out value="${list.telNo}"/></td>
-											<td>3</td>
+											<td><c:out value="${list.overlapCnt}"/></td>
 										</tr>
 									</c:forEach>
 								</c:when>
@@ -91,7 +93,7 @@
 						</tbody>
 					</table>
 					<div class="T_btnLayer fr">
-						<a href="#"><button type="button" class="blueBtn L">엑셀 다운로드</button></a>
+						<a href="javascript:void(0);" onclick="javascript:fn_excelDownload();"><button type="button" class="blueBtn L">엑셀 다운로드</button></a>
 					</div>
 				</div>
 				<!--페이징-->
@@ -107,5 +109,22 @@
 	<!--wrap End-->
 	<%@ include file="/WEB-INF/jsp/rent/common/footer.jsp"%>
 	<!--//footer-->
+	
+	<script type="text/javascript">
+	var fn_searchList = function(pageNo){
+		var forms = document.listForm;
+		forms.pageIndex.value = pageNo;
+		forms.submit();
+	};
+	
+	//프로그램목록 엑셀 다운로드
+	var fn_excelDownload = function(){
+		var frm = document.listForm;
+		var tmpUrl = frm.action;
+		frm.action = "${basePath}/vtmgr/z/selectVisitorListExcelDownload.do";
+		frm.submit();
+		frm.action = tmpUrl;
+	};
+	</script>
 </body>
 </html>

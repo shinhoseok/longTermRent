@@ -54,4 +54,14 @@ public class VisitorManageServiceImpl extends EgovAbstractServiceImpl implements
 		
 		return rsltMap;
 	}
+	
+	//견적관리 엑셀다운로드
+	public List<VisitorVO> selectVisitorListExcelDownload(VisitorVO visitorVO) throws Exception {
+		
+		visitorVO.setFirstIndex(0);
+		visitorVO.setLastIndex(99999999);
+		List<VisitorVO> selectList = visitorDAO.selectVisitorList(visitorVO);
+		
+		return selectList;
+	}
 }
