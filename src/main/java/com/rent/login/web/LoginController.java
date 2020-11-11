@@ -40,7 +40,7 @@ public class LoginController {
 		}
 		request.getSession().setAttribute(GlobalConstants.LOGIN_SESSION_KEY, resultVO);
 		
-		return "redirect:/vtmgr/z/selectVisitorList.do";
+		return "redirect:/vtmgr/w/selectVisitorList.do";
 	}
 	
 	//아이디 찾기

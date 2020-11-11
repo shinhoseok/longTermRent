@@ -23,23 +23,23 @@
 			<ul id="navi">
 				<c:choose>
 					<c:when test="${alevel eq '1'}">
-						<li id="menu" class="selectMenu"><a href="${basePath}/vtmgr/z/selectVisitorList.do">견적관리</a></li>
-						<li id="menu"><a href="${basePath}/usermgr/z/selectUserList.do">어드민사용자 관리</a></li>
+						<li id="menu" class="selectMenu"><a href="${basePath}/vtmgr/w/selectVisitorList.do">견적관리</a></li>
+						<c:if test="${sessionScope.loginVO.userSeq eq 'USR-000000'}"><li id="menu"><a href="${basePath}/usermgr/z/selectUserList.do">어드민사용자 관리</a></li></c:if>
 						<li id="menu"><a href="${basePath}/svymgr/w/updateSurveyQtn.do">랜딩페이지 관리</a></li>
 					</c:when>
 					<c:when test="${alevel eq '2'}">
-						<li id="menu"><a href="${basePath}/vtmgr/z/selectVisitorList.do">견적관리</a></li>
-						<li id="menu" class="selectMenu"><a href="${basePath}/usermgr/z/selectUserList.do">어드민사용자 관리</a></li>
+						<li id="menu"><a href="${basePath}/vtmgr/w/selectVisitorList.do">견적관리</a></li>
+						<c:if test="${sessionScope.loginVO.userSeq eq 'USR-000000'}"><li id="menu" class="selectMenu"><a href="${basePath}/usermgr/z/selectUserList.do">어드민사용자 관리</a></li></c:if>
 						<li id="menu"><a href="${basePath}/svymgr/w/updateSurveyQtn.do">랜딩페이지 관리</a></li>
 					</c:when>
 					<c:when test="${alevel eq '3'}">
-						<li id="menu"><a href="${basePath}/vtmgr/z/selectVisitorList.do">견적관리</a></li>
-						<li id="menu"><a href="${basePath}/usermgr/z/selectUserList.do">어드민사용자 관리</a></li>
+						<li id="menu"><a href="${basePath}/vtmgr/w/selectVisitorList.do">견적관리</a></li>
+						<c:if test="${sessionScope.loginVO.userSeq eq 'USR-000000'}"><li id="menu"><a href="${basePath}/usermgr/z/selectUserList.do">어드민사용자 관리</a></li></c:if>
 						<li id="menu" class="selectMenu"><a href="${basePath}/svymgr/w/updateSurveyQtn.do">랜딩페이지 관리</a></li>
 					</c:when>
 					<c:otherwise>
-						<li id="menu"><a href="${basePath}/vtmgr/z/selectVisitorList.do">견적관리</a></li>
-						<li id="menu"><a href="${basePath}/usermgr/z/selectUserList.do">어드민사용자 관리</a></li>
+						<li id="menu"><a href="${basePath}/vtmgr/w/selectVisitorList.do">견적관리</a></li>
+						<c:if test="${sessionScope.loginVO.userSeq eq 'USR-000000'}"><li id="menu"><a href="${basePath}/usermgr/z/selectUserList.do">어드민사용자 관리</a></li></c:if>
 						<li id="menu"><a href="${basePath}/svymgr/w/updateSurveyQtn.do">랜딩페이지 관리</a></li>
 					</c:otherwise>
 				</c:choose>
@@ -54,7 +54,7 @@ var fn_updateMyInfo = function(userSeq){
 };
 
 var fn_selectMain = function() {
-	location.href = "${basePath}/vtmgr/z/selectVisitorList.do";
+	location.href = "${basePath}/vtmgr/w/selectVisitorList.do";
 };
 
 </script>

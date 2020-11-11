@@ -21,6 +21,13 @@ public class VisitorVO extends CommDefaultVO implements Serializable {
 	private String answer1;
 	private String answer2;
 	private String answer3;
+	//시작,종료일
+	private String startDate;
+	private String endDate;
+	
+	private String mppgId;
+	private String qtnId;
+	private String asrId;
 	
 	public String getVisitorId() {
 		return visitorId;
@@ -75,5 +82,35 @@ public class VisitorVO extends CommDefaultVO implements Serializable {
 	}
 	public void setAnswer3(String answer3) {
 		this.answer3 = answer3;
+	}
+	public String getStartDate() {
+		return startDate;
+	}
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+	public String getEndDate() {
+		return endDate;
+	}
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+	public String getMppgId() {
+		return mppgId;
+	}
+	public void setMppgId(String mppgId) {
+		this.mppgId = mppgId;
+	}
+	public String getQtnId() {
+		return qtnId;
+	}
+	public void setQtnId(String qtnId) {
+		this.qtnId = qtnId;
+	}
+	public String getAsrId() {
+		return asrId;
+	}
+	public void setAsrId(String asrId) {
+		this.asrId = asrId;
 	}
 }

@@ -14,6 +14,11 @@
 					</otherwise>
 				</choose>
 			</if>
+			<if test="startDate != null and startDate != ''">
+				<if test="endDate != null and endDate != ''">
+					AND DATE_FORMAT(A.REG_DT, '%Y-%m-%d') BETWEEN #{startDate} AND #{endDate}
+				</if>
+			</if>
 		</where>
 	</sql>
 
@@ -48,4 +53,63 @@
 		<include refid="vstGubunSql"/>
 	</select>
 	
+	<select id="selectVisitorDetail" parameterType="visitorVO" resultType="visitorVO">
+		<![CDATA[
+		SELECT
+			A.VISITOR_ID visitorId,
+			IF(A.ACCESS_PATH='M','모바일','PC') AS accessPath,
+			A.VISITOR_NM visitorNm,
+			A.ITRSTD_CAR_TY itrstdCarTy,
+			A.TEL_NO telNo,
+			A.OVERLAP_CNT overlapCnt,
+			A.DEL_YN delYn,
+			DATE_FORMAT(A.REG_DT, '%Y-%m-%d %H:%i') regDt
+		FROM
+			VISITORS A
+		WHERE
+			A.TEL_NO = #{telNo}
+		]]>
+	</select>
+	
+	<insert id="insertVisitorProc" parameterType="visitorVO">
+		<![CDATA[
+		INSERT INTO VISITORS (
+			VISITOR_ID,
+			ACCESS_PATH,
+			VISITOR_NM,
+			ITRSTD_CAR_TY,
+			TEL_NO,
+			OVERLAP_CNT,
+			DEL_YN,
+			REG_DT
+		) VALUES (
+			#{visitorId},
+			#{accessPath},
+			#{visitorNm},
+			#{itrstdCarTy},
+			#{telNo},
+			#{overlapCnt},
+			'N',
+			NOW()
+		)
+		]]>		
+    </insert>
+    
+    <insert id="insertVisitorMppgProc" parameterType="visitorVO">
+		<![CDATA[
+		INSERT INTO VISITOR_SURVEY_MPPG (
+			MPPG_ID,
+			VISITOR_ID,
+			QTN_ID,
+			ASR_ID,
+			REG_DT
+		) VALUES (
+			#{mppgId},
+			#{visitorId},
+			#{qtnId},
+			#{asrId},
+			NOW()
+		)
+		]]>		
+    </insert>
 </mapper>

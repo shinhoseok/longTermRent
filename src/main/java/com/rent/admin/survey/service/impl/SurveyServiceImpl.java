@@ -54,4 +54,5 @@ public class SurveyServiceImpl extends EgovAbstractServiceImpl implements Survey
 	public void updateSurveyAsrProc(SurveyVO surveyVO) throws Exception {
 		surveyDAO.updateSurveyAsrProc(surveyVO);
 	}
+	
 }

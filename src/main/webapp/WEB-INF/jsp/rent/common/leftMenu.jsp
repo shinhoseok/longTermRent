@@ -9,7 +9,7 @@
 					<li class="bigMenu">견적관리
 						<div class="subMenu">
 							<ul>
-								<li class="selectsubMenu" style="cursor: pointer;" onclick="location.href='${basePath}/vtmgr/z/selectVisitorList.do';"><a href="javascript:void(0);"> 견적 관리</a></li>
+								<li class="selectsubMenu" style="cursor: pointer;" onclick="location.href='${basePath}/vtmgr/w/selectVisitorList.do';"><a href="javascript:void(0);"> 견적 관리</a></li>
 								<li class="smallMenu" style="cursor: pointer;"><a href="javascript:void(0);">견적 통계</a></li>
 									
 							</ul>
@@ -23,7 +23,7 @@
 					<li class="bigMenu">견적관리
 						<div class="subMenu">
 							<ul>
-								<li class="smallMenu" style="cursor: pointer;" onclick="location.href='${basePath}/vtmgr/z/selectVisitorList.do';"><a href="javascript:void(0);"> 견적 관리</a></li>
+								<li class="smallMenu" style="cursor: pointer;" onclick="location.href='${basePath}/vtmgr/w/selectVisitorList.do';"><a href="javascript:void(0);"> 견적 관리</a></li>
 								<li class="selectsubMenu" style="cursor: pointer;"><a href="javascript:void(0);">견적 통계</a></li>
 							</ul>
 						</div>

@@ -37,10 +37,14 @@
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
 		<property name="interceptors">
 			<list>
+				<ref bean="portalInterceptor" />
 				<ref bean="localeChangeInterceptor" />
 			</list>
 		</property>
 	</bean>
+	
+	<!-- 포탈 인터셉터 -->
+	<bean id="portalInterceptor" class="com.rent.common.PortalInterceptor"/>
 
 	<!-- 쿠키를 이용한 Locale 이용시 <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver"/> -->
 	<!-- 세션을 이용한 Locate -->

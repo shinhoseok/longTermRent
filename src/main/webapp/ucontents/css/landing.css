@@ -1,0 +1,596 @@
+@charset "utf-8";
+/* CSS Document */
+/*필수 css 목록*/
+@import url("reset.css");
+
+
+
+
+/*----------공통----------*/  
+
+/*body*/
+body{
+    background-color: black;
+}
+
+/*전체*/
+section{
+    min-height: 100vh;
+    background-image: url(../images/bg_car_pc.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 80%;
+}   
+
+article{
+    width: 75rem;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+}
+
+/*시작*/
+.logo_box_start h1{
+    font-size: 1.625rem;
+    opacity: 0.3;
+}
+
+.logo_box_start{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 5%;
+}
+
+.text_box_center{
+    padding-top: 10%;
+    width: 58rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.text_box_center>h2{
+    font-size: 3.563rem;
+    letter-spacing: -2.85px;
+    border-bottom: 1px solid #1504e6 ;
+    padding-bottom: 1.5rem;
+    text-align: center;
+}
+
+.text_box_center>p{
+    font-size: 1.375rem;
+    opacity: 0.7;
+    padding: 1.375rem 10% 0;
+}
+
+/*시작하기 버튼*/
+.text_box_center .btn_start{
+    width: 17rem;
+    height: 4rem;
+    border-radius: 36px;
+    background-color: #1504e6;
+    line-height: 4rem;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 3.5rem;
+    position: absolute;
+    left: 50%;
+    margin-left: -8.5rem;
+}
+
+article .start_none{
+    right: -500%;
+}
+
+/*로고*/
+.logo_box{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 5%;
+}
+
+.logo_box h1{
+    font-size: 2.188rem;
+    font-weight: 600;
+}
+
+.logo_box h2{
+    letter-spacing: -1.1px;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #1504e6;
+    width: 13.63rem;
+}
+
+.logo_box p{
+    padding-top: 1.313rem;
+    line-height: 1.5;
+    letter-spacing: -1.1px;
+    opacity: 0.7;
+}
+
+ /*질문*/
+.text_box{
+    padding-top: 5%;
+    height: 20.75rem;
+    width: 50rem;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+}
+
+.img_q1{
+    display: block;
+    width: 6.25rem;
+    height: 3.313rem;
+}
+
+.text_q{
+    font-size: 2.4rem;
+    line-height: 3.4rem;
+    padding-top: 1.563rem;
+    margin-bottom: 2.8125rem;
+    width: 36.5rem;
+}
+
+/*객관식 답변*/
+.answer_list{
+    display: flex;
+    align-content: center;
+    margin-left: -3%;
+}
+
+.answer_list li{
+    margin: 0 1.6875rem;
+}
+
+.answer_list>li a{
+    display: block;
+    cursor: pointer;
+    color: #9095a3;
+    font-size: 1.375rem;
+    text-align: center;
+    letter-spacing: -.04em;
+}
+
+/*hover*/
+.answer_list>li a .answer_check:hover{
+    background-image: url(../images/hover_check1.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+.answer_list>li a .answer_check{
+    display: block;
+    background-color: transparent;
+    background-image: url(../images/img_check1.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+    width: 6.25rem;
+    height: 6.25rem;
+    margin-bottom: .9375rem;
+    transition: all .4s ease;
+}
+
+/*주관식 답변*/
+/*input*/
+input{
+    width: 100%; 
+    height: auto; 
+    line-height : normal;
+    font-family: inherit;
+    border-radius: 0; 
+    outline-style: none; 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none;
+    background-color: black;
+    border: 0;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.answer_box{
+    border-bottom: 1px solid white;
+    width: 31.25rem;
+    padding-bottom: 0.875rem;
+    position: relative;
+}
+
+.answer_box p{
+    letter-spacing: -1.1px;
+    opacity: 0.3;
+    font-size: 1.375rem;
+}
+
+.answer_box a{
+    display: block;
+    position: absolute;
+    top: -15px;
+    right: 0;
+    width: 5.938rem;
+    height: 2.5rem;
+    border-radius: 24px;
+    background-color: #1504e6;
+    text-align: center;
+    
+}
+
+/*닫기버튼*/
+.btn_close{
+    display: block;
+    position: absolute;
+    right: 0;
+    background-image: url('../images/btn_close.png');
+    background-repeat: no-repeat;
+    width: 1.438rem;
+    height: 1.438rem;
+    opacity: 0.5;
+    margin-top: 5%;
+}
+
+/*건너뛰기 버튼 PC에서 보이지 않게*/
+.btn_close_mo{
+    display: none;
+}
+
+/*하단 스텝*/
+.step_bar{
+    width: 100%;
+    height: 7%;
+    background-color: #000000;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+}
+
+.step{
+    width: 18%;
+    height: 100%;
+    background-color: #1504e6;
+    position: fixed;
+    bottom: 0;
+    z-index: 30;
+    position: relative;
+}
+
+/*step2*/
+.step_bar .step2{
+    width: 28.4%;
+}
+
+/*step3*/
+.step_bar .step3{
+    width: 42.6%;
+}
+
+/*step4*/
+.step_bar .step4{
+    width: 56.8%;
+}
+
+/*확인버튼*/
+.answer_box .btn_ok{
+    line-height: 2.5rem;
+    opacity: 1;
+    font-size: 1rem;
+}
+
+/*step5*/
+.step_bar .step5{
+    width: 71%;
+}
+
+/*step6*/
+.step_bar .step6{
+    width: 85.2%;
+}
+
+/*step7*/
+.step_bar .step7{
+    width: 100%;
+}
+
+/* 개인정보 동의*/
+.check_info{
+    position: relative;
+    margin-top: 1.813rem;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.check_info>p{
+    font-size: 1.375rem;
+    line-height: 1.25;
+    letter-spacing: -1.1px;
+    opacity: 0.3;
+    position: absolute;
+    left: 5%;
+    top: 1%;
+}
+
+/* 개인정보 동의 체크 버튼*/
+.btn_check_info{
+    display: block;
+    width: 1.313rem;
+    height: 1.313rem;
+    opacity: 0.5;
+    border-radius: 4px;
+    border: solid 2px #ffffff;
+    background-color: #000000;
+    background-image: url('../images/btn_check_info.png');
+    background-repeat: no-repeat;
+}
+
+.step_bar p{
+    position: absolute;
+    right: 0.625rem;
+    top: 0.625rem;
+    z-index: 50;
+    font-size: 1.4rem;
+}
+
+/*노트북*/
+@media screen and (min-width: 768px) and (max-width:1600px) { 
+
+    html{
+        font-size: 14px;
+    }
+
+    section{
+        background-size: 70%;
+    }
+
+    .btn_close{
+        background-size: 80%;
+    }
+
+}
+
+/*모바일*/
+@media (max-width: 767px){
+
+    body{
+        font-size: 14px;
+    }
+
+    html{
+       
+        overflow-x: hidden;
+    }
+    
+    section{
+        width: 100vw;    
+         background-size: 190%;
+
+    }
+
+    /*조명 배경*/
+    article{
+        width: 100%;
+        position: relative;
+        height: 23.64rem;
+        background-image: url(../images/mo_light.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        margin: 0 auto;
+    }
+
+    /*PC 로고박스 모바일에서 안보이게*/
+    article .logo_box_start{
+        left: -10000px;
+        top: -10000px;
+    }
+
+    .logo_box{
+        position: absolute;
+        left: -10000px;
+        top: -10000px;
+        padding-top: 5%;
+    }
+      
+    /*시작_모바일*/
+    .text_box_center{
+        padding-top: 30%;
+        width: 22rem;
+        margin: 0 auto;
+       
+        margin-bottom: 1.5rem;
+        letter-spacing: -2.25px;
+        text-align: center;
+    }
+
+    .text_box_center h2{
+        line-height: 1.33;
+        font-size: 2.357rem;
+    }
+
+    .text_box_center>h2{
+        border-bottom: none;
+    }
+
+    .style_blue{
+        padding: 0 14%;
+    }
+
+    .text_box_center p{
+        font-size: 1rem;
+        padding: 0;
+        font-weight: 400;
+    }
+
+    .text_box_center .text_none{
+        display: none;
+    }
+
+    /*시작하기 버튼_모바일*/
+    .text_box_center .btn_start{
+        width: 14rem;
+        height: 4rem;
+        border-radius: 36px;
+        background-color: #1504e6;
+        line-height: 4rem;
+        font-size: 1.5rem;
+        text-align: center;
+        margin-top: 3.5rem;
+        position: absolute;
+        left: 50%;
+        margin-left: -7rem;
+    }
+    /*질문*/
+    .img_q1{
+        display: block;
+        width: 3.571rem;
+        height: 1.857rem;
+        margin: 0 auto;
+    }  
+
+    .text_box{
+        width: 100%;
+        padding-top: 20%;
+    }
+
+    .text_q{
+        font-size: 1.571rem;
+        line-height: 2.08943rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: -2.25px;
+        text-align: center;
+    }
+
+    .text_q1_mo{
+        width: 21.36rem;
+        margin: 0 auto;
+        margin-bottom: 32px;
+        line-height: 1.33;
+    }
+
+    .text_q2_mo{
+        width: 17.36rem;
+        margin: 0 auto;
+        margin-bottom: 32px;
+        line-height: 1.33;
+    }
+
+    /*답변*/
+    .answer_list{
+       padding: 0 12%;
+       justify-content: space-around;
+       margin-left: 0;
+    }
+    
+    .answer_list li{
+        margin: 0 ;
+    }
+
+    .answer_list>li a .answer_check{
+        width: 4.286rem;
+        height: 4.286rem;
+        margin-bottom: .9375rem;
+    }
+
+    .answer_list>li a{
+        font-size: 1rem;
+    }
+
+    .text_box .answer_list2_mo{
+        padding: 0 20%;
+    }
+
+    .text_box .answer_list_q3_mo{
+        padding: 0 7%;
+    }
+
+    .text_box .answer_list_q3_mo li a {
+        font-size: 0.85rem;
+    }
+
+    /*주관식 답변*/
+    input{
+        font-size: 1.2rem;
+    }
+    .answer_box{
+        width: 18rem;
+        padding-bottom: 0.875rem;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .answer_box p{
+        letter-spacing: -1.38px;
+        font-size: 1rem;
+    }
+
+    .answer_box a{
+        width: 4rem;
+        height: 2rem;
+        top: -5px;
+    }
+
+    /*확인버튼*/
+    .answer_box .btn_ok{
+        line-height: 2rem;
+    }
+
+    /*개인정보 동의 모바일*/
+    .check_info_mo{
+        width: 18rem;
+        margin: 0.9rem auto 0;
+    }
+
+    .text_box .check_info_mo>p{
+        font-size: 0.7857rem;
+        left: 9%;
+        margin-top: 0.1rem;
+    }
+
+    .btn_check_info{
+        width: 0.95rem;
+        height: 0.95rem;
+        background-size: 80%;
+        background-position: center;
+    }
+
+    /*영업기밀 훔쳐보기*/
+    .style_last{
+        padding: 0 10%;
+    }
+
+    .style_last2{
+        display: block;
+    }
+    /*닫기 버튼 모바일에서 안보이게*/
+    .btn_close{
+        display: none;
+    } 
+
+    /*건너뛰기 버튼*/
+    .btn_close_mo{
+        display: block;
+        width: 6rem;
+        height: 1.714rem;
+        border-radius: 22.5px;
+        border: solid 1px #565656;
+        line-height: 1.82;
+        position: fixed;
+        bottom: 35%;
+        left: 50%;
+        margin-left: -3rem;
+        font-size: 0.7857rem;
+        opacity: 0.3;
+        text-align: center;
+    }
+
+    .step_bar p{
+        font-size: 0.95rem;
+    }
+    
+}    
+
+
+

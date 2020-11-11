@@ -58,7 +58,7 @@ public class MyPageController {
 		//중복 submit 방지
 		status.setComplete();
 		
-		String redirectUrl = "/vtmgr/z/selectVisitorList.do";
+		String redirectUrl = "/vtmgr/w/selectVisitorList.do";
 		String message = "비밀번호가 정상적으로 변경되었습니다.";
 		
 		model.addAttribute("message", message);

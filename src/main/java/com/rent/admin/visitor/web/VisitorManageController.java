@@ -23,7 +23,7 @@ public class VisitorManageController {
 	@Resource(name = "visitorManageService")
 	private VisitorManageService visitorManageService;
 	
-	@RequestMapping(value = "/vtmgr/z/selectVisitorList.do")
+	@RequestMapping(value = "/vtmgr/w/selectVisitorList.do")
 	public String selectVistorList(@ModelAttribute("visitorVO") VisitorVO visitorVO, ModelMap model) throws Exception {
 		
 		Map<String, Object> rsltMap = visitorManageService.selectVisitorList(visitorVO);
@@ -36,7 +36,7 @@ public class VisitorManageController {
 		return "/admin/visitor/visitorList";
 	}
 	
-	@RequestMapping(value = "/vtmgr/z/selectVisitorListExcelDownload.do")
+	@RequestMapping(value = "/vtmgr/w/selectVisitorListExcelDownload.do")
 	public String selectVisitorListExcelDownload(@ModelAttribute("visitorVO") VisitorVO visitorVO, ModelMap model) throws Exception {
 		
 		List<VisitorVO> selectList = visitorManageService.selectVisitorListExcelDownload(visitorVO);

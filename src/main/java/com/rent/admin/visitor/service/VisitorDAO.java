@@ -10,4 +10,10 @@ public interface VisitorDAO {
 	Integer selectVisitorListCnt(VisitorVO visitorVO) throws Exception;
 	//견적관리 목록
 	List<VisitorVO> selectVisitorList(VisitorVO visitorVO) throws Exception;
+	
+	public List<VisitorVO> selectVisitorDetail(VisitorVO visitorVO) throws Exception;
+	
+	public void insertVisitorProc(VisitorVO visitorVO) throws Exception;
+	
+	public void insertVisitorMppgProc(VisitorVO visitorVO) throws Exception;
 }

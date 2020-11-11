@@ -56,7 +56,7 @@
 									<th class="bullet_orange">신규 유튜브</th>
 									<td>
 										<div>
-											<form:input type="text" path="linkAddr" id="linkAddr"  onfocus="checker(this, 200 , 'nbytes_linkAddr');" onblur="stopchecker();" placeholder="http://" style="width: 690px; height:28px; border: 1px solid #D4D4D4;"/> &nbsp;
+											<form:input type="text" path="linkAddr" id="linkAddr"  onfocus="checker(this, 200 , 'nbytes_linkAddr');" onblur="stopchecker();" style="width: 690px; height:28px; border: 1px solid #D4D4D4;"/> &nbsp;
 											&nbsp;[<span id="nbytes_linkAddr" class="color_red">0</span>/200]byte
 										</div>
 									</td>

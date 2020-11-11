@@ -49,4 +49,18 @@
 		WHERE asr_id = #{asrId}
 		]]>
 	</update>
+	
+	<!-- 설문질문 상세 -->
+	<select id="selectSurveyQtnDetail" parameterType="surveyVO" resultType="surveyVO">
+		SELECT
+			qtn_id qtnId,
+			qtn_contents qtnContents,
+			del_yn delYn,
+			reg_id regId,
+			DATE_FORMAT(REG_DT, '%Y-%m-%d') regDt 
+		FROM SURVEY_QTN
+		WHERE del_yn = 'N'
+			AND qtn_id = #{qtnId}
+	</select>
+	
 </mapper>

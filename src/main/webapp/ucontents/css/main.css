@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document */
+/*필수 css 목록*/
+@import url("reset.css");
+
+/*----------공통----------*/  
+/*body*/
+body{
+    color: black;
+}
+
+/*전체*/
+.main_box1{
+    background-image: url(../images/bg_car_pc.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}   
+
+article{
+    width: 1200px;
+    margin: 0 auto;
+    min-height: 967px;
+    border: 1px solid red;
+}
+
+.logo_box>h1{
+    font-size: 1.5rem;
+    color: white;
+    width: 248px;
+
+    text-align: center;
+    background-color: #1504e6;
+}
+
+.logo_box p{
+    font-size: 1.125rem;
+    color: white;
+ 
+    text-align: center;
+    background-color: black;
+    line-height: 1.5;
+    letter-spacing: -1px;
+}
+
+/*노트북*/
+@media screen and (min-width: 768px) and (max-width:1600px) { 
+
+    html{
+        font-size: 14px;
+    }
+
+    section{
+        background-size: 70%;
+    }
+
+    .btn_close{
+        background-size: 80%;
+    }
+
+}
+
+/*모바일*/
+@media (max-width: 767px){
+
+    body{
+        font-size: 14px;
+    }
+
+    html{
+       
+        overflow-x: hidden;
+    }
+    
+    section{
+        width: 100vw;    
+         background-size: 190%;
+
+    }
+  
+        
+}    
+
+
+

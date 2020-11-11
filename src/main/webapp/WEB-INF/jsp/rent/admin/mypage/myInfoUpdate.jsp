@@ -102,7 +102,7 @@
 			</div>
 			<div class="T_btnLayer fr">
 				<a href="javascript:void(0);" onclick="javascript:fn_updateUserPwProc('<c:out value="${resultVO.userId}"/>');"><button type="button" class="blueBtn L">수정</button></a>
-				<a href="${basePath}/vtmgr/z/selectVisitorList.do"><button type="button" class="blueBtn L">취소</button></a>
+				<a href="${basePath}/vtmgr/w/selectVisitorList.do"><button type="button" class="blueBtn L">취소</button></a>
 			</div>
 		</div>
 	</div>
