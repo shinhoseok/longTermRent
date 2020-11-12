@@ -3,7 +3,7 @@
 <section>
 	<article>
 		<div class="logo_box">
-			<h1>바른청년</h1>
+			<h1 style="cursor: pointer;" onclick="location.href='${basePath}/home/a/main.do'">바른청년</h1>
 			<h2>장기렌트 영업기밀!</h2>
 			<p>
 				설문에 참여하시고 1%를 위한<br> 특별할인을 받아보세요.
@@ -23,7 +23,8 @@
 				<p style="cursor: pointer;" onclick="javascript:fn_step7Check();">개인정보 수집 및 이용동의 (필수)</p>
 			</div>
 		</div>
-		<a href="#" class="btn_close"></a> <a href="#" class="btn_close_mo">건너뛰기 > </a>
+		<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close"></a>
+		<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close_mo">건너뛰기 > </a>
 	</article>
 </section>
 <!--step 표시-->

@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.support.SessionStatus;
 
+import com.rent.admin.link.service.LinkManageService;
+import com.rent.admin.link.service.LinkVO;
 import com.rent.admin.survey.service.SurveyVO;
 import com.rent.admin.visitor.service.VisitorVO;
 import com.rent.common.GlobalConstants;
@@ -26,16 +28,8 @@ public class HomeController {
 	@Resource(name = "homeService")
 	private HomeService homeService;
 	
-	//메인화면
-//	@RequestMapping(value="/home/a/main.do")
-//	public String main(@ModelAttribute("surveyVO") SurveyVO surveyVO, ModelMap model) throws Exception {
-//		
-//		surveyVO.setQtnId(GlobalConstants.QUESTION_ONE);
-//		Map<String, Object> rsltMap = homeService.main(surveyVO);
-//		model.addAttribute("rslt", rsltMap);
-//		
-//		return "/home/main";
-//	}
+	@Resource(name = "linkManageService")
+	private LinkManageService linkManageService;
 	
 	//메인화면
 	@RequestMapping(value="/home/a/main.do")
@@ -113,6 +107,17 @@ public class HomeController {
 		status.setComplete(); //중복 submit 방지
 		
 		return "/home/step7";
+	}
+	
+	@RequestMapping(value = "/home/a/selectLanding.do")
+	public String selectLanding(ModelMap model) throws Exception {
+		
+		LinkVO linkVO = new LinkVO();
+		linkVO.setLinkKind(GlobalConstants.YOUTUBE_LINK_CODE);
+		LinkVO youtubeLinkVO = linkManageService.selectReviewLink(linkVO);
+		model.addAttribute("youtubeLinkVO", youtubeLinkVO);
+		
+		return "/home/landing";
 	}
 	
 }

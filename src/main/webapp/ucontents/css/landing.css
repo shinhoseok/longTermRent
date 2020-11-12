@@ -79,7 +79,7 @@ article{
 }
 
 article .start_none{
-    right: -500%;
+    display: none;
 }
 
 /*로고*/
@@ -323,7 +323,7 @@ input{
     border-radius: 4px;
     border: solid 2px #ffffff;
     background-color: #000000;
-    background-image: url('../images/btn_check_info.png');
+    background-image: url('');
     background-repeat: no-repeat;
 }
 
@@ -366,8 +366,8 @@ input{
     
     section{
         width: 100vw;    
-         background-size: 190%;
-
+        background-size: 190%;
+        height: 682px;
     }
 
     /*조명 배경*/

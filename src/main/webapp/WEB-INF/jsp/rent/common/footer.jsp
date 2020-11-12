@@ -5,6 +5,6 @@
 		<p class="footer_logo">
 			<img src="${imagePath }/logo2.png" width="144" height="18" />
 		</p>
-		<span class="footer_text">06051 서울시 강남구 논현로 722 신한빌딩 4층 TEL : 02-419-6362 | FAX : 02-419-6372<br /> Copyright(C) 2001 ENKISOFT, Inc. All Rights Reserved.<a href="mailto:cpcp@nia.or.kr">webmaster@enkisoft.co.kr</a></span>
+		<span class="footer_text">서울특별시 서초구 서초대로 8, 100호 (서초동, 서초빌딩) TEL : 02-123-4567 | 사업자번호 : 123-45-12345<br /> Copyright 2020 by carholic. All rights reserved.</span>
 	</div>
 </div>

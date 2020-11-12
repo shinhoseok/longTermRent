@@ -18,7 +18,7 @@
 <section>
 	<article>
 		<div class="logo_box_start">
-			<h1>바른청년</h1>
+			<h1 style="cursor: pointer;" onclick="location.href='${basePath}/home/a/main.do'">바른청년</h1>
 		</div>
 		<div class="text_box_center">
 			<h2>
@@ -27,9 +27,10 @@
 			<p>
 				<span class="style_last2">문의해주셔서 감사합니다.</span>영업기밀을 바탕으로 상담진행을 도와드리겠습니다.
 			</p>
-			<a href="#"><p class="btn_start">영업기밀 훔쳐보기</p></a>
+			<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();"><p class="btn_start">영업기밀 훔쳐보기</p></a>
 		</div>
-		<a href="#" class="btn_close start_none"></a> <a href="#" class="btn_close_mo">건너뛰기 > </a>
+		<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close start_none"></a>
+		<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close_mo">건너뛰기 > </a>
 	</article>
 </section>
 <!--step 표시-->
@@ -38,5 +39,10 @@
 		<p>THANK YOU</p>
 	</div>
 </div>
+<script type="text/javascript">
+var fn_selectLanding = function() {
+	location.href = "${basePath}/home/a/selectLanding.do";
+};
+</script>
 </body>
 </html>

@@ -20,7 +20,7 @@
 		<section>
 			<article>
 				<div class="logo_box_start">
-					<h1>바른청년</h1>
+					<h1 style="cursor: pointer;" onclick="location.href='${basePath}/home/a/main.do'">바른청년</h1>
 				</div>
 				<div class="text_box_center">
 					<h2>
@@ -31,7 +31,8 @@
 					</p>
 					<a href="javascript:void(0);" onclick="javascript:fn_selectMainStep('1', '', '');"><p class="btn_start">시작하기</p></a>
 				</div>
-				<a href="javascript:void(0);" class="btn_close start_none"></a> <a href="#" class="btn_close_mo">건너뛰기 > </a>
+				<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close start_none"></a>
+				<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close_mo">건너뛰기 > </a>
 			</article>
 		</section>
 	</div>
@@ -164,6 +165,10 @@
 			}
 		}); 
 		
+	};
+	
+	var fn_selectLanding = function() {
+		location.href = "${basePath}/home/a/selectLanding.do";
 	};
 	</script>
 </body>
