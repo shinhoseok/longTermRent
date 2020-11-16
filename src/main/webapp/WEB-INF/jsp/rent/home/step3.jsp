@@ -18,9 +18,9 @@
 					<li><a href="javascript:void(0);" onclick="fn_selectMainStep('4', '<c:out value="${list.qtnId }"/>', '<c:out value="${list.asrId }"/>');" ><span class="answer_check"></span> <c:out value="${list.asrContents }" /></a></li>
 				</c:forEach>
 			</ul>
+			<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close_mo">건너뛰기 > </a>
 		</div>
 		<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close"></a>
-		<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close_mo">건너뛰기 > </a>
 	</article>
 </section>
 <!--step 표시-->

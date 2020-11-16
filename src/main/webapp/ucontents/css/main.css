@@ -3,21 +3,20 @@
 /*필수 css 목록*/
 @import url("reset.css");
 
-/*----------공통----------*/  
+/*움직임*/
+@import url("move.css");
+
 /*body*/
 body{
     color: black;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /*전체*/
-section{
-    border: 1px solid green;
-}
-
 article{
     width: 1200px;
     margin: 0 auto;
-    border: 1px solid red;
     position: relative;
 }
 
@@ -25,9 +24,7 @@ article{
 .main_box1{
     background-image: url(../images/bg_car_main.png);
     background-repeat: no-repeat;
-    background-position-x: center;
     background-position-y: center;
-    background-position: top center;
     background-size: 100%;
     height: 970px;
 }  
@@ -38,7 +35,8 @@ article{
 
 .logo_box{
     width: 248px;
-    margin-bottom: 67px;
+    margin-bottom: 72px;
+    padding-top: 5%;
 }
 
 .logo_box>h1{
@@ -46,7 +44,10 @@ article{
     color: white;
     text-align: center;
     background-color: #1504e6;
-    padding: 20px 32px;
+    height: 68px;
+    line-height: 72px;
+    font-weight: 700;
+    vertical-align: middle;
 }
 
 .logo_box p{
@@ -64,20 +65,14 @@ article{
     letter-spacing: -3.43px;
     font-size: 4.25rem;
     color: black;
+    font-weight: 700;
 }
 
 .text_box>p{
     font-size: 22px;
     line-height: 1.75;
     letter-spacing: -1.1px;
-    margin-top: 99px;
-    margin-bottom: 247px;
-}
-
-.group1 .wrap{
-    position: absolute;
-    left: 5%;
-    top: 5%;
+    margin-top: 80px;
 }
 
 /*2_1*/
@@ -104,7 +99,7 @@ article{
     line-height: 1.33;
     letter-spacing: -2.85px;
     margin-top: 33px;
-    margin-bottom: 73px;
+    margin-bottom: 60px;
 }
 
 .main_box2_1 .text_box2_1{
@@ -114,6 +109,7 @@ article{
 /*2_2*/
 .main_box2_2{
     padding-bottom: 41px;
+    position: relative;
 }
 
 .main_box2_2 .wrap{
@@ -136,21 +132,23 @@ article{
     width: 210px;
     height: 300px;
     border: solid 1px #ffffff;
-    padding: 42px 25px 37px 22px;
+    padding: 33px 0px 0px 28px;
     position: absolute;
+    box-sizing: border-box;
 }
 
 .text_box2_2{
-    top: 90px;
+    top: 86px;
     left: 100px;
 }
 
 .text_box2_2 span, .text_box2_3 span{
     display: block;
     font-size: 34px;
-    font-weight: bold;
+    font-weight: 900;
     line-height: 1;
     color: white;
+    letter-spacing: 1px;
 }
 
 .text_box2_2 .divder, .text_box2_3 .divder{
@@ -171,6 +169,7 @@ article{
 /*2_3*/
 .main_box2_3{
     padding-bottom: 93px;
+    position: relative;
 }
 
 .main_box2_3 .wrap{
@@ -181,13 +180,14 @@ article{
     background-position: top center;
     background-size: 100%;
     width: 1400px;
-    height: 480px;
+    height: 540px;
     margin: 0 auto;
 }
 
 .text_box2_3{
     top: 140px;
     right: 68px;
+    height: 280px;
 }
 
 /*3*/
@@ -204,7 +204,6 @@ article{
     width: 1168px;
     overflow: hidden;
     margin: 0 auto;
-    border: 1px solid blue;
 }
 
 
@@ -225,6 +224,7 @@ article{
     letter-spacing: -2.85px;
     color: #222222;
     margin-top: 59px;
+    font-weight: 700;
 }
 
 .main_box3 p{
@@ -236,6 +236,9 @@ article{
 }
 
 /*4*/
+.text_box4{
+    padding-top: 80px;
+}
 .main_box4{
     height: 870px;
     margin-top: 96px;
@@ -260,16 +263,16 @@ article{
     letter-spacing: -2.85px;
     text-align: center;
     color: #000000;
-    margin-top: 37px;
+    margin-top: 20px;
+    font-weight: 700;
 }
 
 .main_box4 p{
-    opacity: 0.7;
+    opacity: 0.6;
     font-size: 22px;
     line-height: 1.75;
     letter-spacing: -1.1px;
-    margin-top: 27px;
-    margin-bottom: 67px;
+    margin-bottom: 60px;
     text-align: center;
 }
 
@@ -289,6 +292,7 @@ article{
     letter-spacing: -2.85px;
     text-align: center;
     color: #000000;
+    font-weight: 700;
 }
 
 .main_box5 .text_box5 p{
@@ -310,7 +314,6 @@ article{
 }
 
 .main_box5 ul{
-    width: 1160px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -318,12 +321,20 @@ article{
  }
 
  .main_box5 li{
-    width: 550px;
+    width: 557px;
     height: 342px;
     box-sizing: border-box;
     margin: 60px 10px 0px 20px ;    
     position: relative;
- } 
+ }
+
+ .main_box5 li a {
+     display: block;
+}
+
+ .main_box5 ul li a:hover{
+     opacity: 0.3;
+ }
 
  .main_box5 li img{
     width: 550px;
@@ -332,22 +343,24 @@ article{
 } 
 
 .main_box5 li .case{
-    width: 108px;
+    width: 85px;
     border-radius: 25px;
     background-color: #1504e6;
     text-align: center;
-    font-weight: 500;
+    font-weight: 800;
     position: absolute;
-    bottom: 0;
+    bottom: 2px;
     left: 0;
-    padding: 3px 0;
+    height: 37px;
+    line-height: 39px;
+    vertical-align: middle;
+    color: #ffffff;
 }
 
 .main_box5 li p{
     position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 3px 0;
+    bottom: -4px;
+    right: 6px;
     font-size: 27.5px;
     font-weight: bold;
     letter-spacing: -1.1px;
@@ -356,7 +369,7 @@ article{
 
 .main_box5 li .month{
     opacity: 0.4;
-    padding-right: 5px;
+    padding-right: 15px;
     font-size: 22px;
     letter-spacing: -1.1px;
  }
@@ -390,15 +403,12 @@ article{
 
 .main_box6 .text_box6 span{
     display: block;
-    width: 105px;
+    width: 85px;
     height: 37px;
-
     border-radius: 18.5px;
     background-color: #1504e6;
     font-weight: 500;
-
     font-size: 22px;
-  
     line-height: 1.75;
     letter-spacing: -1.1px;
     text-align: center;
@@ -409,6 +419,8 @@ article{
     line-height: 1.33;
     letter-spacing: -2.85px;
     margin-top: 30px;
+    color: #ffffff;
+    font-weight: 700;
 }
 
 .text_box6 p:nth-of-type(2){
@@ -416,6 +428,7 @@ article{
     line-height: 1.75;
     letter-spacing: -1.1px;
     margin-top: 100px;
+    color: #ffffff;
 }
 
 /*7*/
@@ -443,6 +456,7 @@ article{
     text-align: center;
     color: #000000;
     margin-top: 175px;
+    font-weight: 700;
     
 }
 
@@ -459,7 +473,6 @@ article{
     position: absolute;
     left: 0;
     top: 58px;
-    
 }
 
 .main_box7 .text_box7{
@@ -486,27 +499,30 @@ article{
     color: black;
 }
 
+.main_box7 .text_box7 p{
+    width: 410px;
+    word-wrap: break-word;
+}
+
+
 /*8*/
 .main_box8 article{
-    overflow: hidden;
+    width: 1400px;
+    height: 940px;
+    margin-top: -90px;
 }
-
-
 
 .main_box8 img:nth-of-type(1){
-    display: block;
-    width: 711px;
-    height: 862px;
-    float: left;
-}
+    position: absolute;
+    top: 0;
+    left: 50px;
+    }
 
 .main_box8 img:nth-of-type(2){
-    display: block;
-    width: 700px;
-    height: 1026px;
-    float: right;
+    position: absolute;
+    top: -40px;
+    right: 50px;
 }
-
 
 /*9*/
 .main_box9 .divder{
@@ -523,6 +539,7 @@ article{
     line-height: 1.33;
     letter-spacing: -2.85px;
     text-align: center;
+    font-weight: 700;
 }
 
 .main_box9 p{
@@ -530,9 +547,10 @@ article{
     margin-top: 58px;
     margin-bottom: 67px;
     font-size: 28.5px;
-    line-height: 1.33;
+    line-height: 1.53;
     letter-spacing: -1.43px;
     text-align: center;
+    font-weight: 100;
 }
 
 /*10*/
@@ -561,7 +579,6 @@ article{
 .main_box10 form{
     margin: 0 auto;
     width: 1020px;
-  
 }
 
 .main_box10 form>input{
@@ -569,7 +586,7 @@ article{
     box-sizing: border-box;
     margin-bottom: 26px;
     height: auto;
-     line-height : normal; 
+    line-height : normal; 
     padding: .8em .5em; 
     font-family: inherit; 
     border: 1px solid #999; 
@@ -577,7 +594,7 @@ article{
     outline-style: none;
     -webkit-appearance: none; 
     -moz-appearance: none; 
-     appearance: none;
+    appearance: none;
 }
 
 .main_box10 input[type="checkbox"]{
@@ -600,7 +617,7 @@ article{
     width: 450px;
     height: 80px;
     border-radius: 40px;
-    box-shadow: 1.8px 14.9px 27px 0 rgba(21, 4, 230, 0.71);
+    box-shadow: 1.8px 14.9px 27px 0 rgba(21, 4, 230, 0.3);
     background-color: #1504e6;
     font-size: 30px;
     line-height: 2.8;
@@ -610,8 +627,9 @@ article{
 }
 
 /*footer*/
- footer{
+footer{
     background-color: #232323;
+    height: 255px;
  }
 
 footer .wrap{
@@ -624,43 +642,43 @@ footer .wrap{
 footer .wrap p, address{
   color: white;
 }
-/*노트북*/
-@media screen and (min-width: 768px) and (max-width:1600px) { 
 
-    html{
-        font-size: 14px;
-    }
+/*하단 사이드바*/
+.contact_bar{
+    width: 100%;
+    height: 64px;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    overflow: hidden;
+}  
 
-    section{
-        background-size: 70%;
-    }
-
-    .btn_close{
-        background-size: 80%;
-    }
-
+.kakao, .survey{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    font-size: 25px;
+    line-height: 64px;
+    vertical-align: middle;
+    font-weight: 500;
 }
 
-/*모바일*/
-@media (max-width: 767px){
+.contact_bar .kakao{
+    float: left;
+    background-color: #f9db07;
+    color: #3d191d;
+    font-weight: 700;
+}
 
-    body{
-        font-size: 14px;
-    }
+.kakao img{
+    width: 48px;
+    height: 48px;
+    padding-bottom: 6px;
+}
 
-    html{
-       
-        overflow-x: hidden;
-    }
-    
-    section{
-        width: 100vw;    
-         background-size: 190%;
-
-    }
-  
-        
-}    
-
-
+.contact_bar .survey{
+    float: right;
+    background-color: #1504e6;
+    color: white;
+}
 

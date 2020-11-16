@@ -22,9 +22,9 @@
 				<a href="javascript:void(0);" onclick="javascript:fn_step7Check();" class="btn_check_info" id="step7Check"> </a>
 				<p style="cursor: pointer;" onclick="javascript:fn_step7Check();">개인정보 수집 및 이용동의 (필수)</p>
 			</div>
+			<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close_mo">건너뛰기 > </a>
 		</div>
 		<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close"></a>
-		<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close_mo">건너뛰기 > </a>
 	</article>
 </section>
 <!--step 표시-->

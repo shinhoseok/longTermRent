@@ -142,6 +142,11 @@ article .start_none{
 
 .answer_list li{
     margin: 0 1.6875rem;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .answer_list>li a{
@@ -174,6 +179,11 @@ article .start_none{
     height: 6.25rem;
     margin-bottom: .9375rem;
     transition: all .4s ease;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 /*주관식 답변*/
@@ -323,7 +333,7 @@ input{
     border-radius: 4px;
     border: solid 2px #ffffff;
     background-color: #000000;
-    background-image: url('');
+    background-image: url('../images/btn_check_info.png');
     background-repeat: no-repeat;
 }
 
@@ -360,14 +370,13 @@ input{
     }
 
     html{
-       
         overflow-x: hidden;
     }
     
     section{
         width: 100vw;    
         background-size: 190%;
-        height: 682px;
+        min-height: 682px;
     }
 
     /*조명 배경*/
@@ -399,10 +408,10 @@ input{
         padding-top: 30%;
         width: 22rem;
         margin: 0 auto;
-       
         margin-bottom: 1.5rem;
         letter-spacing: -2.25px;
         text-align: center;
+        position: relative;
     }
 
     .text_box_center h2{
@@ -453,6 +462,7 @@ input{
     .text_box{
         width: 100%;
         padding-top: 20%;
+        position: relative;
     }
 
     .text_q{
@@ -496,6 +506,11 @@ input{
 
     .answer_list>li a{
         font-size: 1rem;
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
     }
 
     .text_box .answer_list2_mo{
@@ -526,6 +541,10 @@ input{
         font-size: 1rem;
     }
 
+    .answer_box input{
+        font-size: 0.9rem;
+    }
+
     .answer_box a{
         width: 4rem;
         height: 2rem;
@@ -541,6 +560,9 @@ input{
     .check_info_mo{
         width: 18rem;
         margin: 0.9rem auto 0;
+        position: absolute;
+        left: 60px;
+        bottom: -40px;
     }
 
     .text_box .check_info_mo>p{
@@ -577,8 +599,8 @@ input{
         border-radius: 22.5px;
         border: solid 1px #565656;
         line-height: 1.82;
-        position: fixed;
-        bottom: 35%;
+        position: absolute;
+        bottom: -80px;
         left: 50%;
         margin-left: -3rem;
         font-size: 0.7857rem;

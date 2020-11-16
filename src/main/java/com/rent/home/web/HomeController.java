@@ -120,4 +120,14 @@ public class HomeController {
 		return "/home/landing";
 	}
 	
+	@RequestMapping(value = "/home/a/selectMobileLanding.do")
+	public String selectMobileLanding(ModelMap model) throws Exception {
+		
+		LinkVO linkVO = new LinkVO();
+		linkVO.setLinkKind(GlobalConstants.YOUTUBE_LINK_CODE);
+		LinkVO youtubeLinkVO = linkManageService.selectReviewLink(linkVO);
+		model.addAttribute("youtubeLinkVO", youtubeLinkVO);
+		
+		return "/home/mobileLanding";
+	}
 }
