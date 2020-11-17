@@ -277,31 +277,13 @@
 			}
 			
 			<!--섹션2_1-->
-			if(scroll >= "700" && scroll <="1200") {
+			if(scroll >= "700" && scroll <="1000") {
 				$(".main_box2_1 h2").addClass("move_bottom");
 			}else if(scroll < "700"){
 				$(".main_box2_1 h2").removeClass("move_bottom");
-			}else if(scroll > "1200"){
+			}else if(scroll > "1000"){
 				$(".main_box2_1 h2").removeClass("move_bottom");
 			}	
-			
-			<!--섹션2_2-->
-			if(scroll >= "1250" && scroll <="1500") {
-				$(".main_box2_2 .text_box2_2").addClass("move_right");
-			}else if(scroll < "1250"){
-				$(".main_box2_2 .text_box2_2").removeClass("move_right");
-			}else if(scroll > "1550"){
-				$(".main_box2_2 .text_box2_2").removeClass("move_right");
-			}		
-		
-			<!--섹션2_3-->
-			if(scroll >= "1550" && scroll <="1800") {
-				$(".main_box2_3 .text_box2_3").addClass("move_left");
-			}else if(scroll < "1550"){
-				$(".main_box2_3 .text_box2_3").removeClass("move_left");
-			}else if(scroll > "1800"){
-				$(".main_box2_3 .text_box2_3").removeClass("move_left");
-			}		
 			
 			<!--섹션3-->
 			if(scroll >= "2500" && scroll <="3000") {
