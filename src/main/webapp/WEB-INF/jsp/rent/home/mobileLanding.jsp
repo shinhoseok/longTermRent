@@ -199,4 +199,15 @@
 			<p>Copyright 2020 by carholic. All rights reserved.</p>
 		</div>
 	</footer>
-	</html>
+	
+	<!--하단 사이드바 표시-->
+    <div class="contact_bar">
+        <div class="kakao">
+            	카카오톡 상담 <img src="${imagePath}/icon_kakao.png">
+        </div>
+        <div class="call"">
+            	전화상담
+        </div>
+    </div>
+ </body>   
+</html>
