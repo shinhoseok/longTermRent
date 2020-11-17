@@ -311,13 +311,13 @@
 			
 			<!--섹션6-->
 			if(scroll >= "4600" && scroll <="5000") {
-				$(".main_box6 .text_box6 .p6_1").addClass("move_bounce_in");
+				$(".main_box6 .text_box6 .p6_1").addClass("move_text1");
 				$(".main_box6 .text_box6 .p6_2").addClass("move_bottom");
 			}else if(scroll < "4600"){
-				$(".main_box6 .text_box6 .p6_1").removeClass("move_bounce_in");
+				$(".main_box6 .text_box6 .p6_1").removeClass("move_text1");
 				$(".main_box6 .text_box6 .p6_2").removeClass("move_bottom");
 			}else if(scroll > "5000"){
-				$(".main_box6 .text_box6 .p6_1").removeClass("move_bounce_in");
+				$(".main_box6 .text_box6 .p6_1").removeClass("move_text1");
 				$(".main_box6 .text_box6 .p6_2").removeClass("move_bottom");
 			}
 		
