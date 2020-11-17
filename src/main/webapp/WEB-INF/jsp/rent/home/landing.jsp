@@ -240,14 +240,14 @@
 	<section class="main_box10" id="main_form">
 		<img src="${imagePath}/bg_man.jpg">
 		<article>
-			<p>영업기밀을 바탕으로 상담을 도와드리겠습니다.</p>
+			<p>영업기밀을 바탕으로 상담을 도와드리겠습니다1111.</p>
 			<form>
 				<input type="text" placeholder="이름"> <input type="text" placeholder="휴대번호를 입력해주세요"> <input type="text" placeholder="관심차종을 입력해주세요">
 			</form>
 			<div>
-				<input type="checkbox">개인정보 처리방침 동의*필수 [보기]
+				<input type="checkbox">개인정보 처리방침 동의*필수 <span style="cursor: pointer;" onclick="location.href=''">[보기]</span>
 			</div>
-			<a href="#">영업기밀 열어보기</a>
+			<a href="#" id="secretEstimateTarget">영업기밀 열어보기</a>
 		</article>
 	</section>
 
@@ -264,10 +264,10 @@
 
 	<!--하단 사이드바 표시-->
 	<div class="contact_bar">
-		<div class="kakao">
+		<div class="kakao" style="cursor: pointer;" onclick="javascript:fn_kakaoConsulting();">
 			카카오톡 상담 <img src="${imagePath}/icon_kakao.png">
 		</div>
-		<div class="survey">비밀견적받기</div>
+		<div class="survey" style="cursor: pointer;" onclick="javascript:fn_secretEstimate();">비밀견적받기</div>
 	</div>
 
 	<script type="text/javascript">
@@ -387,6 +387,15 @@
 			
 		});
 	});
+	
+	var fn_secretEstimate = function() {
+		var offset = $("#secretEstimateTarget").offset();
+		$('html, body').animate({scrollTop : offset.top}, 400);
+	};
+	
+	var fn_kakaoConsulting = function(){
+		alert("주소오면 링크연결 준비중");
+	};
 	</script>
 </body>
 </html>
