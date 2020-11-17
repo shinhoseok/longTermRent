@@ -86,8 +86,8 @@
 
 /*move_bounce_in 섹션3*/
 .move_bounce_in {
-	-webkit-animation: move_bounce_in 1.5s both;
-    		animation: move_bounce_in 1.5s both;
+	-webkit-animation: move_bounce_in 3.5s both;
+    		animation: move_bounce_in 3.5s both;
 }
 @keyframes move_bounce_in {
 	0% {
