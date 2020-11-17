@@ -70,7 +70,7 @@
 	<section class="main_box2_3">
 		<div class="wrap">
 			<article>
-				<div class="text_box2_3 move_right">
+				<div class="text_box2_3">
 					<span> CAR<br> RENTAL<br> REVEIW
 					</span>
 					<div class="divder"></div>
@@ -88,10 +88,10 @@
 			<div class="wrap">
 				<img src="${imagePath}/img_left_car.jpg">
 				<div class="text_box3">
-					<h2 class="move_text1">
+					<h2>
 						누구나 구매한 뒤<br> 후회하지 않는<br> 견적서를 받고 싶어<br> 합니다.
 					</h2>
-					<p class="move_text_up">
+					<p>
 						하지만, 수많은 허위 견적서가 판치고 저렴함만을<br> 내세워 결함 있는 차량을 팔기도 합니다.<br> 바른청년 렌터카는 내가족에게 팔 수 있는 물건만<br> 고객님들께 소개해 드리고 있습니다.<br>
 					</p>
 				</div>
@@ -123,25 +123,25 @@
 					고객님이 알아보신<br> 그 가격은 진짜가 아닙니다.
 				</h2>
 				<p>같은차! 그러나 전혀 다른 렌트료! 어디에 먼저 문의를 하는 것이 좋을까요?</p>
-				<img src="${imagePath}/img_stamp_answer.jpg" class="move_shake">
+				<img src="${imagePath}/img_stamp_answer.jpg">
 			</div>
 			<ul>
-				<li class="move_left"><a href="#"> <img src="${imagePath}/img_rent_car.jpg"> <span class="case">CASE1</span>
+				<li class="li_left"><a href="#"> <img src="${imagePath}/img_rent_car.jpg"> <span class="case">CASE1</span>
 						<p>
 							<span class="month">월 렌트료</span>283,628원
 						</p>
 				</a></li>
-				<li class="move_right"><a href="#"> <img src="${imagePath}/img_rent_car.jpg"> <span class="case">CASE2</span>
+				<li class="li_right"><a href="#"> <img src="${imagePath}/img_rent_car.jpg"> <span class="case">CASE2</span>
 						<p>
 							<span class="month">월 렌트료</span>414,100원
 						</p>
 				</a></li>
-				<li class="move_right"><a href="#"> <img src="${imagePath}/img_rent_car.jpg"> <span class="case">CASE3</span>
+				<li class="li_right"><a href="#"> <img src="${imagePath}/img_rent_car.jpg"> <span class="case">CASE3</span>
 						<p>
 							<span class="month">월 렌트료</span>452,900원
 						</p>
 				</a></li>
-				<li class="move_left"><a href="#"> <img src="${imagePath}/img_rent_car.jpg"> <span class="case">CASE4</span>
+				<li class="li_left"><a href="#"> <img src="${imagePath}/img_rent_car.jpg"> <span class="case">CASE4</span>
 						<p>
 							<span class="month">월 렌트료</span>500,190원
 						</p>
@@ -157,10 +157,10 @@
 			<img src="${imagePath}/img_woman.png">
 			<div class="text_box6">
 				<span>답은?</span>
-				<p class="move_bounce_in">
+				<p class="p6_1">
 					고객님이<br> 고르신 샘플견적은<br> 아무 의미가 없습니다!<br>
 				</p>
-				<p class="move_text_up">
+				<p class="p6_2">
 					렌트 비용이 결정되는 과정에는 정말 많은 요소가 있습니다.<br> 선수금, 초기비용, 보증금, 개월, 주행거리 등등등...<br> 이 모든 걸 예측한 사전 렌트료 제시는<br> 장기렌트 할아버지가 와도 불가능합니다.<br> 그래서 가장 싼 렌트료를 미리 정해 진짜인 것처럼<br> 제시하고 홍보를 하는 것입니다.
 				</p>
 			</div>
@@ -170,7 +170,7 @@
 	<!--7-->
 	<section class="main_box7">
 		<article>
-			<p class="move_text1">
+			<p class="p7_1">
 				그렇다면<br> 무엇을 먼저 신경써야 할까요?
 			</p>
 			<ul>
@@ -218,7 +218,7 @@
 	<section class="main_box8">
 		<article>
 			<div>
-				<img src="${imagePath}/img_binder1.png" class="move_left"> <img src="${imagePath}/img_binder2.png" class="move_right">
+				<img src="${imagePath}/img_binder1.png" class="img8_1"> <img src="${imagePath}/img_binder2.png" class="img8_2">
 			</div>
 		</article>
 	</section>
@@ -227,7 +227,7 @@
 	<section class="main_box9">
 		<article>
 			<div class="divder"></div>
-			<h2 class="move_text1">
+			<h2>
 				바른청년 렌터카<br> 고객님만 알고 계세요.
 			</h2>
 			<p>
@@ -237,7 +237,7 @@
 	</section>
 
 	<!--10-->
-	<section class="main_box10">
+	<section class="main_box10" id="main_form">
 		<img src="${imagePath}/bg_man.jpg">
 		<article>
 			<p>영업기밀을 바탕으로 상담을 도와드리겠습니다.</p>
@@ -272,28 +272,119 @@
 
 	<script type="text/javascript">
 	$(function() {
+		
 		$(".main_box1 .text_box h2").addClass("move_text1");
 		$(".main_box1 .text_box p").addClass("move_text_up");
 		$(window).scroll(function(event) {
+		
 			var scroll = $(window).scrollTop();
 			console.log(scroll);
-			if(scroll == "0") {
+			
+			<!--섹션1-->
+			if(scroll >= "0" && scroll <="350") {
 				$(".main_box1 .text_box h2").addClass("move_text1");
 				$(".main_box1 .text_box p").addClass("move_text_up");
-			} else {
+			}else if(scroll > "350"){
 				$(".main_box1 .text_box h2").removeClass("move_text1");
 				$(".main_box1 .text_box p").removeClass("move_text_up");
 			}
-			if(scroll == "800") {
+			
+			<!--섹션2_1-->
+			if(scroll >= "800" && scroll <="1200") {
 				$(".main_box2_1 h2").addClass("move_text1");
-			} else {
+			}else if(scroll < "800"){
 				$(".main_box2_1 h2").removeClass("move_text1");
-			}
-			if(scroll == "1300") {
+			}else if(scroll > "1200"){
+				$(".main_box2_1 h2").removeClass("move_text1");
+			}	
+			
+			<!--섹션2_2-->
+			if(scroll >= "1250" && scroll <="1500") {
 				$(".main_box2_2 .text_box2_2").addClass("move_left");
-			} else {
+			}else if(scroll < "1250"){
 				$(".main_box2_2 .text_box2_2").removeClass("move_left");
+			}else if(scroll > "1550"){
+				$(".main_box2_2 .text_box2_2").removeClass("move_left");
+			}		
+		
+			<!--섹션2_3-->
+			if(scroll >= "1550" && scroll <="1800") {
+				$(".main_box2_3 .text_box2_3").addClass("move_right");
+			}else if(scroll < "1550"){
+				$(".main_box2_3 .text_box2_3").removeClass("move_right");
+			}else if(scroll > "1800"){
+				$(".main_box2_3 .text_box2_3").removeClass("move_right");
+			}		
+			
+			<!--섹션3-->
+			if(scroll >= "2500" && scroll <="3000") {
+				$(".main_box3 .text_box3 h2").addClass("move_text1");
+				$(".main_box3 .text_box3 p").addClass("move_text_up");
+			}else if(scroll < "2500"){
+				$(".main_box3 .text_box3 h2").removeClass("move_text1");
+				$(".main_box3 .text_box3 p").removeClass("move_text_up");
+			}else if(scroll > "3000"){
+				$(".main_box3 .text_box3 h2").removeClass("move_text1");
+				$(".main_box3 .text_box3 p").removeClass("move_text_up");
 			}
+			
+			<!--섹션5-->
+			if(scroll >= "4500" && scroll <="5100") {
+				$(".main_box5 .text_box5 img").addClass("move_shake");
+				$(".main_box5 .li_left").addClass("move_left");
+				$(".main_box5 .li_right").addClass("move_right");
+			}else if(scroll < "4500"){
+				$(".main_box5 .text_box5 img").removeClass("move_shake");
+				$(".main_box5 .li_left").removeClass("move_left");
+				$(".main_box5 .li_right").removeClass("move_right");
+			}else if(scroll > "5100"){
+				$(".main_box5 .text_box5 img").removeClass("move_shake");
+				$(".main_box5 .li_left").removeClass("move_left");
+				$(".main_box5 .li_right").removeClass("move_right");
+			}
+			
+			<!--섹션6-->
+			if(scroll >= "5200" && scroll <="6000") {
+				$(".main_box6 .text_box6 .p6_1").addClass("move_bounce_in");
+				$(".main_box6 .text_box6 .p6_22").addClass("move_text_up");
+			}else if(scroll < "5200"){
+				$(".main_box6 .text_box6 .p6_1").removeClass("move_bounce_in");
+				$(".main_box6 .text_box6 .p6_2").removeClass("move_text_up");
+			}else if(scroll > "6000"){
+				$(".main_box6 .text_box6 .p6_1").removeClass("move_bounce_in");
+				$(".main_box6 .text_box6 .p6_2").removeClass("move_text_up");
+			}
+		
+			<!--섹션7-->
+			if(scroll >= "6300" && scroll <="6900") {
+				$(".main_box7 .p7_1").addClass("move_text1");
+			}else if(scroll < "6300"){
+				$(".main_box7 .p7_1").removeClass("move_text1");
+			}else if(scroll > "6900"){
+				$(".main_box7 .p7_1").removeClass("move_text1");
+			}
+			
+			<!--섹션8-->
+			if(scroll >= "7700" && scroll <="8000") {
+				$(".main_box8 .img8_1").addClass("move_left");
+				$(".main_box8 .img8_2").addClass("move_right");
+			}else if(scroll < "7000"){
+				$(".main_box8 .img8_1").removeClass("move_left");
+				$(".main_box8 .img8_2").removeClass("move_right");
+			}else if(scroll > "8000"){
+				$(".main_box8 .img8_1").removeClass("move_left");
+				$(".main_box8 .img8_2").removeClass("move_right");
+			}
+			
+			<!--섹션9-->
+			if(scroll >= "8500" && scroll <="8800") {
+				$(".main_box9 h2").addClass("move_text1");
+			}else if(scroll < "8500"){
+				$(".main_box9 h2").removeClass("move_text1");
+			}else if(scroll > "8800"){
+				$(".main_box9 h2").removeClass("move_text1");
+			}
+			
 		});
 	});
 	</script>
