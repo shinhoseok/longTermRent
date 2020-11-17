@@ -71,7 +71,7 @@
 		</article>
 	</section>
 
-	<!--mo5 유튜브 영역 삭제-->
+	<!--mo5-->
 
 	<!--mo6-->
 	<section class="main_box6">

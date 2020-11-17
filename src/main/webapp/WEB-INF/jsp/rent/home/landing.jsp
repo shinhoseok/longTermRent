@@ -99,7 +99,7 @@
 		</article>
 	</section>
 
-    <!-- 4 유튜브 영역삭제 -->
+    <!-- 4 -->
 
 	<!--5-->
 	<section class="main_box5">
@@ -256,6 +256,7 @@
 		<div class="survey" style="cursor: pointer;" onclick="javascript:fn_secretEstimate();">비밀견적받기</div>
 	</div>
 
+	<!-- 페이지 움직임 -->
 	<script type="text/javascript">
 	$(function() {
 		
@@ -276,30 +277,30 @@
 			}
 			
 			<!--섹션2_1-->
-			if(scroll >= "800" && scroll <="1200") {
-				$(".main_box2_1 h2").addClass("move_text1");
-			}else if(scroll < "800"){
-				$(".main_box2_1 h2").removeClass("move_text1");
+			if(scroll >= "700" && scroll <="1200") {
+				$(".main_box2_1 h2").addClass("move_bottom");
+			}else if(scroll < "700"){
+				$(".main_box2_1 h2").removeClass("move_bottom");
 			}else if(scroll > "1200"){
-				$(".main_box2_1 h2").removeClass("move_text1");
+				$(".main_box2_1 h2").removeClass("move_bottom");
 			}	
 			
 			<!--섹션2_2-->
 			if(scroll >= "1250" && scroll <="1500") {
-				$(".main_box2_2 .text_box2_2").addClass("move_left");
+				$(".main_box2_2 .text_box2_2").addClass("move_right");
 			}else if(scroll < "1250"){
-				$(".main_box2_2 .text_box2_2").removeClass("move_left");
+				$(".main_box2_2 .text_box2_2").removeClass("move_right");
 			}else if(scroll > "1550"){
-				$(".main_box2_2 .text_box2_2").removeClass("move_left");
+				$(".main_box2_2 .text_box2_2").removeClass("move_right");
 			}		
 		
 			<!--섹션2_3-->
 			if(scroll >= "1550" && scroll <="1800") {
-				$(".main_box2_3 .text_box2_3").addClass("move_right");
+				$(".main_box2_3 .text_box2_3").addClass("move_left");
 			}else if(scroll < "1550"){
-				$(".main_box2_3 .text_box2_3").removeClass("move_right");
+				$(".main_box2_3 .text_box2_3").removeClass("move_left");
 			}else if(scroll > "1800"){
-				$(".main_box2_3 .text_box2_3").removeClass("move_right");
+				$(".main_box2_3 .text_box2_3").removeClass("move_left");
 			}		
 			
 			<!--섹션3-->
@@ -315,59 +316,56 @@
 			}
 			
 			<!--섹션5-->
-			if(scroll >= "4500" && scroll <="5100") {
+			if(scroll >= "3500" && scroll <="4000") {
 				$(".main_box5 .text_box5 img").addClass("move_shake");
-				$(".main_box5 .li_left").addClass("move_left");
-				$(".main_box5 .li_right").addClass("move_right");
-			}else if(scroll < "4500"){
+			
+			}else if(scroll < "3500"){
 				$(".main_box5 .text_box5 img").removeClass("move_shake");
-				$(".main_box5 .li_left").removeClass("move_left");
-				$(".main_box5 .li_right").removeClass("move_right");
-			}else if(scroll > "5100"){
+			
+			}else if(scroll > "4000"){
 				$(".main_box5 .text_box5 img").removeClass("move_shake");
-				$(".main_box5 .li_left").removeClass("move_left");
-				$(".main_box5 .li_right").removeClass("move_right");
+		
 			}
 			
 			<!--섹션6-->
-			if(scroll >= "5200" && scroll <="6000") {
+			if(scroll >= "4600" && scroll <="5000") {
 				$(".main_box6 .text_box6 .p6_1").addClass("move_bounce_in");
-				$(".main_box6 .text_box6 .p6_22").addClass("move_text_up");
-			}else if(scroll < "5200"){
+				$(".main_box6 .text_box6 .p6_2").addClass("move_bottom");
+			}else if(scroll < "4600"){
 				$(".main_box6 .text_box6 .p6_1").removeClass("move_bounce_in");
-				$(".main_box6 .text_box6 .p6_2").removeClass("move_text_up");
-			}else if(scroll > "6000"){
+				$(".main_box6 .text_box6 .p6_2").removeClass("move_bottom");
+			}else if(scroll > "5000"){
 				$(".main_box6 .text_box6 .p6_1").removeClass("move_bounce_in");
-				$(".main_box6 .text_box6 .p6_2").removeClass("move_text_up");
+				$(".main_box6 .text_box6 .p6_2").removeClass("move_bottom");
 			}
 		
 			<!--섹션7-->
-			if(scroll >= "6300" && scroll <="6900") {
-				$(".main_box7 .p7_1").addClass("move_text1");
-			}else if(scroll < "6300"){
-				$(".main_box7 .p7_1").removeClass("move_text1");
-			}else if(scroll > "6900"){
-				$(".main_box7 .p7_1").removeClass("move_text1");
+			if(scroll >= "5500" && scroll <="6000") {
+				$(".main_box7 .p7_1").addClass("move_bottom");
+			}else if(scroll < "5500"){
+				$(".main_box7 .p7_1").removeClass("move_bottom");
+			}else if(scroll > "6000"){
+				$(".main_box7 .p7_1").removeClass("move_bottom");
 			}
 			
 			<!--섹션8-->
-			if(scroll >= "7700" && scroll <="8000") {
+			if(scroll >= "6900" && scroll <="7600") {
 				$(".main_box8 .img8_1").addClass("move_left");
 				$(".main_box8 .img8_2").addClass("move_right");
-			}else if(scroll < "7000"){
+			}else if(scroll < "6900"){
 				$(".main_box8 .img8_1").removeClass("move_left");
 				$(".main_box8 .img8_2").removeClass("move_right");
-			}else if(scroll > "8000"){
+			}else if(scroll > "7600"){
 				$(".main_box8 .img8_1").removeClass("move_left");
 				$(".main_box8 .img8_2").removeClass("move_right");
 			}
 			
 			<!--섹션9-->
-			if(scroll >= "8500" && scroll <="8800") {
+			if(scroll >= "7900" && scroll <="8400") {
 				$(".main_box9 h2").addClass("move_text1");
-			}else if(scroll < "8500"){
+			}else if(scroll < "7900"){
 				$(".main_box9 h2").removeClass("move_text1");
-			}else if(scroll > "8800"){
+			}else if(scroll > "8400"){
 				$(".main_box9 h2").removeClass("move_text1");
 			}
 			
