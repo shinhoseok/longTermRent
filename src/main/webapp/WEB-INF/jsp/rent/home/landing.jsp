@@ -99,21 +99,7 @@
 		</article>
 	</section>
 
-	<!--4-->
-	<section class="main_box4">
-		<div class="wrap">
-			<article>
-				<div class="text_box4">
-					<div class="divder"></div>
-					<h2>바른청년 렌터카 소개영상</h2>
-					<p>대한민국 렌터카 진짜 가격!</p>
-				</div>
-				<div class="youtube_box">
-					<iframe width="100%" height="100%" src="https://youtube.com/embed/-PEIubPe5jI?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
-			</article>
-		</div>
-	</section>
+    <!-- 4 유튜브 영역삭제 -->
 
 	<!--5-->
 	<section class="main_box5">

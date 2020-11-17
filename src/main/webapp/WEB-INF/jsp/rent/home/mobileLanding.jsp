@@ -69,19 +69,9 @@
 				하지만, 수많은 허위 견적서가 판치고 저렴함만을<br> 내세워 결함 있는 차량을 팔기도 합니다.<br> 바른청년 렌터카는 내가족에게 팔 수 있는 물건만<br> 고객님들께 소개해 드리고 있습니다.<br>
 			</p>
 		</article>
-		<div class="divider"></div>
 	</section>
 
-	<!--mo5-->
-	<section class="main_box5">
-		<article>
-			<p>대한민국 렌터카 진짜 가격!</p>
-			<h2>바른청년 렌터카 소개영상</h2>
-			<div class="youtube_box">
-				<iframe width="100%" height="100%" src="https://youtube.com/embed/-PEIubPe5jI?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
-		</article>
-	</section>
+	<!--mo5 유튜브 영역 삭제-->
 
 	<!--mo6-->
 	<section class="main_box6">

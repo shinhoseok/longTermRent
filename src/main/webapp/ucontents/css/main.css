@@ -197,7 +197,9 @@ article{
 
 .main_box3 article{
     margin-top: 149px;
-    margin-bottom: 177px;
+    margin-bottom: 100px;
+    border-bottom: 1px solid #d7d7d7;
+    padding-bottom: 130px;
 }
 
 .main_box3 .wrap{
