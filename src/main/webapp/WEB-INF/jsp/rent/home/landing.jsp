@@ -240,7 +240,7 @@
 	<section class="main_box10" id="main_form">
 		<img src="${imagePath}/bg_man.jpg">
 		<article>
-			<p>영업기밀을 바탕으로 상담을 도와드리겠습니다1111.</p>
+			<p>영업기밀을 바탕으로 상담을 도와드리겠습니다.</p>
 			<form>
 				<input type="text" placeholder="이름"> <input type="text" placeholder="휴대번호를 입력해주세요"> <input type="text" placeholder="관심차종을 입력해주세요">
 			</form>
