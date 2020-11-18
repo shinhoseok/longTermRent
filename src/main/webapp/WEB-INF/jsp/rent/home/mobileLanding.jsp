@@ -262,7 +262,7 @@
 			var scroll = $(window).scrollTop();
 			console.log(scroll);
 			
-			<!--섹션1-->
+			<!--ㅡmo1-->
 			if(scroll >= "0" && scroll <="450") {
 				
 				$(".main_box1 h2").addClass("move_text1");
@@ -272,79 +272,52 @@
 				$(".main_box1 p").removeClass("move_text_up");
 			}
 			
-			<!--섹션2_1-->
-			if(scroll >= "700" && scroll <="1000") {
-				$(".main_box2_1 h2").addClass("move_bottom");
-			}else if(scroll < "700"){
-				$(".main_box2_1 h2").removeClass("move_bottom");
-			}else if(scroll > "1000"){
-				$(".main_box2_1 h2").removeClass("move_bottom");
-			}	
+			<!--mo4-->
+			if(scroll >= "1650" && scroll <="2000") {
+				$(".main_box4 h2").addClass("move_text1");
 			
-			<!--섹션3-->
-			if(scroll >= "2500" && scroll <="3000") {
-				$(".main_box3 .text_box3 h2").addClass("move_text1");
-				$(".main_box3 .text_box3 p").addClass("move_text_up");
-			}else if(scroll < "2500"){
-				$(".main_box3 .text_box3 h2").removeClass("move_text1");
-				$(".main_box3 .text_box3 p").removeClass("move_text_up");
-			}else if(scroll > "3000"){
-				$(".main_box3 .text_box3 h2").removeClass("move_text1");
-				$(".main_box3 .text_box3 p").removeClass("move_text_up");
-			}
+			}else if(scroll < "1650"){
+				$(".main_box4 h2").removeClass("move_text1");
 			
-			<!--섹션5-->
-			if(scroll >= "3500" && scroll <="4000") {
-				$(".main_box5 .text_box5 img").addClass("move_shake");
-			
-			}else if(scroll < "3500"){
-				$(".main_box5 .text_box5 img").removeClass("move_shake");
-			
-			}else if(scroll > "4000"){
-				$(".main_box5 .text_box5 img").removeClass("move_shake");
+			}else if(scroll > "2200"){
+				$(".main_box4 h2").removeClass("move_text1");
 		
 			}
 			
-			<!--섹션6-->
-			if(scroll >= "4600" && scroll <="5000") {
-				$(".main_box6 .text_box6 .p6_1").addClass("move_text1");
-				$(".main_box6 .text_box6 .p6_2").addClass("move_bottom");
-			}else if(scroll < "4600"){
-				$(".main_box6 .text_box6 .p6_1").removeClass("move_text1");
-				$(".main_box6 .text_box6 .p6_2").removeClass("move_bottom");
+			<!--mo6-->
+			if(scroll >= "2100" && scroll <="2700") {
+				$(".main_box6 .img_stamp1").addClass("move_shake");
+			}else if(scroll < "2100"){
+				$(".main_box6 .img_stamp1").removeClass("move_shake");
+			}else if(scroll > "2700"){
+				$(".main_box6 .img_stamp1").removeClass("move_shake");
+			}
+		
+			<!--mo8-->
+			if(scroll >= "3100" && scroll <="3700") {
+				$(".main_box8 h2").addClass("move_bottom");
+			}else if(scroll < "3100"){
+				$(".main_box8 h2").removeClass("move_bottom");
+			}else if(scroll > "3700"){
+				$(".main_box8 h2").removeClass("move_bottom");
+			}
+			
+			<!--mo9-->
+			if(scroll >= "4700" && scroll <="5000") {
+				$(".main_box9 h2").addClass("move_shake");
+			}else if(scroll < "4700"){
+				$(".main_box9 h2").removeClass("move_shake");
 			}else if(scroll > "5000"){
-				$(".main_box6 .text_box6 .p6_1").removeClass("move_text1");
-				$(".main_box6 .text_box6 .p6_2").removeClass("move_bottom");
-			}
-		
-			<!--섹션7-->
-			if(scroll >= "5500" && scroll <="6000") {
-				$(".main_box7 .p7_1").addClass("move_bottom");
-			}else if(scroll < "5500"){
-				$(".main_box7 .p7_1").removeClass("move_bottom");
-			}else if(scroll > "6000"){
-				$(".main_box7 .p7_1").removeClass("move_bottom");
+				$(".main_box9 h2").removeClass("move_shake");
 			}
 			
-			<!--섹션8-->
-			if(scroll >= "6900" && scroll <="7600") {
-				$(".main_box8 .img8_1").addClass("move_left");
-				$(".main_box8 .img8_2").addClass("move_right");
-			}else if(scroll < "6900"){
-				$(".main_box8 .img8_1").removeClass("move_left");
-				$(".main_box8 .img8_2").removeClass("move_right");
-			}else if(scroll > "7600"){
-				$(".main_box8 .img8_1").removeClass("move_left");
-				$(".main_box8 .img8_2").removeClass("move_right");
-			}
-			
-			<!--섹션9-->
-			if(scroll >= "7900" && scroll <="8400") {
-				$(".main_box9 h2").addClass("move_text1");
+			<!--mo10-->
+			if(scroll >= "5400" && scroll <="5900") {
+				$(".main_box10 h2").addClass("move_text1");
 			}else if(scroll < "7900"){
-				$(".main_box9 h2").removeClass("move_text1");
+				$(".main_box10 h2").removeClass("move_text1");
 			}else if(scroll > "8400"){
-				$(".main_box9 h2").removeClass("move_text1");
+				$(".main_box10 h2").removeClass("move_text1");
 			}
 			
 		});
