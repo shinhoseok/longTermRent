@@ -273,7 +273,7 @@
 			}
 			
 			<!--mo4-->
-			if(scroll >= "1650" && scroll <="2000") {
+			if(scroll >= "1450" && scroll <="2000") {
 				$(".main_box4 h2").addClass("move_text1");
 			
 			}else if(scroll < "1650"){
