@@ -19,15 +19,17 @@
 /*move_text_up 글자 위로*/
 .move_text_up{
     position: relative;
-    animation: move_text_up 1.1s ease-in-out; 
+    animation: move_text_up 1s ease-in-out; 
 } 
 @keyframes move_text_up{
 	0%{
 	    top: 50px;
+	    opacity: 0.6;
 	}
 	
 	100%{
 	    top: 0px;
+	    opacity: 1;
 	}
 }
 
