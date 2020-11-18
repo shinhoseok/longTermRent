@@ -273,13 +273,13 @@
 			}
 			
 			<!--mo4-->
-			if(scroll >= "1450" && scroll <="2000") {
+			if(scroll >= "1350" && scroll <="1800") {
 				$(".main_box4 h2").addClass("move_text1");
 			
-			}else if(scroll < "1650"){
+			}else if(scroll < "1350"){
 				$(".main_box4 h2").removeClass("move_text1");
 			
-			}else if(scroll > "2200"){
+			}else if(scroll > "1800"){
 				$(".main_box4 h2").removeClass("move_text1");
 		
 			}
