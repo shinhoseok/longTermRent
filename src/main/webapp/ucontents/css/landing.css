@@ -507,7 +507,7 @@ input{
     .answer_list>li a{
         font-size: 1rem;
     }
-
+	
 	.answer_list>li a .answer_check:active{
 	    background-image: url(../images/hover_check1.png);
 	    background-repeat: no-repeat;
