@@ -248,7 +248,7 @@
             	카카오톡 상담 <img src="${imagePath}/icon_kakao.png">
         </div>
         <div class="call"">
-            	전화상담
+            	<a href='tel:010-9588-5027'>전화상담</a>
         </div>
     </div>
        <!-- 페이지 움직임 -->
