@@ -3,6 +3,9 @@
 /*필수 css 목록*/
 @import url("reset.css");
 
+/*움직임*/
+@import url("move.css");
+
 /*모바일*/
 @media (max-width: 767px){
 
