@@ -82,7 +82,7 @@ public class LoginController {
 	}
 	
 	//비밀번호 찾기
-	@RequestMapping(value="/login/z/selectPwdSearch.do")
+	@RequestMapping(value="/login/a/selectPwdSearch.do")
 	public String selectPwdSearch(@ModelAttribute("loginVO") LoginVO loginVO, ModelMap model) throws Exception {
 		
 		model.addAttribute("alevel", "2");

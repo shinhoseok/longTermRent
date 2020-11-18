@@ -21,7 +21,7 @@
 	<section class="main_box1">
 		<article>
 			<div class="wrap">
-				<div class="logo_box">
+				<div class="logo_box" style="cursor: pointer;" onclick="javascript:location.href='${basePath}/home/a/main.do'">
 					<h1>바른청년 렌트카</h1>
 					<p>대한민국 렌터카 진짜 가격!</p>
 				</div>
@@ -99,21 +99,7 @@
 		</article>
 	</section>
 
-	<!--4-->
-	<section class="main_box4">
-		<div class="wrap">
-			<article>
-				<div class="text_box4">
-					<div class="divder"></div>
-					<h2>바른청년 렌터카 소개영상</h2>
-					<p>대한민국 렌터카 진짜 가격!</p>
-				</div>
-				<div class="youtube_box">
-					<iframe width="100%" height="100%" src="https://youtube.com/embed/-PEIubPe5jI?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
-			</article>
-		</div>
-	</section>
+    <!-- 4 -->
 
 	<!--5-->
 	<section class="main_box5">
@@ -126,34 +112,41 @@
 				<img src="${imagePath}/img_stamp_answer.jpg">
 			</div>
 			<ul>
-				<li class="li_left"><a href="#"> <img src="${imagePath}/img_rent_car.jpg"> <span class="case">CASE1</span>
-						<p>
-							<span class="month">월 렌트료</span>283,628원
-						</p>
-				</a></li>
-				<li class="li_right"><a href="#"> <img src="${imagePath}/img_rent_car.jpg"> <span class="case">CASE2</span>
-						<p>
-							<span class="month">월 렌트료</span>414,100원
-						</p>
-				</a></li>
-				<li class="li_right"><a href="#"> <img src="${imagePath}/img_rent_car.jpg"> <span class="case">CASE3</span>
-						<p>
-							<span class="month">월 렌트료</span>452,900원
-						</p>
-				</a></li>
-				<li class="li_left"><a href="#"> <img src="${imagePath}/img_rent_car.jpg"> <span class="case">CASE4</span>
-						<p>
-							<span class="month">월 렌트료</span>500,190원
-						</p>
-				</a></li>
-
+				<li class="li_left">
+					<a href="#answer"> 
+						<img src="${imagePath}/img_rent_car.jpg">
+						<span class="case">CASE1</span>
+						<p><span class="month">월 렌트료</span>283,628원</p>
+					</a>
+				</li>
+				<li class="li_right">
+					<a href="#answer"> 
+						<img src="${imagePath}/img_rent_car.jpg">
+						<span class="case">CASE2</span>
+						<p><span class="month">월 렌트료</span>414,100원</p>
+					</a>
+				</li>
+				<li class="li_right">
+					<a href="#answer"> 
+						<img src="${imagePath}/img_rent_car.jpg"> 
+						<span class="case">CASE3</span>
+						<p><span class="month">월 렌트료</span>452,900원</p>
+					</a>
+				</li>
+				<li class="li_left">
+					<a href="#answer"> 
+					<img src="${imagePath}/img_rent_car.jpg">
+					<span class="case">CASE4</span>
+					<p><span class="month">월 렌트료</span>500,190원</p>
+					</a>
+				</li>
 			</ul>
 		</article>
 	</section>
 
 	<!--6-->
 	<section class="main_box6">
-		<article>
+		<article id="answer">
 			<img src="${imagePath}/img_woman.png">
 			<div class="text_box6">
 				<span>답은?</span>
@@ -174,42 +167,54 @@
 				그렇다면<br> 무엇을 먼저 신경써야 할까요?
 			</p>
 			<ul>
-				<li><img src="${imagePath}/icon_when.jpg">
+				<li>
+					<img src="${imagePath}/icon_when.jpg">
 					<div class="text_box7">
 						<span>WHEN</span>
 						<h2>장기렌트는 언제 계약하는 게 가장 좋을까요?</h2>
 						<p>지금 계약했을 때 이득인 부분이 있고, 계약일을 미뤘을 때 기대되는 혜택이 있을 수 있습니다. 빠른 출고, 렌탈료, 차종 등 고객님의 니즈에 따라 달라집니다.</p>
-					</div></li>
-				<li><img src="${imagePath}/icon_where.jpg">
+					</div>
+				</li>
+				<li>
+					<img src="${imagePath}/icon_where.jpg">
 					<div class="text_box7">
 						<span>WHERE</span>
 						<h2>장기렌트를 계약하려면 어디로 가야할까?</h2>
 						<p>지금 있으신 그 공간에서 모든 절차를 진행할 수 있습니다. 바른청년은 온라인을 기반으로 경영하여 고정지출을 크게 줄일 수 있었습니다. 그 혜택은 고스란히 고객님 렌탈료에 녹아들 것입니다.</p>
-					</div></li>
-				<li><img src="${imagePath}/icon_who.jpg">
+					</div>
+				</li>
+				<li>
+					<img src="${imagePath}/icon_who.jpg">
 					<div class="text_box7">
 						<span>WHO</span>
 						<h2>장기렌트는 누구에게 계약을 해야 할까?</h2>
 						<p>장기렌트는 수천만 원의 계약으로 단연코 신뢰 있는 사람과 계약해야 합니다. 신뢰 여부는 글로 설명이 안 됩니다. 고객님의 직감이 가장 확실하게 알려줄 거라고 생각하며, 바른청년은 자신 있습니다.</p>
-					</div></li>
-				<li><img src="${imagePath}/icon_what.jpg">
+					</div>
+				</li>
+				<li>
+					<img src="${imagePath}/icon_what.jpg">
 					<div class="text_box7">
 						<span>WHAT</span>
 						<h2>장기렌트는 어떤 차, 어떤 조건으로 계약을 해야 할까?</h2>
 						<p>자동차 구매는 가치관이 크게 반영됩니다. 개인의 가치관에 있어 정답이 있을 리 없습니다. 가성비, 디자인, 편의옵션 등 고객님이 원하시는 것을 먼저 묻고 그에 맞는 차량을 가져다드리겠습니다.</p>
-					</div></li>
-				<li><img src="${imagePath}/icon_how.jpg">
+					</div>
+				</li>
+				<li>
+					<img src="${imagePath}/icon_how.jpg">
 					<div class="text_box7">
 						<span>HOW</span>
 						<h2>장기렌트는 어떻게 계약하는 걸까?</h2>
 						<p>견적을 받아 보신 뒤에 진행을 희망하시면 심사 후 계약이 진행됩니다. 조건이 좋은 회사 일수록 심사가 까다롭기 마련인데요. 바른청년은 특히 심사를 잘 풀어냅니다.</p>
-					</div></li>
-				<li><img src="${imagePath}/icon_why.jpg">
+					</div>
+				</li>
+				<li>
+					<img src="${imagePath}/icon_why.jpg">
 					<div class="text_box7">
 						<span>WHY</span>
 						<h2>장기렌트, 왜 바른청년일까??</h2>
 						<p>바른청년과 함께 장기렌트 하면! 원하는 시점에, 앉은 자리에서, 신뢰가 가는 사람과, 내마음에 쏙드는 차량을 간편 한 절차로 진행할 수 있기 때문입니다.</p>
-					</div></li>
+					</div>
+				</li>
 			</ul>
 		</article>
 	</section>
@@ -245,7 +250,7 @@
 				<input type="text" placeholder="이름"> <input type="text" placeholder="휴대번호를 입력해주세요"> <input type="text" placeholder="관심차종을 입력해주세요">
 			</form>
 			<div>
-				<input type="checkbox">개인정보 처리방침 동의*필수 <span style="cursor: pointer;" onclick="location.href=''">[보기]</span>
+				<input type="checkbox">개인정보 처리방침 동의*필수 <span style="cursor: pointer;" onclick="location.href='${basePath}/home/a/privacy.do'">[보기]</span>
 			</div>
 			<a href="#" id="secretEstimateTarget">영업기밀 열어보기</a>
 		</article>
@@ -270,6 +275,7 @@
 		<div class="survey" style="cursor: pointer;" onclick="javascript:fn_secretEstimate();">비밀견적받기</div>
 	</div>
 
+	<!-- 페이지 움직임 -->
 	<script type="text/javascript">
 	$(function() {
 		
@@ -290,31 +296,13 @@
 			}
 			
 			<!--섹션2_1-->
-			if(scroll >= "800" && scroll <="1200") {
-				$(".main_box2_1 h2").addClass("move_text1");
-			}else if(scroll < "800"){
-				$(".main_box2_1 h2").removeClass("move_text1");
-			}else if(scroll > "1200"){
-				$(".main_box2_1 h2").removeClass("move_text1");
+			if(scroll >= "700" && scroll <="1000") {
+				$(".main_box2_1 h2").addClass("move_bottom");
+			}else if(scroll < "700"){
+				$(".main_box2_1 h2").removeClass("move_bottom");
+			}else if(scroll > "1000"){
+				$(".main_box2_1 h2").removeClass("move_bottom");
 			}	
-			
-			<!--섹션2_2-->
-			if(scroll >= "1250" && scroll <="1500") {
-				$(".main_box2_2 .text_box2_2").addClass("move_left");
-			}else if(scroll < "1250"){
-				$(".main_box2_2 .text_box2_2").removeClass("move_left");
-			}else if(scroll > "1550"){
-				$(".main_box2_2 .text_box2_2").removeClass("move_left");
-			}		
-		
-			<!--섹션2_3-->
-			if(scroll >= "1550" && scroll <="1800") {
-				$(".main_box2_3 .text_box2_3").addClass("move_right");
-			}else if(scroll < "1550"){
-				$(".main_box2_3 .text_box2_3").removeClass("move_right");
-			}else if(scroll > "1800"){
-				$(".main_box2_3 .text_box2_3").removeClass("move_right");
-			}		
 			
 			<!--섹션3-->
 			if(scroll >= "2500" && scroll <="3000") {
@@ -329,59 +317,56 @@
 			}
 			
 			<!--섹션5-->
-			if(scroll >= "4500" && scroll <="5100") {
+			if(scroll >= "3500" && scroll <="4000") {
 				$(".main_box5 .text_box5 img").addClass("move_shake");
-				$(".main_box5 .li_left").addClass("move_left");
-				$(".main_box5 .li_right").addClass("move_right");
-			}else if(scroll < "4500"){
+			
+			}else if(scroll < "3500"){
 				$(".main_box5 .text_box5 img").removeClass("move_shake");
-				$(".main_box5 .li_left").removeClass("move_left");
-				$(".main_box5 .li_right").removeClass("move_right");
-			}else if(scroll > "5100"){
+			
+			}else if(scroll > "4000"){
 				$(".main_box5 .text_box5 img").removeClass("move_shake");
-				$(".main_box5 .li_left").removeClass("move_left");
-				$(".main_box5 .li_right").removeClass("move_right");
+		
 			}
 			
 			<!--섹션6-->
-			if(scroll >= "5200" && scroll <="6000") {
-				$(".main_box6 .text_box6 .p6_1").addClass("move_bounce_in");
-				$(".main_box6 .text_box6 .p6_22").addClass("move_text_up");
-			}else if(scroll < "5200"){
-				$(".main_box6 .text_box6 .p6_1").removeClass("move_bounce_in");
-				$(".main_box6 .text_box6 .p6_2").removeClass("move_text_up");
-			}else if(scroll > "6000"){
-				$(".main_box6 .text_box6 .p6_1").removeClass("move_bounce_in");
-				$(".main_box6 .text_box6 .p6_2").removeClass("move_text_up");
+			if(scroll >= "4600" && scroll <="5000") {
+				$(".main_box6 .text_box6 .p6_1").addClass("move_text1");
+				$(".main_box6 .text_box6 .p6_2").addClass("move_bottom");
+			}else if(scroll < "4600"){
+				$(".main_box6 .text_box6 .p6_1").removeClass("move_text1");
+				$(".main_box6 .text_box6 .p6_2").removeClass("move_bottom");
+			}else if(scroll > "5000"){
+				$(".main_box6 .text_box6 .p6_1").removeClass("move_text1");
+				$(".main_box6 .text_box6 .p6_2").removeClass("move_bottom");
 			}
 		
 			<!--섹션7-->
-			if(scroll >= "6300" && scroll <="6900") {
-				$(".main_box7 .p7_1").addClass("move_text1");
-			}else if(scroll < "6300"){
-				$(".main_box7 .p7_1").removeClass("move_text1");
-			}else if(scroll > "6900"){
-				$(".main_box7 .p7_1").removeClass("move_text1");
+			if(scroll >= "5500" && scroll <="6000") {
+				$(".main_box7 .p7_1").addClass("move_bottom");
+			}else if(scroll < "5500"){
+				$(".main_box7 .p7_1").removeClass("move_bottom");
+			}else if(scroll > "6000"){
+				$(".main_box7 .p7_1").removeClass("move_bottom");
 			}
 			
 			<!--섹션8-->
-			if(scroll >= "7700" && scroll <="8000") {
+			if(scroll >= "6900" && scroll <="7600") {
 				$(".main_box8 .img8_1").addClass("move_left");
 				$(".main_box8 .img8_2").addClass("move_right");
-			}else if(scroll < "7000"){
+			}else if(scroll < "6900"){
 				$(".main_box8 .img8_1").removeClass("move_left");
 				$(".main_box8 .img8_2").removeClass("move_right");
-			}else if(scroll > "8000"){
+			}else if(scroll > "7600"){
 				$(".main_box8 .img8_1").removeClass("move_left");
 				$(".main_box8 .img8_2").removeClass("move_right");
 			}
 			
 			<!--섹션9-->
-			if(scroll >= "8500" && scroll <="8800") {
+			if(scroll >= "7900" && scroll <="8400") {
 				$(".main_box9 h2").addClass("move_text1");
-			}else if(scroll < "8500"){
+			}else if(scroll < "7900"){
 				$(".main_box9 h2").removeClass("move_text1");
-			}else if(scroll > "8800"){
+			}else if(scroll > "8400"){
 				$(".main_box9 h2").removeClass("move_text1");
 			}
 			

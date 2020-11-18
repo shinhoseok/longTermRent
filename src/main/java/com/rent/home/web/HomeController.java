@@ -100,6 +100,11 @@ public class HomeController {
 		return "jsonView";
 	}
 	
+	@RequestMapping(value = "/home/a/selectStep6.do")
+	public String selectStep6(@ModelAttribute("visitorVO") VisitorVO visitorVO, ModelMap model) throws Exception {
+		return "/home/step6";
+	}
+	
 	@RequestMapping(value="/home/a/insertVisitorProc.do")
 	public String insertVisitorProc(@ModelAttribute("visitorVO") VisitorVO visitorVO, ModelMap model, SessionStatus status) throws Exception {
 		
@@ -129,5 +134,10 @@ public class HomeController {
 		model.addAttribute("youtubeLinkVO", youtubeLinkVO);
 		
 		return "/home/mobileLanding";
+	}
+	
+	@RequestMapping(value = "/home/a/privacy.do")
+	public String privacy() throws Exception {
+		return "/home/privacy";
 	}
 }

@@ -36,7 +36,7 @@
 			</article>
 		</section>
 	</div>
-	<form action="/home/a/insertVisitorProc.do" name="visitorVO" id="visitorVO" method="post">
+	<form action="/home/a/selectStep6.do" name="visitorVO" id="visitorVO" method="post">
 		<input type="hidden" name="qtnId" id="qtnId">
 		<input type="hidden" name="asrId" id="asrId">
 		<input type="hidden" name="itrstdCarTy" id="itrstdCarTy">
@@ -64,19 +64,6 @@
 			}
 			params.itrstdCarTy = $("#param").val();
 		}
-		if(stepNum == "6") {
-			if (!TypeChecker.required($("#param").val())) {
-				alert("'성함'은  "+ TypeChecker.requiredText);
-				$("#param").focus();
-				return;
-			}
-			if (!TypeChecker.korEng($("#param").val())) {
-				alert("'성함'은  "+ TypeChecker.korEngText);
-				$("#param").focus();
-				return;
-			}
-			params.visitorNm = $("#param").val();
-		}
 		$.ajax({
 			url: "${basePath}/home/a/selectMainStep"+stepNum+".do",
 			type: 'post',
@@ -90,6 +77,27 @@
 				$("#target").html(r);
 			}
 		});
+	};
+	
+	var fn_selectMainStep6 = function() {
+		if (!TypeChecker.required($("#param").val())) {
+			alert("'성함'은  "+ TypeChecker.requiredText);
+			$("#param").focus();
+			return;
+		}
+		if (!TypeChecker.korEng($("#param").val())) {
+			alert("'성함'은  "+ TypeChecker.korEngText);
+			$("#param").focus();
+			return;
+		}
+		params.visitorNm = $("#param").val();
+		
+		$("#visitorVO #qtnId").val(qtnIdArr);
+		$("#visitorVO #asrId").val(asrIdArr);
+		$("#visitorVO #itrstdCarTy").val(params.itrstdCarTy);
+		$("#visitorVO #visitorNm").val(params.visitorNm);
+		$("#visitorVO #overlapCnt").val(0);
+		document.visitorVO.submit();
 	};
 	
 	var fn_step7Check = function() {
@@ -133,10 +141,7 @@
 		}
 		params.telNo = $("#param").val();
 		
-		$("#visitorVO #qtnId").val(qtnIdArr);
-		$("#visitorVO #asrId").val(asrIdArr);
-		$("#visitorVO #itrstdCarTy").val(params.itrstdCarTy);
-		$("#visitorVO #visitorNm").val(params.visitorNm);
+		
 		$("#visitorVO #telNo").val(params.telNo);
 		var mobilecheck = function () {
 			var check = false;
@@ -148,7 +153,7 @@
 		} else {
 			$("#visitorVO #accessPath").val("P");
 		}
-		$("#visitorVO #overlapCnt").val(0);
+		
 		//중복체크
 		$.ajax({ 	
 			url: "${basePath}/home/a/selectMainStep7.do",

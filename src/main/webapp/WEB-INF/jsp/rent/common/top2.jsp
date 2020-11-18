@@ -15,11 +15,11 @@
 				<c:choose>
 					<c:when test="${alevel eq '1' }">
 						<li id="menu" class="selectMenu"><a href="${basePath }/login/a/selectIdSearch.do">아이디 찾기</a></li>
-						<li id="menu"><a href="${basePath }/login/z/selectPwdSearch.do">비밀번호 찾기</a></li>
+						<li id="menu"><a href="${basePath }/login/a/selectPwdSearch.do">비밀번호 찾기</a></li>
 					</c:when>
 					<c:when test="${alevel eq '2' }">
 						<li id="menu"><a href="${basePath }/login/a/selectIdSearch.do">아이디 찾기</a></li>
-						<li id="menu" class="selectMenu"><a href="${basePath }/login/z/selectPwdSearch.do">비밀번호 찾기</a></li>
+						<li id="menu" class="selectMenu"><a href="${basePath }/login/a/selectPwdSearch.do">비밀번호 찾기</a></li>
 					</c:when>
 				</c:choose>
 			</ul>

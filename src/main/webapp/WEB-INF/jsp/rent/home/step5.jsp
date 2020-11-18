@@ -16,7 +16,7 @@
 			</p>
 			<div class="answer_box">
 				<input type="text" id="param" placeholder="성함을 입력해주세요" onfocus="checker(this, 50 , 'nbytes_param');" onblur="stopchecker();"></input>
-				<a href="javascript:void(0);" onclick="fn_selectMainStep('6', '', '');"><p class="btn_ok">확인</p> </a>
+				<a href="javascript:void(0);" onclick="fn_selectMainStep6();"><p class="btn_ok">확인</p> </a>
 			</div>
 			<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close_mo">건너뛰기 > </a>
 		</div>

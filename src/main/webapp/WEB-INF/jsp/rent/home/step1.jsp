@@ -2,8 +2,8 @@
 <%@ include file="/WEB-INF/jsp/rent/ucommon/include.jsp"%>
 <section>
 	<article>
-		<div class="logo_box">
-			<h1 style="cursor: pointer;" onclick="location.href='${basePath}/home/a/main.do'">바른청년</h1>
+		<div class="logo_box" style="cursor: pointer;" onclick="location.href='${basePath}/home/a/main.do'">
+			<h1>바른청년</h1>
 			<h2>장기렌트 영업기밀!</h2>
 			<p>
 				설문에 참여하시고 1%를 위한<br> 특별할인을 받아보세요.

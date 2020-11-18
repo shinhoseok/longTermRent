@@ -67,7 +67,7 @@
 	};
 	
 	var fn_selectPwSearch = function() {
-		location.href="${basePath}/login/z/selectPwdSearch.do";
+		location.href="${basePath}/login/a/selectPwdSearch.do";
 	};
 	</script>
 </body>
