@@ -506,13 +506,16 @@ input{
 
     .answer_list>li a{
         font-size: 1rem;
-        -webkit-transform: translateZ(0);
-        -moz-transform: translateZ(0);
-        -ms-transform: translateZ(0);
-        -o-transform: translateZ(0);
-        transform: translateZ(0);
     }
 
+	.answer_list>li a .answer_check:active{
+	    background-image: url(../images/hover_check1.png);
+	    background-repeat: no-repeat;
+	    background-position-x: center;
+	    background-position-y: center;
+	    background-size: 100%;
+	}
+	
     .text_box .answer_list2_mo{
         padding: 0 20%;
     }
