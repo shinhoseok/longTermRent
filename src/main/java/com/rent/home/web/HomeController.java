@@ -140,4 +140,25 @@ public class HomeController {
 	public String privacy() throws Exception {
 		return "/home/privacy";
 	}
+	
+	@RequestMapping(value = "/home/a/insertSkipVisitorProc.do")
+	public String insertSkipVisitorProc(@ModelAttribute("visitorVO") VisitorVO visitorVO, ModelMap model, SessionStatus status) throws Exception {
+		
+		homeService.insertSkipVisitorProc(visitorVO);
+		status.setComplete();
+		
+		String redirectUrl = "";
+		if(visitorVO.getAccessPath().equals("M")) {
+			redirectUrl = "/home/a/selectMobileLanding.do";
+		} else {
+			redirectUrl = "/home/a/selectLanding.do";
+		}
+		 
+		String message = "설문에 응해 주셔서 감사합니다.\\n문의해주셔서 감사합니다. 영업기밀을 바탕으로 상담진행을 도와드리겠습니다.";
+		
+		model.addAttribute("message", message);
+		model.addAttribute("redirectUrl", redirectUrl);
+		
+		return "/common/temp_action_message";
+	}
 }

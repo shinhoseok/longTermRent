@@ -35,7 +35,7 @@ public class VisitorManageServiceImpl extends EgovAbstractServiceImpl implements
 		paginationInfo.setRecordCountPerPage(visitorVO.getPageUnit());
 		paginationInfo.setPageSize(visitorVO.getPageSize());
 		
-		visitorVO.setFirstIndex(paginationInfo.getFirstRecordIndex()); 
+		visitorVO.setFirstIndex(paginationInfo.getFirstRecordIndex()+1); 
 		visitorVO.setLastIndex(paginationInfo.getLastRecordIndex());
 		visitorVO.setRecordCountPerPage(paginationInfo.getRecordCountPerPage());
 		

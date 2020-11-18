@@ -13,6 +13,8 @@
 				<entry key="Mail.TmpPwdContent" value="${Mail.TmpPwdContent}" />
 				<entry key="Mail.IdSearchTitle" value="${Mail.IdSearchTitle}" />
 				<entry key="Mail.IdSearchContent" value="${Mail.IdSearchContent}" />
+				<entry key="Mail.SurveyCompletTitle" value="${Mail.SurveyCompletTitle}" />
+				<entry key="Mail.SurveyCompletContent" value="${Mail.SurveyCompletContent}" />
 			</map>
 		</property>
 	</bean>

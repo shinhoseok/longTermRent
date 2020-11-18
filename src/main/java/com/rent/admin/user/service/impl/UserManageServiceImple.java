@@ -49,7 +49,7 @@ public class UserManageServiceImple extends EgovAbstractServiceImpl implements U
 		paginationInfo.setRecordCountPerPage(userVO.getPageUnit());
 		paginationInfo.setPageSize(userVO.getPageSize());
 		
-		userVO.setFirstIndex(paginationInfo.getFirstRecordIndex()); 
+		userVO.setFirstIndex(paginationInfo.getFirstRecordIndex()+1); 
 		userVO.setLastIndex(paginationInfo.getLastRecordIndex());
 		userVO.setRecordCountPerPage(paginationInfo.getRecordCountPerPage());
 		

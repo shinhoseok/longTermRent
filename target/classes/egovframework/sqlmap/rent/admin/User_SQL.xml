@@ -4,6 +4,7 @@
 	
     <sql id="ugmGubunSql">
 		<where>
+			(@rownum:=0)=0
 			<if test="searchKeyword != null and searchKeyword != ''">
 				<choose>
 					<when test="searchCondition == 'userNm'">
@@ -23,21 +24,24 @@
     <!-- 사용자 목록 -->
 	<select id="selectUserList" parameterType="userVO" resultType="userVO">
 		<![CDATA[
-		SELECT
-			USER_SEQ userSeq,
-			USER_ID userId, 
-			USER_PW userPw, 
-			USER_NM userNm, 
-			DEL_YN delYn, 
-			EMAIL_ADDR emailAddr,
-			REG_ID regId,
-			DATE_FORMAT(REG_DT, '%Y-%m-%d') regDt
-		FROM 
-			USERS
-		]]>
-		<include refid="ugmGubunSql"/>
-		ORDER BY reg_dt DESC
-		LIMIT #{firstIndex}, #{lastIndex}
+		SELECT d.* FROM(
+			SELECT
+				@rownum:=@rownum+1 as rNum,
+				USER_SEQ userSeq,
+				USER_ID userId, 
+				USER_PW userPw, 
+				USER_NM userNm, 
+				DEL_YN delYn, 
+				EMAIL_ADDR emailAddr,
+				REG_ID regId,
+				DATE_FORMAT(REG_DT, '%Y-%m-%d') regDt
+			FROM 
+				USERS
+			]]>
+			<include refid="ugmGubunSql"/>
+			ORDER BY reg_dt DESC
+		) d
+		WHERE d.rNum BETWEEN #{firstIndex} AND #{lastIndex}
 	</select>
 	
 	<!-- 사용자 목록 카운트 -->

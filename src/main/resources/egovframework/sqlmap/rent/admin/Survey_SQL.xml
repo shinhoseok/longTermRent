@@ -63,4 +63,12 @@
 			AND qtn_id = #{qtnId}
 	</select>
 	
+	<!-- 설문답변 상세 -->
+	<select id="selectSurveyAsrDetail" parameterType="java.lang.String" resultType="java.lang.String">
+		SELECT
+			ASR_CONTENTS asrContents
+		FROM SURVEY_ASR
+		WHERE ASR_ID = #{asrId}
+	</select>
+	
 </mapper>

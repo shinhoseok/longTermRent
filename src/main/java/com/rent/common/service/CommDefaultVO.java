@@ -57,6 +57,8 @@ public class CommDefaultVO implements Serializable {
 	
 	/** 삭제여부 */
 	private String delYn;
+	
+	private String rNum;
 
 	public String getSearchCondition() {
 		return searchCondition;
@@ -200,5 +202,13 @@ public class CommDefaultVO implements Serializable {
 
 	public void setDelYn(String delYn) {
 		this.delYn = delYn;
+	}
+
+	public String getrNum() {
+		return rNum;
+	}
+
+	public void setrNum(String rNum) {
+		this.rNum = rNum;
 	}
 }

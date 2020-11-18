@@ -16,4 +16,6 @@ public interface SurveyDAO {
 	void updateSurveyAsrProc(SurveyVO surveyVO) throws Exception;
 	//설문질문 상세
 	public SurveyVO selectSurveyQtnDetail(SurveyVO surveyVO) throws Exception;
+	//설문답변 상세
+	public String selectSurveyAsrDetail(String asrId) throws Exception;
 }

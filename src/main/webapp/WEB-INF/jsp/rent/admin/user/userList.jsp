@@ -24,7 +24,7 @@
 				<%@ include file="/WEB-INF/jsp/rent/common/leftMenu.jsp"%>
 			</div>
 			<div class="contents">
-				<p class="contentTitle">사용자 관리</p>
+				<p class="contentTitle">사용자 관리</p>&nbsp;&nbsp;&nbsp;<span class="color_red">전체 : ${rslt.userListCnt}</span>
 				<p class="sub_path">
 					<img src="${imagePath }/ico_home.png" width="10" height="9" />&nbsp;〉&nbsp;사용자관리&nbsp;〉&nbsp;사용자관리
 				</p>
@@ -45,7 +45,6 @@
 					<table class="tableList">
 						<caption></caption>
 						<colgroup>
-							<col width="5%">
 							<col width="15%">
 							<col width="15%">
 							<col width="*">
@@ -53,7 +52,6 @@
 							<col width="15%">
 						</colgroup>
 						<thead>
-							<th class="noBg">번호</th>
 							<th>아이디</th>
 							<th>성명</th>
 							<th>이메일</th>
@@ -65,7 +63,6 @@
 								<c:when test="${rslt.userListCnt > 0}">
 									<c:forEach items="${rslt.userList}" var="list" varStatus="i">
 										<tr class="row" style="cursor: pointer;" onclick="javascript:fn_selectUserDetail('<c:out value='${list.userSeq}'/>');">
-											<td><c:out value="${i.count}"/></td>
 											<td><c:out value="${list.userId}"/></td>
 											<td><c:out value="${list.userNm}"/></td>
 											<td><c:out value="${list.emailAddr}"/></td>

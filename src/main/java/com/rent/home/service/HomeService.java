@@ -13,4 +13,6 @@ public interface HomeService {
 	public List<VisitorVO> selectVisitorDetail(VisitorVO visitorVO) throws Exception;
 	
 	public void insertVisitorProc(VisitorVO visitorVO) throws Exception;
+	
+	public void insertSkipVisitorProc(VisitorVO visitorVO) throws Exception;
 }

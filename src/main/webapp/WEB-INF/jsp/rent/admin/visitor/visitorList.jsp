@@ -28,7 +28,7 @@
 				<%@ include file="/WEB-INF/jsp/rent/common/leftMenu.jsp"%>
 			</div>
 			<div class="contents">
-				<p class="contentTitle">견적 관리</p>
+				<p class="contentTitle">견적 관리</p>&nbsp;&nbsp;&nbsp;<span class="color_red">전체 : ${rslt.userListCnt}</span>
 				<p class="sub_path">
 					<img src="${imagePath }/ico_home.png" width="10" height="9" />&nbsp;〉&nbsp;견적관리&nbsp;〉&nbsp;견적관리
 				</p>
@@ -55,7 +55,6 @@
 					<table class="tableList">
 						<caption></caption>
 						<colgroup>
-							<col width="5%">
 							<col width="15%">
 							<col width="7%">
 							<col width="10%">
@@ -67,7 +66,6 @@
 							<col width="5%">
 						</colgroup>
 						<thead>
-							<th class="noBg">번호</th>
 							<th>날짜</th>
 							<th>접속경로</th>
 							<th>1.특별할인</th>
@@ -83,7 +81,6 @@
 								<c:when test="${rslt.userListCnt > 0}">
 									<c:forEach items="${rslt.userList}" var="list" varStatus="i">
 										<tr class="row">
-											<td><c:out value="${i.count}"/></td>
 											<td><c:out value="${list.regDt}"/></td>
 											<td><c:out value="${list.accessPath}"/></td>
 											<td><c:if test="${empty list.answer1}">-</c:if><c:out value="${list.answer1}"/></td>
