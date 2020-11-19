@@ -29,7 +29,7 @@
 					<p>
 						<span class="text_none">장기렌트 영업기밀!</span>설문에 참여하시고 1%를 위한 특별할인을 받아보세요
 					</p>
-					<a href="javascript:void(0);" onclick="javascript:fn_selectMainStep('1', '', '');"><p class="btn_start">시작하기</p></a>
+					<a href="${basePath}/home/a/selectMainStep1.do"><p class="btn_start">시작하기</p></a>
 				</div>
 				<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close start_none"></a>
 				<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close_mo">건너뛰기 > </a>

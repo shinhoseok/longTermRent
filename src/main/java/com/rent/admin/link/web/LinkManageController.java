@@ -57,7 +57,7 @@ public class LinkManageController {
 	@RequestMapping("/linkmgr/w/updateKakaoLink.do")
 	public String updateYouTubeLink(@ModelAttribute("linkVO") LinkVO linkVO, ModelMap model) throws Exception {
 		
-		linkVO.setLinkKind(GlobalConstants.YOUTUBE_LINK_CODE);
+		linkVO.setLinkKind(GlobalConstants.KAKAO_LINK_CODE);
 		LinkVO resultVO = linkManageService.selectReviewLink(linkVO);
 		model.addAttribute("resultVO", resultVO);
 		
@@ -76,7 +76,7 @@ public class LinkManageController {
 		//중복 submit 방지
 		status.setComplete();
 		
-		String redirectUrl = "linkmgr/w/updateKakaoLink.do";
+		String redirectUrl = "/linkmgr/w/updateKakaoLink.do";
 		String message = "수정 되었습니다.";
 		
 		model.addAttribute("message", message);

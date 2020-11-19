@@ -38,7 +38,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/home/a/selectMainStep1.do")
-	public String selectMainStep1(ModelMap model) throws Exception {
+	public String selectMainStep1(@ModelAttribute("visitorVO") VisitorVO visitorVO, ModelMap model) throws Exception {
 		
 		SurveyVO surveyVO = new SurveyVO();
 		surveyVO.setQtnId(GlobalConstants.QUESTION_ONE);
@@ -50,7 +50,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/home/a/selectMainStep2.do")
-	public String selectMainStep2(ModelMap model) throws Exception {
+	public String selectMainStep2(@ModelAttribute("visitorVO") VisitorVO visitorVO, ModelMap model) throws Exception {
 		
 		SurveyVO surveyVO = new SurveyVO();
 		surveyVO.setQtnId(GlobalConstants.QUESTION_TWO);
@@ -62,7 +62,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/home/a/selectMainStep3.do")
-	public String selectMainStep3(ModelMap model) throws Exception {
+	public String selectMainStep3(@ModelAttribute("visitorVO") VisitorVO visitorVO, ModelMap model) throws Exception {
 		
 		SurveyVO surveyVO = new SurveyVO();
 		surveyVO.setQtnId(GlobalConstants.QUESTION_THREE);
@@ -74,17 +74,17 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/home/a/selectMainStep4.do")
-	public String selectMainStep4() throws Exception {
+	public String selectMainStep4(@ModelAttribute("visitorVO") VisitorVO visitorVO) throws Exception {
 		return "/home/step4";
 	}
 	
 	@RequestMapping(value="/home/a/selectMainStep5.do")
-	public String selectMainStep5() throws Exception {
+	public String selectMainStep5(@ModelAttribute("visitorVO") VisitorVO visitorVO) throws Exception {
 		return "/home/step5";
 	}
 	
 	@RequestMapping(value="/home/a/selectMainStep6.do")
-	public String selectMainStep6() throws Exception {
+	public String selectMainStep6(@ModelAttribute("visitorVO") VisitorVO visitorVO) throws Exception {
 		return "/home/step6";
 	}
 	
@@ -118,9 +118,9 @@ public class HomeController {
 	public String selectLanding(ModelMap model) throws Exception {
 		
 		LinkVO linkVO = new LinkVO();
-		linkVO.setLinkKind(GlobalConstants.YOUTUBE_LINK_CODE);
-		LinkVO youtubeLinkVO = linkManageService.selectReviewLink(linkVO);
-		model.addAttribute("youtubeLinkVO", youtubeLinkVO);
+		linkVO.setLinkKind(GlobalConstants.KAKAO_LINK_CODE);
+		LinkVO kakaoLinkVO = linkManageService.selectReviewLink(linkVO);
+		model.addAttribute("kakaoLinkVO", kakaoLinkVO);
 		
 		return "/home/landing";
 	}
@@ -129,9 +129,9 @@ public class HomeController {
 	public String selectMobileLanding(ModelMap model) throws Exception {
 		
 		LinkVO linkVO = new LinkVO();
-		linkVO.setLinkKind(GlobalConstants.YOUTUBE_LINK_CODE);
-		LinkVO youtubeLinkVO = linkManageService.selectReviewLink(linkVO);
-		model.addAttribute("youtubeLinkVO", youtubeLinkVO);
+		linkVO.setLinkKind(GlobalConstants.KAKAO_LINK_CODE);
+		LinkVO kakaoLinkVO = linkManageService.selectReviewLink(linkVO);
+		model.addAttribute("kakaoLinkVO", kakaoLinkVO);
 		
 		return "/home/mobileLanding";
 	}

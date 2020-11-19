@@ -381,7 +381,7 @@
 	};
 	
 	var fn_kakaoConsulting = function(){
-		alert("주소오면 링크연결 준비중");
+		location.href= "<c:out value='${kakaoLinkVO.linkAddr}'/>";
 	};
 	
 	var fn_insertSkipVisitorProc = function() {
