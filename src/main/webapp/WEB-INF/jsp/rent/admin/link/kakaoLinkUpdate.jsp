@@ -31,7 +31,7 @@
 			<div class="contents">
 				<p class="contentTitle f_blue">링크 관리</p>
 				<p class="sub_path">
-					<img src="${imagePath }/ico_home.png" width="10" height="9" />&nbsp;〉&nbsp;링크 관리&nbsp;〉&nbsp;유튜브 링크
+					<img src="${imagePath }/ico_home.png" width="10" height="9" />&nbsp;〉&nbsp;링크 관리&nbsp;〉&nbsp;카카오 링크
 				</p>
 
 				<h4 class="contentTitle_h4">유뷰트 링크</h4>
@@ -44,7 +44,7 @@
 							<col width="150px">
 							<col width="339px">
 						</colgroup>
-						<form:form commandName="linkVO" name="linkVO" id="linkVO" method="post" action="${basePath}/linkmgr/w/updateYoutubeLinkProc.do">
+						<form:form commandName="linkVO" name="linkVO" id="linkVO" method="post" action="${basePath}/linkmgr/w/updateKakaoLinkProc.do">
 							<input type="hidden" name="linkId" id="linkId" value="<c:out value="${resultVO.linkId}"/>">
 							<input type="hidden" name="linkKind" id="linkKind" value="<c:out value="${resultVO.linkKind}"/>">
 							<tbody class="line">
@@ -72,7 +72,7 @@
 						</form:form>
 					</table>
 					<div class="T_btnLayer fr" id="mb15">
-						<a href="javascript:void(0);" onclick="javascript:fn_updateYoutubeLinkProc();"><button type="button" class="blueBtn L">수정</button></a>
+						<a href="javascript:void(0);" onclick="javascript:fn_updateKakaoLinkProc();"><button type="button" class="blueBtn L">수정</button></a>
 					</div>
 				</div>
 			</div>
@@ -83,7 +83,7 @@
 	<%@ include file="/WEB-INF/jsp/rent/common/footer.jsp"%>
 	<!--//footer-->
 	<script type="text/javascript">
-	var fn_updateYoutubeLinkProc = function() {
+	var fn_updateKakaoLinkProc = function() {
 		if (!TypeChecker.required($("#linkAddr").val())) {
 			alert("'신규 링크 주소'는  "+ TypeChecker.requiredText);
 			$("#linkAddr").focus();

@@ -61,11 +61,11 @@
 							</ul>
 						</div>
 					</li>
-					<li class="bigMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">링크 관리</a>
+					<li class="bigMenu">링크 관리
 						<div class="subMenu">
 							<ul>
 								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
-								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateYouTubeLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">유튜브 링크</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">카카오채널 링크</a></li>
 							</ul>
 						</div>
 					</li>
@@ -86,7 +86,7 @@
 						<div class="subMenu">
 							<ul>
 								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
-								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateYouTubeLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">유튜브 링크</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">카카오채널 링크</a></li>
 							</ul>
 						</div>
 					</li>
@@ -109,7 +109,7 @@
 						<div class="subMenu">
 							<ul>
 								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
-								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateYouTubeLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">유튜브 링크</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">카카오채널 링크</a></li>
 							</ul>
 						</div>
 					</li>
@@ -130,7 +130,7 @@
 						<div class="subMenu">
 							<ul>
 								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
-								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateYouTubeLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">유튜브 링크</a></li>
+								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">카카오채널 링크</a></li>
 							</ul>
 						</div>
 					</li>

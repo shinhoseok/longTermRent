@@ -54,7 +54,7 @@ public class LinkManageController {
 		return "/common/temp_action_message";
 	}
 	
-	@RequestMapping("/linkmgr/w/updateYouTubeLink.do")
+	@RequestMapping("/linkmgr/w/updateKakaoLink.do")
 	public String updateYouTubeLink(@ModelAttribute("linkVO") LinkVO linkVO, ModelMap model) throws Exception {
 		
 		linkVO.setLinkKind(GlobalConstants.YOUTUBE_LINK_CODE);
@@ -65,10 +65,10 @@ public class LinkManageController {
 		model.addAttribute("blevel", "2");
 		model.addAttribute("clevel", "2");
 		
-		return "/admin/link/youTubeLinkUpdate";
+		return "/admin/link/kakaoLinkUpdate";
 	}
 	
-	@RequestMapping("/linkmgr/w/updateYoutubeLinkProc.do")
+	@RequestMapping("/linkmgr/w/updateKakaoLinkProc.do")
 	public String updateYoutubeLinkProc(@ModelAttribute("linkVO") LinkVO linkVO, ModelMap model, SessionStatus status, LoginVO sessionVO) throws Exception {
 		
 		linkVO.setModId(sessionVO.getUserSeq());
@@ -76,7 +76,7 @@ public class LinkManageController {
 		//중복 submit 방지
 		status.setComplete();
 		
-		String redirectUrl = "/linkmgr/w/updateYouTubeLink.do";
+		String redirectUrl = "linkmgr/w/updateKakaoLink.do";
 		String message = "수정 되었습니다.";
 		
 		model.addAttribute("message", message);

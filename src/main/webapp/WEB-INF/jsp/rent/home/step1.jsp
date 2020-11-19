@@ -16,7 +16,8 @@
 			</p>
 			<ul class="answer_list">
 				<c:forEach items="${rslt.answerList}" var="list" varStatus="i">
-					<li><a href="javascript:void(0);" onclick="fn_selectMainStep('2', '<c:out value="${list.qtnId }"/>', '<c:out value="${list.asrId }"/>');"><span class="answer_check"></span> <c:out value="${list.asrContents }" /></a></li>
+					<li><a href="javascript:void(0);" onclick="javascript:fn_selectMainStep('2', '<c:out value="${list.qtnId }"/>', '<c:out value="${list.asrId }"/>');">✓</a> <c:out value="${list.asrContents }" /></li>
+<%-- 					<li><a href="javascript:void(0);" onclick="javascript:fn_selectMainStep('2', '<c:out value="${list.qtnId }"/>', '<c:out value="${list.asrId }"/>');"><span class="answer_check"></span> <c:out value="${list.asrContents }" /></a></li> --%>
 				</c:forEach>
 			</ul>
 			<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close_mo">건너뛰기 > </a>
@@ -30,3 +31,15 @@
 		<p>STEP 1</p>
 	</div>
 </div>
+
+<script type="text/javascript">
+	var ClickEventType = ((document.ontouchstart !== null) ? 'click' : 'touchstart');
+	if (ClickEventType == 'touchstart') {
+		$('li a').on('touchstart', function(e) { // clear added stlye="" elements..
+			$(this).css({
+				'background-color' : '#1504e6'
+			});
+			fn_selectMainStep('2', '<c:out value="${list.qtnId }"/>', '<c:out value="${list.asrId }"/>');
+		});
+	}
+</script>
