@@ -157,6 +157,7 @@ INSERT INTO SURVEY_ASR (asr_id, qtn_id, asr_contents, del_yn, reg_id, reg_dt) VA
 
 INSERT INTO LINK (link_id, link_addr, link_kind, del_yn, reg_id, reg_dt) VALUES ('LNK-000000', 'https://www.naver.com', 'R', 'N', 'USR-000000', NOW());
 INSERT INTO LINK (link_id, link_addr, link_kind, del_yn, reg_id, reg_dt) VALUES ('LNK-000001', 'https://youtu.be/zjJOWE2utoo', 'Y', 'N', 'USR-000000', NOW());
+INSERT INTO LINK (link_id, link_addr, link_kind, del_yn, reg_id, reg_dt) VALUES ('LNK-000002', '010-9588-5027', 'P', 'N', 'USR-000000', NOW());
 
 
 

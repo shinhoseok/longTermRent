@@ -120,7 +120,12 @@ public class HomeController {
 		LinkVO linkVO = new LinkVO();
 		linkVO.setLinkKind(GlobalConstants.KAKAO_LINK_CODE);
 		LinkVO kakaoLinkVO = linkManageService.selectReviewLink(linkVO);
+		
+		linkVO.setLinkKind(GlobalConstants.REVIEW_LINK_CODE);
+		LinkVO reviewLinkVO = linkManageService.selectReviewLink(linkVO);
+		
 		model.addAttribute("kakaoLinkVO", kakaoLinkVO);
+		model.addAttribute("reviewLinkVO", reviewLinkVO);
 		
 		return "/home/landing";
 	}
@@ -131,7 +136,12 @@ public class HomeController {
 		LinkVO linkVO = new LinkVO();
 		linkVO.setLinkKind(GlobalConstants.KAKAO_LINK_CODE);
 		LinkVO kakaoLinkVO = linkManageService.selectReviewLink(linkVO);
+		
+		linkVO.setLinkKind(GlobalConstants.REVIEW_LINK_CODE);
+		LinkVO reviewLinkVO = linkManageService.selectReviewLink(linkVO);
+		
 		model.addAttribute("kakaoLinkVO", kakaoLinkVO);
+		model.addAttribute("reviewLinkVO", reviewLinkVO);
 		
 		return "/home/mobileLanding";
 	}

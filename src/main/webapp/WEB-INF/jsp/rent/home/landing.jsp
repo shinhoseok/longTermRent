@@ -67,7 +67,14 @@
 	<!--2_3-->
 	<section class="main_box2_3">
 		<div class="wrap">
-			<article>
+			<c:choose>
+				<c:when test="${reviewLinkVO.delYn eq 'N'}">
+					<article style="cursor: pointer;" onclick="window.open('<c:out value='${reviewLinkVO.linkAddr }'/>')">
+				</c:when>
+				<c:otherwise>
+					<article>
+				</c:otherwise>
+			</c:choose>
 				<div class="text_box2_3">
 					<span> CAR<br> RENTAL<br> REVEIW
 					</span>
@@ -252,7 +259,7 @@
 				<input type="text" name="itrstdCarTy" id="itrstdCarTy" onfocus="checker(this, 50 , 'nbytes_itrstdCarTy');" onblur="stopchecker();" placeholder="관심차종을 입력해주세요">
 			</form>
 			<div>
-				<input type="checkbox" id="privacyChk">개인정보 처리방침 동의*필수 
+				<input type="checkbox" id="privacyChk" checked>개인정보 처리방침 동의*필수 
 				<span style="cursor: pointer;" onclick="location.href='${basePath}/home/a/privacy.do'">[보기]</span>
 			</div>
 			<a href="javascript:void(0);" id="secretEstimateTarget" onclick="javascript:fn_insertSkipVisitorProc();">영업기밀 열어보기</a>
@@ -262,7 +269,7 @@
 	<!--footer-->
 	<footer>
 		<div class="wrap">
-			<p>(주)바른청년 렌터카 장기렌트</p>
+			<p style="cursor: pointer;" onclick="location.href='${basePath}/login/a/login.do'">(주)바른청년 렌터카 장기렌트</p>
 			<address>
 				서울특별시 서초구 서초대로 8, 100호 (서초동, 서초빌딩)<br> TEL : 02-123-4567 사업자번호 : 123-45-12345
 			</address>

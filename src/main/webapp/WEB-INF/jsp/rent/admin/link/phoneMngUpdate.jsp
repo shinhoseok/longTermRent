@@ -31,10 +31,10 @@
 			<div class="contents">
 				<p class="contentTitle f_blue">링크 관리</p>
 				<p class="sub_path">
-					<img src="${imagePath }/ico_home.png" width="10" height="9" />&nbsp;〉&nbsp;링크 관리&nbsp;〉&nbsp;카카오 링크
+					<img src="${imagePath }/ico_home.png" width="10" height="9" />&nbsp;〉&nbsp;링크 관리&nbsp;〉&nbsp;전화번호관리
 				</p>
 
-				<h4 class="contentTitle_h4">카카오 링크</h4>
+				<h4 class="contentTitle_h4">전화번호관리</h4>
 				<div class="tableLayer">
 					<table class="table">
 						<caption></caption>
@@ -49,11 +49,11 @@
 							<input type="hidden" name="linkKind" id="linkKind" value="<c:out value="${resultVO.linkKind}"/>">
 							<tbody class="line">
 								<tr>
-									<th class="bullet_orange">기존 유튜브</th>
+									<th class="bullet_orange">기존 전화번호</th>
 									<td><c:out value="${resultVO.linkAddr}"/></td>
 								</tr>
 								<tr>
-									<th class="bullet_orange">신규 유튜브</th>
+									<th class="bullet_orange">신규 전화번호</th>
 									<td>
 										<div>
 											<form:input type="text" path="linkAddr" id="linkAddr"  onfocus="checker(this, 200 , 'nbytes_linkAddr');" onblur="stopchecker();" style="width: 690px; height:28px; border: 1px solid #D4D4D4;"/> &nbsp;

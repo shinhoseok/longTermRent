@@ -10,8 +10,6 @@
 						<div class="subMenu">
 							<ul>
 								<li class="selectsubMenu" style="cursor: pointer;" onclick="location.href='${basePath}/vtmgr/w/selectVisitorList.do';"><a href="javascript:void(0);"> 견적 관리</a></li>
-								<li class="smallMenu" style="cursor: pointer;"><a href="javascript:void(0);">견적 통계</a></li>
-									
 							</ul>
 						</div>
 					</li>
@@ -24,7 +22,6 @@
 						<div class="subMenu">
 							<ul>
 								<li class="smallMenu" style="cursor: pointer;" onclick="location.href='${basePath}/vtmgr/w/selectVisitorList.do';"><a href="javascript:void(0);"> 견적 관리</a></li>
-								<li class="selectsubMenu" style="cursor: pointer;"><a href="javascript:void(0);">견적 통계</a></li>
 							</ul>
 						</div>
 					</li>
@@ -66,6 +63,7 @@
 							<ul>
 								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
 								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">카카오채널 링크</a></li>
+								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">전화번호관리</a></li>
 							</ul>
 						</div>
 					</li>
@@ -87,6 +85,7 @@
 							<ul>
 								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
 								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">카카오채널 링크</a></li>
+								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">전화번호관리</a></li>
 							</ul>
 						</div>
 					</li>
@@ -110,6 +109,7 @@
 							<ul>
 								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
 								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">카카오채널 링크</a></li>
+								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">전화번호관리</a></li>
 							</ul>
 						</div>
 					</li>
@@ -131,6 +131,29 @@
 							<ul>
 								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
 								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">카카오채널 링크</a></li>
+								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">전화번호관리</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</c:if>
+			<c:if test="${clevel eq '3'}">
+				<h3>랜딩페이지 관리</h3>
+				<ul class="menuBox">
+					<li class="bigMenu">설문조사 관리
+						<div class="subMenu">
+							<ul>
+								<li class="smallMenu" onclick="location.href='${basePath}/svymgr/w/updateSurveyQtn.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 질문 수정</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/svymgr/w/updateSurveyAnswer.do';" style="cursor: pointer;"><a href="javascript:void(0);">답변 수정</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="bigMenu">링크 관리
+						<div class="subMenu">
+							<ul>
+								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
+								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">카카오채널 링크</a></li>
+								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">전화번호관리</a></li>
 							</ul>
 						</div>
 					</li>

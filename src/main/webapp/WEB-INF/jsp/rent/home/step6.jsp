@@ -60,9 +60,9 @@
 <script type="text/javascript" src="${scriptPath}/validation/validation.js"></script>
 <script type="text/javascript" src="${scriptPath}/common.js"></script>
 <script type="text/javascript">
-$(function() {
-	$('#step7Check').css('background-image', 'url("")');
-});
+// $(function() {
+// 	$('#step7Check').css('background-image', 'url("")');
+// });
 
 var fn_step7Check = function() {
 	var img = $("#step7Check").css("background-image");
