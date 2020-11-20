@@ -96,7 +96,10 @@ var fn_insertVisitorProc = function() {
 		alert("전화번호 형식이 올바르지 않습니다.");
 		return;
 	}
-	
+	if(telNo.length < 11) {
+		alert("전화번호 형식이 올바르지 않습니다.");
+		return;
+	}
 	var img = $("#step7Check").css("background-image");
 	if(img == 'url("${basePath}/ucontents/images/btn_check_info.png")') {
 	} else {

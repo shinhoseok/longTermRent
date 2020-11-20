@@ -290,6 +290,19 @@
 	<script type="text/javascript" src="${scriptPath}/common.js"></script>
 	<script type="text/javascript">
 	$(function() {
+		var uri = "<%=request.getRequestURI()%>"; 
+		var windowWidth = $(window).width();
+		if(windowWidth < 767) {
+			if(uri == "/WEB-INF/jsp/rent//home/landing.jsp") {
+				location.href="${basePath}/home/a/selectMobileLanding.do";
+			}
+		} else {
+			if(uri == "/WEB-INF/jsp/rent//home/landing.jsp") {
+			} else {
+				location.href="${basePath}/home/a/selectLanding.do";
+			}
+		}
+
 		$(".main_box1 .text_box h2").addClass("move_text1");
 		$(".main_box1 .text_box p").addClass("move_text_up");
 		$(window).scroll(function(event) {
@@ -421,6 +434,10 @@
 		telNoFront = telNo.substring(0, 4);
 		if(telNoFront == "0101") {
 			alert("휴대폰번호 형식이 올바르지 않습니다.");
+			return;
+		}
+		if(telNo.length < 11) {
+			alert("전화번호 형식이 올바르지 않습니다.");
 			return;
 		}
 		if (!TypeChecker.required($("#itrstdCarTy").val())) {

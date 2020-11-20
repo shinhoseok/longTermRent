@@ -42,8 +42,8 @@
 						<span class="contents_search_bar"></span>
 						<div class="calendar_wrap">
 							<label for="" class="blind">시작/종료일자</label> 
-							<form:input path="startDate" id="startDate" readonly="readonly" value=""/> ~ 
-							<form:input path="endDate" id="endDate" readonly="readonly" value=""/>
+							<form:input path="startDate" id="startDate" value="" readonly="readonly"/> ~ 
+							<form:input path="endDate" id="endDate" value="" readonly="readonly"/>
 						</div>&nbsp;&nbsp;&nbsp;&nbsp;
 						<form:select path="searchCondition" class="w13p">
 							<form:option value="visitorNm" label="성명"></form:option>
@@ -125,6 +125,8 @@
 		//달력
 		DefaultDatePicker($("#startDate"), "yy-mm-dd", 10, "${imagePath}");
 		DefaultDatePicker($("#endDate"), "yy-mm-dd", 10, "${imagePath}");
+		$('#startDate').attr('readonly', true);
+		$('#endDate').attr('readonly', true);
 	});
 	
 	var fn_searchList = function(pageNo){
@@ -135,6 +137,7 @@
 				return;
 			}
 		}
+		
 		if (TypeChecker.required($("#endDate").val())) {
 			if (!TypeChecker.required($("#startDate").val())) {
 				alert("시작일을 입력해주세요.");
@@ -144,39 +147,38 @@
 		}
 		if (TypeChecker.required($("#endDate").val())) {
 			if (TypeChecker.required($("#startDate").val())) {
-				if(!fn_dateCompare($("#startDate").val(), $("#endDate").val())){
+				if (!fn_dateCompare($("#startDate").val(), $("#endDate").val())) {
 					return;
-				};
+				}
 			}
 		}
 		var forms = document.listForm;
 		forms.pageIndex.value = pageNo;
 		forms.submit();
 	};
-	
+
 	//프로그램목록 엑셀 다운로드
-	var fn_excelDownload = function(){
-		var sDats = $("#startDate").val();
-		var eDats = $("#endDate").val();
-		if(sDats != null || sDats != "") {
-			if(eDats == null || eDats == "") {
+	var fn_excelDownload = function() {
+		if (TypeChecker.required($("#startDate").val())) {
+			if (!TypeChecker.required($("#endDate").val())) {
 				alert("종료일을 입력해주세요.");
 				$("#endDate").focus();
 				return;
 			}
 		}
-		if(eDats != null || eDats != "") {
-			if(sDats == null || sDats == "") {
+		
+		if (TypeChecker.required($("#endDate").val())) {
+			if (!TypeChecker.required($("#startDate").val())) {
 				alert("시작일을 입력해주세요.");
-				$("#startDate").focus();
+				$("#endDate").focus();
 				return;
 			}
 		}
-		if(sDats != null || sDats != "") {
-			if(eDats != null || eDats != "") {
-				if(!fn_dateCompare(sDats, eDats)){
+		if (TypeChecker.required($("#endDate").val())) {
+			if (TypeChecker.required($("#startDate").val())) {
+				if (!fn_dateCompare($("#startDate").val(), $("#endDate").val())) {
 					return;
-				};
+				}
 			}
 		}
 		var frm = document.listForm;
