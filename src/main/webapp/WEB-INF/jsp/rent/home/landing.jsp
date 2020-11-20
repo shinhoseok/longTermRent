@@ -279,7 +279,7 @@
 
 	<!--하단 사이드바 표시-->
 	<div class="contact_bar">
-		<div class="kakao" style="cursor: pointer;" onclick="javascript:fn_kakaoConsulting();">
+		<div class="kakao" style="cursor: pointer;" onclick="window.open('<c:out value='${kakaoLinkVO.linkAddr}'/>')">
 			카카오톡 상담 <img src="${imagePath}/icon_kakao.png">
 		</div>
 		<div class="survey" style="cursor: pointer;" onclick="javascript:fn_secretEstimate();">비밀견적받기</div>
@@ -398,10 +398,6 @@
 	var fn_secretEstimate = function() {
 		var offset = $("#secretEstimateTarget").offset();
 		$('html, body').animate({scrollTop : offset.top}, 400);
-	};
-	
-	var fn_kakaoConsulting = function(){
-		location.href= "<c:out value='${kakaoLinkVO.linkAddr}'/>";
 	};
 	
 	var fn_insertSkipVisitorProc = function() {
