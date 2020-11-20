@@ -15,139 +15,127 @@
 <script type="text/javascript" src="${scriptPath}/jquery/jquery-1.12.3.min.js"></script>
 </head>
 <body>
-<section>
-	<article>
-		<div class="logo_box">
-			<h1 style="cursor: pointer;" onclick="location.href='${basePath}/home/a/main.do'">바른청년</h1>
-			<h2>장기렌트 영업기밀!</h2>
-			<p>
-				설문에 참여하시고 1%를 위한<br> 특별할인을 받아보세요.
-			</p>
-		</div>
-		<div class="text_box">
-			<img src="${imagePath}/q6.png" class="img_q1">
-			<p class="text_q text_q1_mo">
-				바른청년 렌터카 고객님의<br> 전화번호가 어떻게 되세요?
-			</p>
-			<div class="answer_box">
-				<input type="text" id="param" placeholder="-빼고 휴대전화를 입력해주세요" onfocus="checker(this, 11 , 'nbytes_param');" onblur="stopchecker();"></input>
-				<a href="javascript:void(0);" onclick="fn_insertVisitorProc();"><p class="btn_ok">확인</p> </a>
+	<section>
+		<article>
+			<div class="logo_box">
+				<h1 style="cursor: pointer;" onclick="location.href='${basePath}/home/a/main.do'">바른청년</h1>
+				<h2>장기렌트 영업기밀!</h2>
+				<p>
+					설문에 참여하시고 1%를 위한<br> 특별할인을 받아보세요.
+				</p>
 			</div>
-			<div class="check_info check_info_mo">
-				<a href="javascript:void(0);" onclick="javascript:fn_step7Check();" class="btn_check_info" id="step7Check"> </a>
-				<p style="cursor: pointer;" onclick="location.href='${basePath}/home/a/privacy.do'">개인정보 수집 및 이용동의 (필수)</p>
+			<div class="text_box">
+				<img src="${imagePath}/q6.png" class="img_q1">
+				<p class="text_q text_q1_mo">
+					바른청년 렌터카 고객님의<br> 전화번호가 어떻게 되세요?
+				</p>
+				<div class="answer_box">
+					<input type="text" id="param" onkeydown="if(event.keyCode==13){javascript:fn_insertVisitorProc();}" placeholder="-빼고 휴대전화를 입력해주세요" onfocus="checker(this, 11 , 'nbytes_param');" onblur="stopchecker();"></input> <a href="javascript:void(0);" onclick="fn_insertVisitorProc();"><p class="btn_ok">확인</p> </a>
+				</div>
+				<div class="check_box_info">
+					<input type="checkbox" id="privacyChk" checked>개인정보 처리방침 동의*필수 <span style="cursor: pointer;" onclick="location.href='${basePath}/home/a/privacy.do'">[보기]</span>
+				</div>
+				<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close_mo">건너뛰기 > </a>
 			</div>
-			<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close_mo">건너뛰기 > </a>
+			<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close"></a>
+		</article>
+	</section>
+	<!--step 표시-->
+	<div class="step_bar">
+		<div class="step step6">
+			<p>STEP 6</p>
 		</div>
-		<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close"></a>
-	</article>
-</section>
-<!--step 표시-->
-<div class="step_bar">
-	<div class="step step6">
-		<p>STEP 6</p>
 	</div>
-</div>
-<form:form commandName="visitorVO" action="${basePath}/home/a/insertVisitorProc.do" name="visitorVO" id="visitorVO" method="post">
-	<form:hidden path="qtnId" id="qtnId"/>
-	<form:hidden path="asrId" id="asrId"/>
-	<form:hidden path="itrstdCarTy" id="itrstdCarTy"/>
-	<form:hidden path="visitorNm" id="visitorNm"/>
-	<form:hidden path="telNo" id="telNo"/>
-	<form:hidden path="accessPath" id="accessPath"/>
-	<form:hidden path="overlapCnt" id="overlapCnt"/>
-</form:form>
-<script type="text/javascript" src="${scriptPath}/validation/validation.js"></script>
-<script type="text/javascript" src="${scriptPath}/common.js"></script>
-<script type="text/javascript">
-// $(function() {
-// 	$('#step7Check').css('background-image', 'url("")');
-// });
-
-var fn_step7Check = function() {
-	var img = $("#step7Check").css("background-image");
-	if(img == 'url("${basePath}/ucontents/images/btn_check_info.png")') {
-		$('#step7Check').css('background-image', 'url("")');
-	} else {
-		$('#step7Check').css('background-image', 'url("${basePath}/ucontents/images/btn_check_info.png")');
-	}
-};
-
-var fn_insertVisitorProc = function() {
-	if (!TypeChecker.required($("#param").val())) {
-		alert("'전화번호'은  "+ TypeChecker.requiredText);
-		$("#param").focus();
-		return;
-	}
-	if (!TypeChecker.number($("#param").val())) {
-		alert("'전화번호'은  "+ TypeChecker.numberText);
-		$("#param").focus();
-		return;
-	}
-	
-	var telNo = $("#param").val();
-	var telNoFront = telNo.substring(0, 3);
-	if(telNoFront != "010") {
-		alert("전화번호 형식이 올바르지 않습니다.");
-		return;
-	}
-	telNoFront = telNo.substring(0, 4);
-	if(telNoFront == "0101") {
-		alert("전화번호 형식이 올바르지 않습니다.");
-		return;
-	}
-	if(telNo.length < 11) {
-		alert("전화번호 형식이 올바르지 않습니다.");
-		return;
-	}
-	var img = $("#step7Check").css("background-image");
-	if(img == 'url("${basePath}/ucontents/images/btn_check_info.png")') {
-	} else {
-		alert("개인정보 수집 및 이용동의에 동의해 주세요.");
-		return;
-	}
-	
-	$("#visitorVO #telNo").val($("#param").val());
-	var mobilecheck = function () {
-		var check = false;
-		(function(a,b){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
-		return check;
-	}
-	if(mobilecheck()){
-		$("#visitorVO #accessPath").val("M");
-	} else {
-		$("#visitorVO #accessPath").val("P");
-	}
-	
-	//중복체크
-	$.ajax({ 	
-		url: "${basePath}/home/a/selectMainStep7.do",
-		type: 'POST',
-		dataType : "json",
-		data : $("#visitorVO").serialize(),
-		error: function(){
-			 alert("현재 조회 서비스가 원할하지 않습니다.\n잠시후 다시 이용해 주십시요.");
-			 return;
-		},
-		success: function(r) { 
-			$("#visitorVO #overlapCnt").val(r.overlapCnt);
-			document.visitorVO.submit();
+	<form:form commandName="visitorVO" action="${basePath}/home/a/insertVisitorProc.do" name="visitorVO" id="visitorVO" method="post">
+		<form:hidden path="qtnId" id="qtnId" />
+		<form:hidden path="asrId" id="asrId" />
+		<form:hidden path="itrstdCarTy" id="itrstdCarTy" />
+		<form:hidden path="visitorNm" id="visitorNm" />
+		<form:hidden path="telNo" id="telNo" />
+		<form:hidden path="accessPath" id="accessPath" />
+		<form:hidden path="overlapCnt" id="overlapCnt" />
+	</form:form>
+	<script type="text/javascript" src="${scriptPath}/validation/validation.js"></script>
+	<script type="text/javascript" src="${scriptPath}/common.js"></script>
+	<script type="text/javascript">
+	var fn_insertVisitorProc = function() {
+		if (!TypeChecker.required($("#param").val())) {
+			alert("'전화번호'은  " + TypeChecker.requiredText);
+			$("#param").focus();
+			return;
 		}
-	}); 
-};
+		if (!TypeChecker.number($("#param").val())) {
+			alert("'전화번호'은  " + TypeChecker.numberText);
+			$("#param").focus();
+			return;
+		}
 
-var fn_selectLanding = function() {
-	var mobilecheck = function () {
-		var check = false;
-		(function(a,b){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
-		return check;
-	}
-	if(mobilecheck()){
-		location.href = "${basePath}/home/a/selectMobileLanding.do";
-	} else {
-		location.href = "${basePath}/home/a/selectLanding.do";
-	}
-};
-</script>
+		var telNo = $("#param").val();
+		var telNoFront = telNo.substring(0, 3);
+		if (telNoFront != "010") {
+			alert("전화번호 형식이 올바르지 않습니다.");
+			return;
+		}
+		telNoFront = telNo.substring(0, 4);
+		if (telNoFront == "0101") {
+			alert("전화번호 형식이 올바르지 않습니다.");
+			return;
+		}
+		if (telNo.length < 11) {
+			alert("전화번호 형식이 올바르지 않습니다.");
+			return;
+		}
+		if(!$("#privacyChk").is(":checked")) {
+			alert("개인정보 수집 및 이용동의에 동의해 주세요.");
+			return;
+		}
+		$("#visitorVO #telNo").val($("#param").val());
+		var mobilecheck = function () {
+			var check = false;
+			(function(a,b){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
+			return check;
+		}
+		if (mobilecheck()) {
+			$("#visitorVO #accessPath").val("M");
+		} else {
+			$("#visitorVO #accessPath").val("P");
+		}
+
+		//중복체크
+		$.ajax({
+			url : "${basePath}/home/a/selectMainStep7.do",
+			type : 'POST',
+			dataType : "json",
+			data : $("#visitorVO").serialize(),
+			error : function() {
+				alert("현재 조회 서비스가 원할하지 않습니다.\n잠시후 다시 이용해 주십시요.");
+				return;
+			},
+			success : function(r) {
+				$("#visitorVO #overlapCnt").val(r.overlapCnt);
+				document.visitorVO.submit();
+			}
+		});
+	};
+
+	var fn_selectLanding = function() {
+		var mobilecheck = function() {
+			var check = false;
+			(function(a, b) {
+				if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i
+						.test(a)
+						|| /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i
+								.test(a.substr(0, 4)))
+					check = true
+			})(navigator.userAgent || navigator.vendor || window.opera);
+			return check;
+		}
+		if (mobilecheck()) {
+			location.href = "${basePath}/home/a/selectMobileLanding.do";
+		} else {
+			location.href = "${basePath}/home/a/selectLanding.do";
+		}
+	};
+	</script>
 </body>
 </html>

@@ -17,4 +17,6 @@ public interface VisitorDAO {
 	public void insertVisitorProc(VisitorVO visitorVO) throws Exception;
 	
 	public void insertVisitorMppgProc(VisitorVO visitorVO) throws Exception;
+	
+	Integer selectVisitorTotalCnt() throws Exception;
 }

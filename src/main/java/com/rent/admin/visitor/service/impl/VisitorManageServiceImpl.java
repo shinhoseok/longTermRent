@@ -52,6 +52,9 @@ public class VisitorManageServiceImpl extends EgovAbstractServiceImpl implements
 		LocalDate currentDate = LocalDate.now();
 		int todayUserCnt =  visitorDAO.selectVisitorTodayCnt(String.valueOf(currentDate));
 		
+		int totalUserCnt = visitorDAO.selectVisitorTotalCnt();
+		
+		rsltMap.put("totalUserCnt", totalUserCnt);
 		rsltMap.put("todayUserCnt", todayUserCnt);
 		rsltMap.put("paginationInfo", paginationInfo);
 		rsltMap.put("userList", selectList);

@@ -15,6 +15,10 @@
 <script type="text/javascript" src="${scriptPath}/jquery/jquery-1.12.3.min.js"></script>
 <script type="text/javascript" src="${scriptPath}/jquery/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
 <script type="text/javascript" src="${scriptPath}/commonDate.js"></script>
+<style>
+/*datepicer 버튼 롤오버 시 손가락 모양 표시*/
+.ui-datepicker-trigger{cursor: pointer;}
+</style>
 </head>
 <body>
 	<div class="header">
@@ -30,7 +34,7 @@
 			<div class="contents">
 				<p class="contentTitle">견적 관리</p>
 				<p class="contentTitle" style="margin-left: 15px">Total : <c:out value="${rslt.userListCnt}"/></p>
-				<p class="contentTitle" style="margin-left: 15px; color: red">today : <c:out value="${rslt.todayUserCnt}"/></p>
+				<p class="contentTitle" style="margin-left: 15px; color: red">today : <c:out value="${rslt.totalUserCnt}"/></p>
 				<p class="sub_path">
 					<img src="${imagePath }/ico_home.png" width="10" height="9" />&nbsp;〉&nbsp;견적관리&nbsp;〉&nbsp;견적관리
 				</p>

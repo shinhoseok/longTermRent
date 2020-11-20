@@ -6,6 +6,10 @@
 /*움직임*/
 @import url("move.css");
 
+html{
+    scroll-behavior: smooth;
+}
+    
 /*body*/
 body{
     color: black;

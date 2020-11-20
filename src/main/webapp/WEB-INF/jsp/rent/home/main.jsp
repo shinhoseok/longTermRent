@@ -32,7 +32,7 @@
 					<a href="${basePath}/home/a/selectMainStep1.do"><p class="btn_start">시작하기</p></a>
 				</div>
 				<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close start_none"></a>
-				<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close_mo">건너뛰기 > </a>
+				<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close_mo start_none">건너뛰기 > </a>
 			</article>
 		</section>
 	</div>

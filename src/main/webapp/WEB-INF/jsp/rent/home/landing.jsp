@@ -104,8 +104,6 @@
 		</article>
 	</section>
 
-    <!-- 4 -->
-
 	<!--5-->
 	<section class="main_box5">
 		<article>
@@ -254,9 +252,9 @@
 			<form action="${basePath}/home/a/insertSkipVisitorProc.do" name="visitorVO" id="visitorVO" method="post">
 				<input type="hidden" name="accessPath" id="accessPath" value="">
 				<input type="hidden" name="overlapCnt" id="overlapCnt" value="">
-				<input type="text" name="visitorNm" id="visitorNm" onfocus="checker(this, 50 , 'nbytes_visitorNm');" onblur="stopchecker();" placeholder="이름">
-				<input type="text" name="telNo" id="telNo" onfocus="checker(this, 11 , 'nbytes_telNo');" onblur="stopchecker();" placeholder="휴대번호를 입력해주세요">
-				<input type="text" name="itrstdCarTy" id="itrstdCarTy" onfocus="checker(this, 50 , 'nbytes_itrstdCarTy');" onblur="stopchecker();" placeholder="관심차종을 입력해주세요">
+				<input type="text" name="visitorNm" id="visitorNm" onkeydown="if(event.keyCode==13){javascript:fn_insertSkipVisitorProc();}" onfocus="checker(this, 50 , 'nbytes_visitorNm');" onblur="stopchecker();" placeholder="이름">
+				<input type="text" name="telNo" id="telNo" onkeydown="if(event.keyCode==13){javascript:fn_insertSkipVisitorProc();}" onfocus="checker(this, 11 , 'nbytes_telNo');" onblur="stopchecker();" placeholder="휴대번호를 입력해주세요">
+				<input type="text" name="itrstdCarTy" id="itrstdCarTy" onkeydown="if(event.keyCode==13){javascript:fn_insertSkipVisitorProc();}" onfocus="checker(this, 50 , 'nbytes_itrstdCarTy');" onblur="stopchecker();" placeholder="관심차종을 입력해주세요">
 			</form>
 			<div>
 				<input type="checkbox" id="privacyChk" checked>개인정보 처리방침 동의*필수 
@@ -397,7 +395,7 @@
 	
 	var fn_secretEstimate = function() {
 		var offset = $("#secretEstimateTarget").offset();
-		$('html, body').animate({scrollTop : offset.top}, 400);
+		$('html, body').animate({scrollTop : offset.top}, 700);
 	};
 	
 	var fn_insertSkipVisitorProc = function() {

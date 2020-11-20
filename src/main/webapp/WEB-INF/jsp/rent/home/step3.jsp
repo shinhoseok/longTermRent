@@ -31,7 +31,6 @@
 			<ul class="answer_list answer_list_q3_mo">
 				<c:forEach items="${rslt.answerList}" var="list" varStatus="i">
 					<li><a href="javascript:void(0);" onclick="javascript:fn_selectMainStep('<c:out value="${list.qtnId }"/>', '<c:out value="${list.asrId }"/>');">✓</a> <c:out value="${list.asrContents }" /></li>
-<%-- 					<li><a href="javascript:void(0);" onclick="javascript:fn_selectMainStep('4', '<c:out value="${list.qtnId }"/>', '<c:out value="${list.asrId }"/>');"><span class="answer_check"></span> <c:out value="${list.asrContents }" /></a></li> --%>
 				</c:forEach>
 			</ul>
 			<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close_mo">건너뛰기 > </a>

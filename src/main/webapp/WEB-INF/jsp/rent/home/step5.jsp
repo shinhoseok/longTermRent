@@ -30,7 +30,7 @@
 				바른청년 렌터카 고객님의<br> 성함이 어떻게 되시나요?
 			</p>
 			<div class="answer_box">
-				<input type="text" id="param" placeholder="성함을 입력해주세요" onfocus="checker(this, 50 , 'nbytes_param');" onblur="stopchecker();"></input>
+				<input type="text" id="param" onkeydown="if(event.keyCode==13){javascript:fn_selectMainStep();}" placeholder="성함을 입력해주세요" onfocus="checker(this, 50 , 'nbytes_param');" onblur="stopchecker();"></input>
 				<a href="javascript:void(0);" onclick="fn_selectMainStep();"><p class="btn_ok">확인</p> </a>
 			</div>
 			<a href="javascript:void(0);" onclick="javascript:fn_selectLanding();" class="btn_close_mo">건너뛰기 > </a>

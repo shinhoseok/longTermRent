@@ -7,7 +7,7 @@
 	<div class="lnb">
 		<dl>
 			<dt class="hidden">로그인, 로그아웃, 사이트맵 , 설정이 들어가는 자리입니다.</dt>
-			<dd style="cursor: pointer;" onclick="javascript:fn_updateMyInfo('${sessionScope.loginVO.userSeq}');">${sessionScope.loginVO.userNm}님 환영합니다.</dd>
+			<dd style="cursor: pointer;" onclick="javascript:fn_updateMyInfo('${sessionScope.loginVO.userSeq}');"><span style="font-weight: 700; color: blue;">${sessionScope.loginVO.userNm}</span>님 환영합니다.</dd>
 			<dd>
 				<a href="${basePath}/login/a/logOut.do" class="lbtn">로그아웃</a>
 			</dd>
