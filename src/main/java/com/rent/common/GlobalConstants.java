@@ -7,6 +7,8 @@ public class GlobalConstants {
 	public static final String REVIEW_LINK_CODE = "R";
 	//링크관리 유튜브링크 코드값
 	public static final String KAKAO_LINK_CODE = "Y";
+	//링크관리 전화번호관리 코드값
+	public static final String PHONE_MNG_CODE = "P";
 	
 	public static final String ADMIN_SEQ = "USR-000000";
 	

@@ -92,10 +92,10 @@ public class HomeController {
 	public String selectMainStep7(@ModelAttribute("visitorVO") VisitorVO visitorVO, ModelMap model) throws Exception {
 		
 		List<VisitorVO> resultVO = homeService.selectVisitorDetail(visitorVO);
-		if(resultVO == null) {
+		if(resultVO.size() == 0) {
 			model.addAttribute("overlapCnt", 0);
 		} else {
-			model.addAttribute("overlapCnt", resultVO.size()+1);
+			model.addAttribute("overlapCnt", resultVO.size());
 		}
 		return "jsonView";
 	}
@@ -140,8 +140,12 @@ public class HomeController {
 		linkVO.setLinkKind(GlobalConstants.REVIEW_LINK_CODE);
 		LinkVO reviewLinkVO = linkManageService.selectReviewLink(linkVO);
 		
+		linkVO.setLinkKind(GlobalConstants.PHONE_MNG_CODE);
+		LinkVO phonMngVO = linkManageService.selectReviewLink(linkVO);
+		
 		model.addAttribute("kakaoLinkVO", kakaoLinkVO);
 		model.addAttribute("reviewLinkVO", reviewLinkVO);
+		model.addAttribute("phonMngVO", phonMngVO);
 		
 		return "/home/mobileLanding";
 	}

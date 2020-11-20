@@ -156,7 +156,7 @@ INSERT INTO SURVEY_ASR (asr_id, qtn_id, asr_contents, del_yn, reg_id, reg_dt) VA
 
 
 INSERT INTO LINK (link_id, link_addr, link_kind, del_yn, reg_id, reg_dt) VALUES ('LNK-000000', 'https://www.naver.com', 'R', 'N', 'USR-000000', NOW());
-INSERT INTO LINK (link_id, link_addr, link_kind, del_yn, reg_id, reg_dt) VALUES ('LNK-000001', 'https://youtu.be/zjJOWE2utoo', 'Y', 'N', 'USR-000000', NOW());
+INSERT INTO LINK (link_id, link_addr, link_kind, del_yn, reg_id, reg_dt) VALUES ('LNK-000001', 'http://pf.kakao.com/_bFxmPK', 'Y', 'N', 'USR-000000', NOW());
 INSERT INTO LINK (link_id, link_addr, link_kind, del_yn, reg_id, reg_dt) VALUES ('LNK-000002', '010-9588-5027', 'P', 'N', 'USR-000000', NOW());
 
 
@@ -192,3 +192,11 @@ INSERT INTO VISITOR_SURVEY_MPPG(mppg_id, visitor_id, qtn_id, asr_id, reg_dt) VAL
 INSERT INTO VISITOR_SURVEY_MPPG(mppg_id, visitor_id, qtn_id, asr_id, reg_dt) VALUES ('VSM-000009', 'VST-000007', 'QTN-000000', 'ASR-000000', NOW());
 INSERT INTO VISITOR_SURVEY_MPPG(mppg_id, visitor_id, qtn_id, asr_id, reg_dt) VALUES ('VSM-000010', 'VST-000007', 'QTN-000001', 'ASR-000004', NOW());
 INSERT INTO VISITOR_SURVEY_MPPG(mppg_id, visitor_id, qtn_id, asr_id, reg_dt) VALUES ('VSM-000011', 'VST-000007', 'QTN-000002', 'ASR-000008', NOW());
+
+
+
+INSERT INTO SN_MANAGE VALUES ('LINK', 3);
+INSERT INTO SN_MANAGE VALUES ('SURVEY_ASR', 9);
+INSERT INTO SN_MANAGE VALUES ('USERS', 1);
+INSERT INTO SN_MANAGE VALUES ('VISITORS', 8);
+INSERT INTO SN_MANAGE VALUES ('VISITOR_SURVEY_MPPG', 12);

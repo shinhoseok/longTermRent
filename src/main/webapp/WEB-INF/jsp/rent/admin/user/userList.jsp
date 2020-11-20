@@ -24,7 +24,7 @@
 				<%@ include file="/WEB-INF/jsp/rent/common/leftMenu.jsp"%>
 			</div>
 			<div class="contents">
-				<p class="contentTitle">사용자 관리</p>&nbsp;&nbsp;&nbsp;<span class="color_red">전체 : ${rslt.userListCnt}</span>
+				<p class="contentTitle">사용자 관리</p>
 				<p class="sub_path">
 					<img src="${imagePath }/ico_home.png" width="10" height="9" />&nbsp;〉&nbsp;사용자관리&nbsp;〉&nbsp;사용자관리
 				</p>

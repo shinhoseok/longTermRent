@@ -63,7 +63,7 @@
 							<ul>
 								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
 								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">카카오채널 링크</a></li>
-								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">전화번호관리</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updatePhoneMng.do';" style="cursor: pointer;"><a href="javascript:void(0);">전화번호관리</a></li>
 							</ul>
 						</div>
 					</li>
@@ -85,7 +85,7 @@
 							<ul>
 								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
 								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">카카오채널 링크</a></li>
-								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">전화번호관리</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updatePhoneMng.do';" style="cursor: pointer;"><a href="javascript:void(0);">전화번호관리</a></li>
 							</ul>
 						</div>
 					</li>
@@ -109,7 +109,7 @@
 							<ul>
 								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
 								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">카카오채널 링크</a></li>
-								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">전화번호관리</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updatePhoneMng.do';" style="cursor: pointer;"><a href="javascript:void(0);">전화번호관리</a></li>
 							</ul>
 						</div>
 					</li>
@@ -131,7 +131,7 @@
 							<ul>
 								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
 								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">카카오채널 링크</a></li>
-								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">전화번호관리</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updatePhoneMng.do';" style="cursor: pointer;"><a href="javascript:void(0);">전화번호관리</a></li>
 							</ul>
 						</div>
 					</li>
@@ -152,8 +152,8 @@
 						<div class="subMenu">
 							<ul>
 								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateReviewLink.do';" style="cursor: pointer;"><a href="javascript:void(0);"> 후기 링크</a></li>
-								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">카카오채널 링크</a></li>
-								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">전화번호관리</a></li>
+								<li class="smallMenu" onclick="location.href='${basePath}/linkmgr/w/updateKakaoLink.do';" style="cursor: pointer;"><a href="javascript:void(0);">카카오채널 링크</a></li>
+								<li class="selectsubMenu" onclick="location.href='${basePath}/linkmgr/w/updatePhoneMng.do';" style="cursor: pointer;"><a href="javascript:void(0);">전화번호관리</a></li>
 							</ul>
 						</div>
 					</li>

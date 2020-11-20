@@ -1,5 +1,6 @@
 package com.rent.admin.visitor.service.impl;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,6 +49,10 @@ public class VisitorManageServiceImpl extends EgovAbstractServiceImpl implements
 			selectList = visitorDAO.selectVisitorList(visitorVO);
 		}
 		
+		LocalDate currentDate = LocalDate.now();
+		int todayUserCnt =  visitorDAO.selectVisitorTodayCnt(String.valueOf(currentDate));
+		
+		rsltMap.put("todayUserCnt", todayUserCnt);
 		rsltMap.put("paginationInfo", paginationInfo);
 		rsltMap.put("userList", selectList);
 		rsltMap.put("userListCnt", cnt);

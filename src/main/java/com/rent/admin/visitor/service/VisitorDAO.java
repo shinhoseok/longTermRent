@@ -6,6 +6,7 @@ import egovframework.rte.psl.dataaccess.mapper.Mapper;
 
 @Mapper("visitorDAO")
 public interface VisitorDAO {
+	Integer selectVisitorTodayCnt(String today) throws Exception;
 	//견적관리 목록 카운트
 	Integer selectVisitorListCnt(VisitorVO visitorVO) throws Exception;
 	//견적관리 목록

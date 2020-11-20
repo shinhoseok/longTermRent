@@ -249,7 +249,7 @@
 	<!--10-->
 	<section class="main_box10" id="main_form">
 		<img src="${imagePath}/bg_man.jpg">
-		<article>
+		<article id="secretEstimateTarget">
 			<p>영업기밀을 바탕으로 상담을 도와드리겠습니다.</p>
 			<form action="${basePath}/home/a/insertSkipVisitorProc.do" name="visitorVO" id="visitorVO" method="post">
 				<input type="hidden" name="accessPath" id="accessPath" value="">
@@ -262,7 +262,7 @@
 				<input type="checkbox" id="privacyChk" checked>개인정보 처리방침 동의*필수 
 				<span style="cursor: pointer;" onclick="location.href='${basePath}/home/a/privacy.do'">[보기]</span>
 			</div>
-			<a href="javascript:void(0);" id="secretEstimateTarget" onclick="javascript:fn_insertSkipVisitorProc();">영업기밀 열어보기</a>
+			<a href="javascript:void(0);" onclick="javascript:fn_insertSkipVisitorProc();">영업기밀 열어보기</a>
 		</article>
 	</section>
 
@@ -461,6 +461,7 @@
 			}
 		}); 
 	};
+	
 	</script>
 </body>
 </html>

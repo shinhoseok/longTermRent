@@ -44,7 +44,7 @@
 							<col width="150px">
 							<col width="339px">
 						</colgroup>
-						<form:form commandName="linkVO" name="linkVO" id="linkVO" method="post" action="${basePath}/linkmgr/w/updateKakaoLinkProc.do">
+						<form:form commandName="linkVO" name="linkVO" id="linkVO" method="post" action="${basePath}/linkmgr/w/updatePhoneMngProc.do">
 							<input type="hidden" name="linkId" id="linkId" value="<c:out value="${resultVO.linkId}"/>">
 							<input type="hidden" name="linkKind" id="linkKind" value="<c:out value="${resultVO.linkKind}"/>">
 							<tbody class="line">
@@ -65,7 +65,7 @@
 						</form:form>
 					</table>
 					<div class="T_btnLayer fr" id="mb15">
-						<a href="javascript:void(0);" onclick="javascript:fn_updateKakaoLinkProc();"><button type="button" class="blueBtn L">수정</button></a>
+						<a href="javascript:void(0);" onclick="javascript:fn_updatePhoneMngProc();"><button type="button" class="blueBtn L">수정</button></a>
 					</div>
 				</div>
 			</div>
@@ -76,9 +76,9 @@
 	<%@ include file="/WEB-INF/jsp/rent/common/footer.jsp"%>
 	<!--//footer-->
 	<script type="text/javascript">
-	var fn_updateKakaoLinkProc = function() {
+	var fn_updatePhoneMngProc = function() {
 		if (!TypeChecker.required($("#linkAddr").val())) {
-			alert("'신규 링크 주소'는  "+ TypeChecker.requiredText);
+			alert("'신규 전화번호'는  "+ TypeChecker.requiredText);
 			$("#linkAddr").focus();
 			return;
 		}

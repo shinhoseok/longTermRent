@@ -72,11 +72,44 @@ public class LinkManageController {
 	public String updateYoutubeLinkProc(@ModelAttribute("linkVO") LinkVO linkVO, ModelMap model, SessionStatus status, LoginVO sessionVO) throws Exception {
 		
 		linkVO.setModId(sessionVO.getUserSeq());
+		linkVO.setDelYn("N");
 		linkManageService.updateLinkProc(linkVO);
 		//중복 submit 방지
 		status.setComplete();
 		
 		String redirectUrl = "/linkmgr/w/updateKakaoLink.do";
+		String message = "수정 되었습니다.";
+		
+		model.addAttribute("message", message);
+		model.addAttribute("redirectUrl", redirectUrl);
+		
+		return "/common/temp_action_message";
+	}
+	
+	@RequestMapping("/linkmgr/w/updatePhoneMng.do")
+	public String updatePhoneMng(@ModelAttribute("linkVO") LinkVO linkVO, ModelMap model) throws Exception {
+		
+		linkVO.setLinkKind(GlobalConstants.PHONE_MNG_CODE);
+		LinkVO resultVO = linkManageService.selectReviewLink(linkVO);
+		model.addAttribute("resultVO", resultVO);
+		
+		model.addAttribute("alevel", "3");
+		model.addAttribute("blevel", "2");
+		model.addAttribute("clevel", "3");
+		
+		return "/admin/link/phoneMngUpdate";
+	}
+	
+	@RequestMapping("/linkmgr/w/updatePhoneMngProc.do")
+	public String updatePhoneMngProc(@ModelAttribute("linkVO") LinkVO linkVO, ModelMap model, SessionStatus status, LoginVO sessionVO) throws Exception {
+		
+		linkVO.setModId(sessionVO.getUserSeq());
+		linkVO.setDelYn("N");
+		linkManageService.updateLinkProc(linkVO);
+		//중복 submit 방지
+		status.setComplete();
+		
+		String redirectUrl = "/linkmgr/w/updatePhoneMng.do";
 		String message = "수정 되었습니다.";
 		
 		model.addAttribute("message", message);

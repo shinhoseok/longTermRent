@@ -57,6 +57,17 @@
 		<include refid="vstGubunSql"/>
 	</select>
 	
+	<!-- 견적관리 오늘 카운트 -->
+	<select id="selectVisitorTodayCnt" parameterType="java.lang.String" resultType="java.lang.Integer">
+		<![CDATA[
+		SELECT 
+			COUNT(*) cnt 
+		FROM VISITORS 
+		WHERE 
+			DATE_FORMAT(REG_DT, '%Y-%m-%d') = #{lastIndex}
+		]]>
+	</select>
+	
 	<select id="selectVisitorDetail" parameterType="visitorVO" resultType="visitorVO">
 		<![CDATA[
 		SELECT

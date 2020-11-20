@@ -49,11 +49,11 @@
 							<input type="hidden" name="linkKind" id="linkKind" value="<c:out value="${resultVO.linkKind}"/>">
 							<tbody class="line">
 								<tr>
-									<th class="bullet_orange">기존 유튜브</th>
+									<th class="bullet_orange">기존 카카오링크</th>
 									<td><c:out value="${resultVO.linkAddr}"/></td>
 								</tr>
 								<tr>
-									<th class="bullet_orange">신규 유튜브</th>
+									<th class="bullet_orange">신규 카카오링크</th>
 									<td>
 										<div>
 											<form:input type="text" path="linkAddr" id="linkAddr"  onfocus="checker(this, 200 , 'nbytes_linkAddr');" onblur="stopchecker();" style="width: 690px; height:28px; border: 1px solid #D4D4D4;"/> &nbsp;

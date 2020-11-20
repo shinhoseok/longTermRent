@@ -29,7 +29,7 @@
 				<%@ include file="/WEB-INF/jsp/rent/common/leftMenu.jsp"%>
 			</div>
 			<div class="contents">
-				<p class="contentTitle">링크 관리</p>
+				<p class="contentTitle f_blue">링크 관리</p>
 				<p class="sub_path">
 					<img src="${imagePath }/ico_home.png" width="10" height="9" />&nbsp;〉&nbsp;링크 관리&nbsp;〉&nbsp;후기 링크
 				</p>
