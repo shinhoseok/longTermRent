@@ -253,7 +253,7 @@
 				<input type="hidden" name="accessPath" id="accessPath" value="">
 				<input type="hidden" name="overlapCnt" id="overlapCnt" value="">
 				<input type="text" name="visitorNm" id="visitorNm" onkeydown="if(event.keyCode==13){javascript:fn_insertSkipVisitorProc();}" onfocus="checker(this, 50 , 'nbytes_visitorNm');" onblur="stopchecker();" placeholder="이름">
-				<input type="text" name="telNo" id="telNo" onkeydown="if(event.keyCode==13){javascript:fn_insertSkipVisitorProc();}" onfocus="checker(this, 11 , 'nbytes_telNo');" onblur="stopchecker();" placeholder="휴대번호를 입력해주세요">
+				<input type="text" name="telNo" id="telNo" onkeydown="if(event.keyCode==13){javascript:fn_insertSkipVisitorProc();}" onfocus="checker(this, 11 , 'nbytes_telNo');" onblur="stopchecker();" placeholder="-빼고 휴대전화를 입력해주세요">
 				<input type="text" name="itrstdCarTy" id="itrstdCarTy" onkeydown="if(event.keyCode==13){javascript:fn_insertSkipVisitorProc();}" onfocus="checker(this, 50 , 'nbytes_itrstdCarTy');" onblur="stopchecker();" placeholder="관심차종을 입력해주세요">
 			</form>
 			<div>
@@ -267,11 +267,11 @@
 	<!--footer-->
 	<footer>
 		<div class="wrap">
-			<p style="cursor: pointer;" onclick="location.href='${basePath}/login/a/login.do'">(주)바른청년 렌터카 장기렌트</p>
+			<p style="cursor: pointer;" onclick="location.href='${basePath}/login/a/login.do'">바른청년 렌터카</p>
 			<address>
-				서울특별시 서초구 서초대로 8, 100호 (서초동, 서초빌딩)<br> TEL : 02-123-4567 사업자번호 : 123-45-12345
+				서울특별시 송파구 백제고분로15길 32, 201호(잠실동)<br> TEL : 010-9687-6111 사업자번호 : 259-24-01058
 			</address>
-			<p>Copyright 2020 by carholic. All rights reserved.</p>
+			<p>Copyright 2020 by goodboy. All rights reserved.</p>
 		</div>
 	</footer>
 
