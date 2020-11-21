@@ -25,10 +25,12 @@
 				</div>
 				<div class="text_box">
 					<h2 id="move">
-						장기렌트/리스견적<br> 영업기밀을 고객님께만<br> 알려드립니다.
+						장기렌트,영업사원들이<br> 
+						비밀로 숨기는 견적 기밀을<br>
+						알 수 있다면?
 					</h2>
 					<p id="move2">
-						복잡한 렌터카 시장,<br> 1%의 고객님들만 받아볼 수 있는 진짜 가격을<br> 바른청년 렌터카가 견적서로 알려드립니다.
+						렌터카 너무 복잡하시죠,<br> 바른청년 렌터카 고객님들은 이미 다 누리고 있는<br> ‘진짜 가격’이 궁금하지 않으세요?
 					</p>
 				</div>
 			</div>
@@ -39,12 +41,12 @@
 	<section class="main_box2_1">
 		<article>
 			<div>
-				<p>장기렌트 영업기밀이란?</p>
+				<p>어떻게 믿냐구요?</p>
 				<h2>
-					바른청년 렌터카만 알 수 있는 <br> 고객님께 최적화 된 가격입니다.
+					렌터카 시장을 불신하는 마음, <br> 저희가 책임지겠습니다.<br> 믿지마세요.
 				</h2>
 				<p class="text_box2_1">
-					장기렌트 영업기밀은 고객님께서 알맞은 차량을 합리적으로 장기렌트 및 리스할 수 있도록 하는 가격이며,<br> 바른청년 렌터카 고객님 외에 일반적으로 공개되지 않습니다.
+					그냥 견적만 받고 다른 곳에서 계약하셔도 괜찮습니다.<br> 바른청년 렌터카의 ‘영업기밀’은 일반적으로 공개되지 않습니다.<br>그러므로 이 곳을 발견하신 것을 축하합니다!
 				</p>
 			</div>
 		</article>
@@ -94,10 +96,14 @@
 				<img src="${imagePath}/img_left_car.jpg">
 				<div class="text_box3">
 					<h2>
-						누구나 구매한 뒤<br> 후회하지 않는<br> 견적서를 받고 싶어<br> 합니다.
+						장기렌트에는<br> 2가지 견적서가 <br>있습니다.
 					</h2>
 					<p>
-						하지만, 수많은 허위 견적서가 판치고 저렴함만을<br> 내세워 결함 있는 차량을 팔기도 합니다.<br> 바른청년 렌터카는 내가족에게 팔 수 있는 물건만<br> 고객님들께 소개해 드리고 있습니다.<br>
+						남들이 ‘왜 이 돈 주고 샀냐’고 묻는 견적서,<br>
+						그리고 ‘어디서 했냐’고 물어보는 견적서입니다.<br>
+						바른청년 렌터카는 입소문이 주 영업 방법입니다.<br>
+						바르게 일하면, 고객분들이 알아서 <br>
+						소개해 주시는 것을 알기 때문입니다.
 					</p>
 				</div>
 			</div>
@@ -248,7 +254,7 @@
 	<section class="main_box10" id="main_form">
 		<img src="${imagePath}/bg_man.jpg">
 		<article id="secretEstimateTarget">
-			<p>영업기밀을 바탕으로 상담을 도와드리겠습니다.</p>
+			<p>타사에선 공개를 꺼리는 영업기밀을 바탕으로 상담을 약속합니다.</p>
 			<form action="${basePath}/home/a/insertSkipVisitorProc.do" name="visitorVO" id="visitorVO" method="post">
 				<input type="hidden" name="accessPath" id="accessPath" value="">
 				<input type="hidden" name="overlapCnt" id="overlapCnt" value="">

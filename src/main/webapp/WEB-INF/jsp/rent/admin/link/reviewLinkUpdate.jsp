@@ -83,11 +83,6 @@
 	<!--//footer-->
 	<script type="text/javascript">
 	var fn_updateReviewLinkProc = function() {
-		if (!TypeChecker.required($("#linkAddr").val())) {
-			alert("'신규 링크 주소'는  "+ TypeChecker.requiredText);
-			$("#linkAddr").focus();
-			return;
-		}
 		if(!confirm("수정 하시겠습니까?")){
 			return;
 		}
