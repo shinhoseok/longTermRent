@@ -9,7 +9,15 @@
 <meta content="yes" name="apple-mobile-web-app-capable" />
 <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport" />
 <meta name="naver-site-verification" content="9ff42542848f7180fb0d160a27be8b53e63954e3" />
-<title>바른청년 장기렌트</title>
+<meta name="title" content="바른청년렌터카">
+<meta name="keywords" content="바른청년렌터카,장기렌트,장기렌트가격비교,장기렌트가격">
+<meta name="description" content="바른청년렌터카,장기렌트,장기렌트가격비교,장기렌트가격">
+<meta property="og:type" content="website">
+<meta property="og:url" content="${basePath}">
+<meta property="og:title" content="바른청년 렌트카">
+<meta property="og:description" content="바른청년렌터카,장기렌트,장기렌트가격비교,장기렌트가격">
+<meta property="og:image" content="${imagePath}/img/img_link.jpg">
+<title>바른청년 렌터카</title>
 <!--공통css-->
 <link rel="stylesheet" type="text/css" href="${cssPath}/landing.css">
 <!-- 스크립트 선언 -->

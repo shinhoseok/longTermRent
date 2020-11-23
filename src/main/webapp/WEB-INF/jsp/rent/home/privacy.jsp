@@ -9,7 +9,7 @@
 <meta content="yes" name="apple-mobile-web-app-capable" />
 <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport" />
 <meta name="naver-site-verification" content="9ff42542848f7180fb0d160a27be8b53e63954e3" />
-<title>바른청년 장기렌트</title>
+<title>바른청년 렌터카</title>
 <!--공통css-->
 <link rel="stylesheet" type="text/css" href="${cssPath}/main.css">
 <%-- <link rel="stylesheet" type="text/css" href="${cssPath}/aos.css"> --%>
