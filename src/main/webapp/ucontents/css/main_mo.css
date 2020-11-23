@@ -12,7 +12,6 @@
 
     html{
     	scroll-behavior: smooth;
-        overflow-x: hidden;
     }
 
     body{
@@ -22,6 +21,7 @@
 
     section{
         width: 100vw;
+        overflow-x: hidden;
     }
 
     article{
@@ -41,7 +41,7 @@
    }
   
    .main_box1 h2{
-        font-size: 35.5px;
+        font-size: 35.4px;
         line-height: 1.44;
         letter-spacing: -1.78px;
         color: #111111;
